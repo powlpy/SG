@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: GroundObjects
+    uniqueID: 2251766489
+    locked: 0
+  - name: Characters
+    uniqueID: 1504195297
+    locked: 0
+  - name: Items
+    uniqueID: 3265460797
+    locked: 0
+  - name: HighObjects
+    uniqueID: 552649633
+    locked: 0
+  - name: UI
+    uniqueID: 3579834659
+    locked: 0
