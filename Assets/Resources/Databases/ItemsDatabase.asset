@@ -20,3 +20,7 @@ MonoBehaviour:
     Prefab: {fileID: 1000013846566288, guid: 8119b91512e37494688cb9f5fff63629, type: 2}
     Equip: 2
     Animation: 2
+  - Type: 300
+    Prefab: {fileID: 1000013382558264, guid: 49541b97459675e4c9969399349a6a77, type: 2}
+    Equip: 0
+    Animation: 2

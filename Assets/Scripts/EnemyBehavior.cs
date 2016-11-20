@@ -3,21 +3,34 @@ using System.Collections;
 
 public class EnemyBehavior : MonoBehaviour {
 
+    public float maxHealth;
+    private float currentHealth;
     public float moveSpeed = 2;
     public float pushStrength;
     public float pushTime;
+    public float stunTime;
+    private float myStunTime;
+    public float deathAnimationDelay;
+    public GameObject deathAnimation;
+    public float immunityWindow;
     private bool isMoving;
     Animator anim;
     private static float movementX;
     private static float movementY;
-    private Vector3 vectMovement = new Vector3(0, 0, 0);
     Rigidbody2D myBody;
     public bool isAwake;
-    public GameObject player;
+    private GameObject player;
     private float myPushTime;
     private Vector3 pushDirection;
+    private bool isFrozen = false;
+    private bool isImmune = false;
+
+    void Awake() {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     void Start() {
+        currentHealth = maxHealth;
 
         anim = GetComponentInChildren<Animator>();
         myBody = GetComponent<Rigidbody2D>();
@@ -25,12 +38,19 @@ public class EnemyBehavior : MonoBehaviour {
     }
     
     void Update() {
+        if(IsStunned()) {
+            myStunTime = Mathf.MoveTowards(myStunTime, 0f, Time.deltaTime);
+            if (!IsStunned()) {
+                StopStun();
+            }
+        }
         if (IsBeingPushed()) {
             myBody.velocity = pushDirection;
-            Debug.Log(myPushTime);
             myPushTime = Mathf.MoveTowards(myPushTime, 0f, Time.deltaTime);
+            if (!IsBeingPushed()) myBody.velocity = Vector3.zero;
             return;
         }
+        if (isFrozen) return;
         if (!isAwake) return;
         FollowPlayer();
 
@@ -47,8 +67,37 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     public void OnHit(Collider2D weaponCollider) {
+        if (isImmune) return;
+        StartCoroutine(ManageImmunity(immunityWindow));
+        currentHealth--;
+        CheckHealth();
         PushBack(weaponCollider);
-        Sleep();
+    }
+
+    void CheckHealth() {
+        if(currentHealth <= 0 && !IsStunned()) {
+            StunEnnemy();
+        }
+    }
+
+    void StunEnnemy() {
+        myStunTime = stunTime;
+        anim.SetBool("IsStunned", true);
+        SetFrozen(true);
+    }
+
+    void StopStun() {
+        currentHealth = maxHealth;
+        anim.SetBool("IsStunned", false);
+        SetFrozen(false);
+    }
+
+    bool IsStunned() {
+        return (myStunTime > 0f);
+    }
+
+    void OnDeath() {
+        Destroy(gameObject);
     }
 
     void FollowPlayer() {
@@ -70,11 +119,23 @@ public class EnemyBehavior : MonoBehaviour {
         pushDirection = transform.position - weapon.transform.position;
         pushDirection.Normalize();
         pushDirection *= pushStrength;
-        myPushTime = pushTime/10f;
+        myPushTime = pushTime;
     }
 
     public bool IsBeingPushed() {
         return (myPushTime > 0f);
     }
+
+    public void SetFrozen(bool frozen) {
+        isFrozen = frozen;
+    }
+
+    IEnumerator ManageImmunity(float delay) {
+        isImmune = true;
+        yield return new WaitForSeconds(delay);
+        isImmune = false;
+    }
+
+
 
 }

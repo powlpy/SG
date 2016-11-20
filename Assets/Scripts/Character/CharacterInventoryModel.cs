@@ -15,6 +15,11 @@ public class CharacterInventoryModel : MonoBehaviour {
 
     }
 
+    public int GetItemCount(ItemType itemType) {
+        if (!items.ContainsKey(itemType)) return 0;
+        return items[itemType];
+    }
+
     public void AddItem(ItemType itemType) {
         AddItem(itemType, 1);
 
