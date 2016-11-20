@@ -27,9 +27,16 @@ public class CharacterInventoryModel : MonoBehaviour {
             items.Add(itemType, amount);
         }
 
-        if(itemType == ItemType.Sword && amount > 0) {
-            Behavior.EquipWeapon(itemType);
-            Behavior.StartPickUp1Animation();
+        if(amount > 0) {
+            ItemData itemData = Database.Items.FindItem(itemType);
+            if(itemData != null) {
+                if(itemData.Equip == ItemData.EquipType.SwordHand && Behavior.equipedWeapon == ItemType.None) {
+                    Behavior.EquipWeapon(itemType);
+
+                }
+                if(itemData.Animation != ItemData.PickupAnimation.None)
+                    Behavior.PreviewItem(itemType);
+            }
         }
 
     }

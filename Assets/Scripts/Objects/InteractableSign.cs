@@ -7,19 +7,13 @@ public class InteractableSign : Interactable {
 
     public override void OnInteract(Character character) {
         if (DialogBox.IsVisible()) {
-            Time.timeScale = 1;
             DialogBox.Hide();
-            character.Behavior.setFrozen(false);
+            character.Behavior.setFrozen(false, true);
         } else {
             DialogBox.Show(myText);
-            character.Behavior.setFrozen(true);
-            StartCoroutine(FreezeTimeRoutine());
+            character.Behavior.setFrozen(true, true);
         }
     }
 
-    IEnumerator FreezeTimeRoutine() {
-        yield return null;
-        Time.timeScale = 0;
-    }
 
 }
