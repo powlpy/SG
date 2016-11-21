@@ -11,7 +11,7 @@ public class AttackableBush : Attackable {
         myRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    public override void OnHit(ItemType item, Collider2D weaponCollider) {
+    public override void OnHit(ItemType item) {
         if(GetComponent<Collider2D>() != null) {
             GetComponent<Collider2D>().enabled = false;
         }

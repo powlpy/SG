@@ -18,19 +18,19 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: 0.39, y: 0.517, z: 0}
+        value: {x: 0.4, y: 0.522, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 2
-        value: {x: 0.39, y: 0.517, z: 0}
+      - time: 1.6666666
+        value: {x: 0.4, y: 0.522, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: PreviewItem
+    path: Weapon
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
@@ -64,7 +64,7 @@ AnimationClip:
       classID: 212
       customType: 23
       isPPtrCurve: 1
-    - path: 247897005
+    - path: 1855955664
       attribute: 1
       script: {fileID: 0}
       classID: 4
@@ -102,12 +102,12 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0.39
+        value: 0.4
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 2
-        value: 0.39
+      - time: 1.6666666
+        value: 0.4
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -115,19 +115,19 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: PreviewItem
+    path: Weapon
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0.517
+        value: 0.522
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 2
-        value: 0.517
+      - time: 1.6666666
+        value: 0.522
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -135,7 +135,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: PreviewItem
+    path: Weapon
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -146,7 +146,7 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 2
+      - time: 1.6666666
         value: 0
         inSlope: 0
         outSlope: 0
@@ -155,7 +155,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: PreviewItem
+    path: Weapon
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []
@@ -164,21 +164,14 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0
-    functionName: OnAnimationStarted
+    functionName: OnAttackStarted
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.6666666
-    functionName: OnAnimationFinished
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.6666666
-    functionName: HidePreviewItem
+    functionName: OnAttackFinished
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
