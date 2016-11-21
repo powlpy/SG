@@ -10,7 +10,6 @@ public class InteractableChest : Interactable {
 
     public override void OnInteract(Character character) {
         if (!isOpen) {
-
             character.Inventory.AddItem(itemInChest, amount);
             GetComponentInChildren<SpriteRenderer>().sprite = openChestSprite;
             isOpen = true;
