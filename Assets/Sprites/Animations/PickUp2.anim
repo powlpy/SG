@@ -177,15 +177,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.6666666
-    functionName: HidePreviewItem
+  - time: 2
+    functionName: OnAnimationFinished
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.6666666
-    functionName: OnAnimationFinished
+  - time: 2
+    functionName: HidePreviewItem
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

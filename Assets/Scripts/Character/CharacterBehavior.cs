@@ -126,8 +126,9 @@ public class CharacterBehavior : MonoBehaviour {
     }
     bool CanAttack() {
         if (isAttacking) return false;
-        if(equipedWeapon == ItemType.None) return false;
+        if (equipedWeapon == ItemType.None) return false;
         if (IsBeingPushed()) return false;
+        if (IsCarrying()) return false;
         return true;
     }
     
@@ -273,6 +274,11 @@ public class CharacterBehavior : MonoBehaviour {
         }
 
 
+    }
+
+    public GameObject GetCarriedObject() {
+        if (carriedObject == null) return null;
+        return carriedObject.gameObject;
     }
 
 }

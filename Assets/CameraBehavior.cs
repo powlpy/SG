@@ -4,16 +4,19 @@ using System.Collections;
 public class CameraBehavior : MonoBehaviour {
 
     public GameObject player;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+    public bool FollowAxisX = true;
+    public bool FollowAxisY = true;	
 
 	void Update () {
         Vector3 vectMovement = transform.position;
-        vectMovement.x = player.transform.position.x;
+        if (FollowAxisX) {
+            vectMovement.x = player.transform.position.x;
+        }
+        if (FollowAxisY) {
+            vectMovement.y = player.transform.position.y;
+        } else {
+            vectMovement.y = 0f;
+        }
         transform.position = vectMovement;
 	}
 }
