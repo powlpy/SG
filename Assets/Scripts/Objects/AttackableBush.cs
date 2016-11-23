@@ -12,16 +12,18 @@ public class AttackableBush : Attackable {
     }
 
     public override void OnHit(ItemType item, Collider2D weaponCollider) {
-        if(GetComponent<Collider2D>() != null) {
+        DestroyBush();
+    }
+
+    void DestroyBush() {
+        if (GetComponent<Collider2D>() != null)
             GetComponent<Collider2D>().enabled = false;
-        }
         myRenderer.sprite = destroyedSprite;
 
-        if(DestroyEffect != null) {
+        if (DestroyEffect != null) {
             GameObject destroyEffect = (GameObject)Instantiate(DestroyEffect);
             destroyEffect.transform.position = transform.position;
         }
-
     }
 
 }

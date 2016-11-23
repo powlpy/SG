@@ -19,6 +19,8 @@ public class CharacterBehavior : MonoBehaviour {
     public ItemType equipedWeapon = ItemType.None;
     private float pushTime;
     private Vector3 pushDirection;
+    private InteractablePickup carriedObject = null;
+    private string layerOfCarriedObject;
 
 
     // Use this for initialization
@@ -51,50 +53,44 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     void UpdateMovement() {
-        if(isFrozen || isAttacking) {
-            myBody.velocity = new Vector3(0, 0, 0);
-            return;
-        }
-
-        if (IsBeingPushed()) {
-            myBody.velocity = pushDirection;
-            pushTime = Mathf.MoveTowards(pushTime, 0f, Time.deltaTime);
-            anim.SetBool("IsHit", IsBeingPushed());
-            return;
-        }
 
         isMoving = false;
         movementX = 0;
         movementY = 0;
 
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            movementX = -1;
-            isMoving = true;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow)) {
-            movementX = 1;
-            isMoving = true;
-        }
-        if (Input.GetKey(KeyCode.UpArrow)) {
-            movementY = 1;
-            isMoving = true;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow)) {
-            movementY = -1;
-            isMoving = true;
-        }
-        if (isMoving) {
-            vectMovement.x = movementX;
-            vectMovement.y = movementY;
-            vectMovement.Normalize();
-            anim.SetFloat("MovementX", vectMovement.x);
-            anim.SetFloat("MovementY", vectMovement.y);
-            myBody.velocity = moveSpeed * vectMovement;
-        } else {
+        if (isFrozen || isAttacking) {
             myBody.velocity = new Vector3(0, 0, 0);
+        } else if (IsBeingPushed()) {
+            myBody.velocity = pushDirection;
+            pushTime = Mathf.MoveTowards(pushTime, 0f, Time.deltaTime);
+            anim.SetBool("IsHit", IsBeingPushed());
+        } else {
+            if (Input.GetKey(KeyCode.LeftArrow)) {
+                movementX = -1;
+                isMoving = true;
+            } else if (Input.GetKey(KeyCode.RightArrow)) {
+                movementX = 1;
+                isMoving = true;
+            }
+            if (Input.GetKey(KeyCode.UpArrow)) {
+                movementY = 1;
+                isMoving = true;
+            } else if (Input.GetKey(KeyCode.DownArrow)) {
+                movementY = -1;
+                isMoving = true;
+            }
+            if (isMoving) {
+                vectMovement.x = movementX;
+                vectMovement.y = movementY;
+                vectMovement.Normalize();
+                anim.SetFloat("MovementX", vectMovement.x);
+                anim.SetFloat("MovementY", vectMovement.y);
+                myBody.velocity = moveSpeed * vectMovement;
+            } else {
+                myBody.velocity = new Vector3(0, 0, 0);
+            }
         }
         anim.SetBool("IsMoving", isMoving && !isFrozen);
-
     }
 
     public void setFrozen(bool frozen, bool freezeTime) {
@@ -108,7 +104,7 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     IEnumerator FreezeTimeRoutine() {
-        yield return null;
+        yield return new WaitForEndOfFrame();
         Time.timeScale = 0;
     }
 
@@ -119,9 +115,13 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     void OnActionPressed() {
-         if(InteractionModel == null) {
+        if (IsCarrying()) {
+            DropObject();
             return;
-         }
+        }
+        if(InteractionModel == null) {
+            return;
+        }
         InteractionModel.OnInteract();
     }
     bool CanAttack() {
@@ -216,7 +216,8 @@ public class CharacterBehavior : MonoBehaviour {
         pushDirection = pushVect;
         OnAttackFinished();
         setFrozen(false, false);
-        HidePreviewItem();
+        if(!IsCarrying())
+            HidePreviewItem();
         HideWeapon();
         anim.SetBool("IsHit", true);
     }
@@ -227,6 +228,51 @@ public class CharacterBehavior : MonoBehaviour {
 
     IEnumerator Sleep(float time) {
         yield return new WaitForSeconds(time);
+    }
+
+    public void CarryObject(InteractablePickup objectToCarry) {
+        if (IsCarrying()) return;
+        carriedObject = objectToCarry;
+        anim.SetTrigger("DoPickupObject");
+        anim.SetBool("IsPickingUp", true);
+        carriedObject.transform.parent = previewItemParent;
+        carriedObject.transform.localPosition = Vector3.zero;
+        layerOfCarriedObject = carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName;
+        carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "HighObjects";
+        SetColliders(carriedObject.gameObject, false);
+    }
+
+    public void DropObject() {
+        if (!IsCarrying()) return;
+        anim.SetTrigger("DoDrop");
+        Vector3 newPosition = vectMovement;
+        newPosition.y -= previewItemParent.transform.localPosition.y + 0.2f;
+        carriedObject.transform.localPosition = newPosition;
+        carriedObject.transform.parent = null;
+        carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = layerOfCarriedObject;
+        if(carriedObject.GetComponentInChildren<SpriteRenderer>().sortingOrder < 200)
+            carriedObject.GetComponentInChildren<SpriteRenderer>().sortingOrder += 100;
+        SetColliders(carriedObject.gameObject, true);
+        carriedObject = null;
+        anim.SetBool("IsPickingUp", false);
+    }
+
+    public bool IsCarrying() {
+        return (carriedObject != null);
+    }
+
+    void SetColliders(GameObject obj, bool b) {
+        if (obj.GetComponent<Rigidbody2D>() != null)
+            obj.GetComponent<Rigidbody2D>().isKinematic = !b;
+
+        if (obj.GetComponent<Collider2D>() != null)
+            obj.GetComponent<Collider2D>().enabled = b;
+
+        foreach(Collider2D collider in obj.GetComponentsInChildren<Collider2D>()) {
+            collider.enabled = b;
+        }
+
+
     }
 
 }

@@ -27,6 +27,7 @@ public class EnemyBehavior : MonoBehaviour {
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
+        GetComponentInParent<InteractablePickup>().enabled = false;
     }
 
     void Start() {
@@ -38,6 +39,7 @@ public class EnemyBehavior : MonoBehaviour {
     }
     
     void Update() {
+        if (IsBeingCarried()) return;
         if(IsStunned()) {
             myStunTime = Mathf.MoveTowards(myStunTime, 0f, Time.deltaTime);
             if (!IsStunned()) {
@@ -81,6 +83,7 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     void StunEnnemy() {
+        GetComponentInParent<InteractablePickup>().enabled = true;
         myStunTime = stunTime;
         anim.SetBool("IsStunned", true);
         SetFrozen(true);
@@ -90,9 +93,10 @@ public class EnemyBehavior : MonoBehaviour {
         currentHealth = maxHealth;
         anim.SetBool("IsStunned", false);
         SetFrozen(false);
+        GetComponentInParent<InteractablePickup>().enabled = false;
     }
 
-    bool IsStunned() {
+    public bool IsStunned() {
         return (myStunTime > 0f);
     }
 
@@ -136,6 +140,8 @@ public class EnemyBehavior : MonoBehaviour {
         isImmune = false;
     }
 
-
+    public bool IsBeingCarried() {
+        return (gameObject.transform.parent != null);
+    }
 
 }
