@@ -6,9 +6,15 @@ public class EnemyAggro : MonoBehaviour {
 
 
     void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.tag == "Player") {
+        if (collider.tag == "Player")
             GetComponentInParent<EnemyBehavior>().Awaken();
-        }
     }
+
+
+    void OnTriggerExit2D(Collider2D collider) {
+        if (collider.tag == "Player")
+            GetComponentInParent<EnemyBehavior>().Sleep();
+    }
+
 
 }

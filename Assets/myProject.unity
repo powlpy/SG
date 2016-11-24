@@ -531,6 +531,11 @@ Prefab:
       propertyPath: m_Name
       value: BatGreen (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010233141618, guid: 1c70120d03c29614586bf4828b26aa1b,
+        type: 2}
+      propertyPath: TypeOfTrash
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c70120d03c29614586bf4828b26aa1b, type: 2}
   m_IsPrefabParent: 0
@@ -7595,11 +7600,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012808718530, guid: 1c70120d03c29614586bf4828b26aa1b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 34.76
+      value: 34.5
       objectReference: {fileID: 0}
     - target: {fileID: 4000012808718530, guid: 1c70120d03c29614586bf4828b26aa1b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.06
+      value: -4.51
       objectReference: {fileID: 0}
     - target: {fileID: 4000012808718530, guid: 1c70120d03c29614586bf4828b26aa1b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7628,6 +7633,26 @@ Prefab:
     - target: {fileID: 1000010246102324, guid: 1c70120d03c29614586bf4828b26aa1b, type: 2}
       propertyPath: m_Name
       value: BatGreen (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010233141618, guid: 1c70120d03c29614586bf4828b26aa1b,
+        type: 2}
+      propertyPath: TypeOfTrash
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000010711143744, guid: 1c70120d03c29614586bf4828b26aa1b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.9862069
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000010711143744, guid: 1c70120d03c29614586bf4828b26aa1b,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000010711143744, guid: 1c70120d03c29614586bf4828b26aa1b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c70120d03c29614586bf4828b26aa1b, type: 2}
@@ -8192,7 +8217,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1199481017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.23, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -8830,6 +8855,11 @@ Prefab:
     - target: {fileID: 4000012808718530, guid: 1c70120d03c29614586bf4828b26aa1b, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010233141618, guid: 1c70120d03c29614586bf4828b26aa1b,
+        type: 2}
+      propertyPath: TypeOfTrash
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c70120d03c29614586bf4828b26aa1b, type: 2}
@@ -9959,6 +9989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4475607fa7c52b34a98e4f3697de8f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TypeOfTrash: 100
   RecyclingEffect: {fileID: 1000011654673000, guid: 4424bb63904c9c14fa3c2e49faa3e461,
     type: 2}
 --- !u!61 &1565060236

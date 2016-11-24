@@ -27,13 +27,12 @@ public class EnemyBehavior : MonoBehaviour {
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponentInChildren<Animator>();
+        myBody = GetComponent<Rigidbody2D>();
     }
 
     void Start() {
         currentHealth = maxHealth;
-
-        anim = GetComponentInChildren<Animator>();
-        myBody = GetComponent<Rigidbody2D>();
         isAwake = false;
         GetComponentInParent<InteractablePickup>().SetAuthorizePickup(false);
     }
@@ -116,7 +115,6 @@ public class EnemyBehavior : MonoBehaviour {
         Vector3 pushDirection = player.transform.position - transform.position;
         pushDirection.Normalize();
         player.GetComponent<CharacterBehavior>().PushBack(pushDirection * pushStrength, pushTime);
-        Sleep();
     }
 
     public void PushBack(Collider2D weapon) {
@@ -142,6 +140,14 @@ public class EnemyBehavior : MonoBehaviour {
 
     public bool IsBeingCarried() {
         return (gameObject.transform.parent != null);
+    }
+
+    public void MakeStronger() {
+
+        moveSpeed *= 1.5f;
+        currentHealth = maxHealth * 1.5f;
+        StopStun();
+
     }
 
 }

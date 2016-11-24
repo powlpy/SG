@@ -21,17 +21,14 @@ public class CharacterBehavior : MonoBehaviour {
     private Vector3 pushDirection;
     private InteractablePickup carriedObject = null;
     private string layerOfCarriedObject;
-
-
-    // Use this for initialization
+    
     void Start() {
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody2D>();
         InteractionModel = GetComponent<CharacterInteractionModel>();
         HideWeapon();
     }
-
-    // Update is called once per frame
+    
     void Update() {
         UpdateAttack();
         UpdateAction();
@@ -39,17 +36,14 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     void UpdateAttack() {
-        if (Input.GetKeyDown(KeyCode.C)) {
-            if (CanAttack()) {
+        if (Input.GetKeyDown(KeyCode.C))
+            if (CanAttack())
                 anim.SetTrigger("DoAttack");
-            }
-        }
     }
 
     void UpdateAction() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space))
             OnActionPressed();
-        }
     }
 
     void UpdateMovement() {
@@ -93,6 +87,7 @@ public class CharacterBehavior : MonoBehaviour {
         anim.SetBool("IsMoving", isMoving && !isFrozen);
     }
 
+    //freeze/unfreeze the character
     public void setFrozen(bool frozen, bool freezeTime) {
         isFrozen = frozen;
         if (freezeTime) {
@@ -102,33 +97,32 @@ public class CharacterBehavior : MonoBehaviour {
                 Time.timeScale = 1;
         }
     }
-
+    //wait end of frame before freezing the time for the animation
     IEnumerator FreezeTimeRoutine() {
         yield return new WaitForEndOfFrame();
         Time.timeScale = 0;
     }
 
-
-
     public Vector3 GetDirection() {
         return vectMovement;
     }
 
+    //when player press interaction key
     void OnActionPressed() {
         if (IsCarrying()) {
             DropObject();
             return;
         }
-        if(InteractionModel == null) {
-            return;
-        }
-        InteractionModel.OnInteract();
+        if(InteractionModel != null)
+            InteractionModel.OnInteract();
     }
+
+    //returns true if the character can attack
     bool CanAttack() {
-        if (isAttacking) return false;
-        if (equipedWeapon == ItemType.None) return false;
-        if (IsBeingPushed()) return false;
-        if (IsCarrying()) return false;
+        if (isAttacking) return false;  //already attacking
+        if (equipedWeapon == ItemType.None) return false;   //no weapon equiped
+        if (IsBeingPushed()) return false;  //being pushed
+        if (IsCarrying()) return false;     //carrying smth
         return true;
     }
     
@@ -140,6 +134,7 @@ public class CharacterBehavior : MonoBehaviour {
 
         equipedWeapon = weapon;
 
+        //create the prefab of the weapon in WeaponParent
         GameObject newEquipableObject = (GameObject)Instantiate(itemData.Prefab);
         newEquipableObject.transform.parent = weaponParent;
         newEquipableObject.transform.localPosition = Vector2.zero;
@@ -160,10 +155,9 @@ public class CharacterBehavior : MonoBehaviour {
             StartPickUp1Animation();
         else if (itemData.Animation == ItemData.PickupAnimation.TwoHanded)
             StartPickUp2Animation();
-
-
     }
 
+    //player can't move when pickup animation is being played
     public void OnAnimationStarted() {
         setFrozen(true, false);
     }
@@ -179,14 +173,15 @@ public class CharacterBehavior : MonoBehaviour {
     public void OnAttackFinished() {
         isAttacking = false;
     }
+
     public void ShowWeapon() {
-        if (weaponParent == null) return;
-        weaponParent.gameObject.SetActive(true);
+        if (weaponParent != null)
+            weaponParent.gameObject.SetActive(true);
     }
 
     public void HideWeapon() {
-        if (weaponParent == null) return;
-        weaponParent.gameObject.SetActive(false);
+        if (weaponParent != null)
+            weaponParent.gameObject.SetActive(false);
     }
 
     public void HidePreviewItem() {
@@ -194,11 +189,13 @@ public class CharacterBehavior : MonoBehaviour {
             GameObject.Destroy(child.gameObject);
     }
 
+    //draw weapon behind character
     public void SetWeaponBehind() {
         if (weaponParent == null) return;
         weaponParent.GetComponentInChildren<SpriteRenderer>().sortingOrder = 90;
     }
 
+    //draw weapon above character
     public void SetWeaponAbove() {
         if (weaponParent == null) return;
         weaponParent.GetComponentInChildren<SpriteRenderer>().sortingOrder = 110;
@@ -212,56 +209,58 @@ public class CharacterBehavior : MonoBehaviour {
         anim.SetTrigger("DoPickUp2");
     }
 
+    //character is pushed back in a direction
     public void PushBack(Vector3 pushVect, float time) {
         pushTime = time;
         pushDirection = pushVect;
-        OnAttackFinished();
-        setFrozen(false, false);
-        if(!IsCarrying())
-            HidePreviewItem();
+        OnAttackFinished();         //end attack
+        setFrozen(false, false);    //freeze player
+        if (IsCarrying())
+            DropObject();
+        HidePreviewItem();
         HideWeapon();
         anim.SetBool("IsHit", true);
     }
 
+    //returns true if player is being pushed right now
     public bool IsBeingPushed() {
         return (pushTime > 0);
     }
 
-    IEnumerator Sleep(float time) {
-        yield return new WaitForSeconds(time);
-    }
-
+    //Pickup and carry an InteractablePickup item
     public void CarryObject(InteractablePickup objectToCarry) {
         if (IsCarrying()) return;
         carriedObject = objectToCarry;
-        anim.SetTrigger("DoPickupObject");
-        anim.SetBool("IsPickingUp", true);
-        carriedObject.transform.parent = previewItemParent;
+        anim.SetTrigger("DoPickupObject");  //pickup animation
+        anim.SetBool("IsPickingUp", true);  //special Idle and Walk animation when carrying
+        carriedObject.transform.parent = previewItemParent; //object becomes child of previewItemParent
         carriedObject.transform.localPosition = Vector3.zero;
         layerOfCarriedObject = carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName;
-        carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "HighObjects";
-        SetColliders(carriedObject.gameObject, false);
+        carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "HighObjects";    //rendered above the character
+        SetColliders(carriedObject.gameObject, false);  //disable all coliders of the carried object
     }
 
     public void DropObject() {
         if (!IsCarrying()) return;
-        anim.SetTrigger("DoDrop");
+        anim.SetTrigger("DoDrop");  //drop animation
         Vector3 newPosition = vectMovement;
         newPosition.y -= previewItemParent.transform.localPosition.y + 0.2f;
-        carriedObject.transform.localPosition = newPosition;
-        carriedObject.transform.parent = null;
+        carriedObject.transform.localPosition = newPosition;    //move it in front of character
+        carriedObject.transform.parent = null;  //no parent
         carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = layerOfCarriedObject;
         if(carriedObject.GetComponentInChildren<SpriteRenderer>().sortingOrder < 200)
             carriedObject.GetComponentInChildren<SpriteRenderer>().sortingOrder += 100;
         SetColliders(carriedObject.gameObject, true);
         carriedObject = null;
-        anim.SetBool("IsPickingUp", false);
+        anim.SetBool("IsPickingUp", false);     //go back to normal animations
     }
 
+    //true if player is carrying smth
     public bool IsCarrying() {
         return (carriedObject != null);
     }
 
+    //enable/disable all colliders and rigidbody of an object and its children
     void SetColliders(GameObject obj, bool b) {
         if (obj.GetComponent<Rigidbody2D>() != null)
             obj.GetComponent<Rigidbody2D>().isKinematic = !b;
@@ -269,13 +268,11 @@ public class CharacterBehavior : MonoBehaviour {
         if (obj.GetComponent<Collider2D>() != null)
             obj.GetComponent<Collider2D>().enabled = b;
 
-        foreach(Collider2D collider in obj.GetComponentsInChildren<Collider2D>()) {
+        foreach(Collider2D collider in obj.GetComponentsInChildren<Collider2D>())
             collider.enabled = b;
-        }
-
-
     }
 
+    //returns the carried object or null
     public GameObject GetCarriedObject() {
         if (carriedObject == null) return null;
         return carriedObject.gameObject;

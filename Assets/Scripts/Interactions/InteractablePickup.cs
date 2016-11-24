@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class InteractablePickup : Interactable {
-    
+
+    public TrashType TypeOfTrash;
     private bool authorizePickup = true;
 
     public override void OnInteract(Character character) {

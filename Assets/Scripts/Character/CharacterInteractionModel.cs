@@ -12,47 +12,42 @@ public class CharacterInteractionModel : MonoBehaviour {
         character = GetComponent<Character>();
     }
 
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+    //when Interact key is pressed
     public void OnInteract() {
 
+        //find closest interactable
         Interactable usableInteractable = FindUsableInteractable();
 
-        if(usableInteractable == null) {
-            return;
-        }
-
-        usableInteractable.OnInteract(character);
+        //if any, interact with it
+        if(usableInteractable != null)
+            usableInteractable.OnInteract(character);
 
     }
 
+    //return the closest interactable in front of the player in a circle radius
     Interactable FindUsableInteractable() {
-
+        Debug.Log(1);
         Collider2D[] closeColliders = Physics2D.OverlapCircleAll(transform.position, 0.8f);
         Interactable closestInteractable = null;
         float angleToClosestInteractable = Mathf.Infinity;
 
+        //for each colider in the radius
         foreach (Collider2D closeCollider in closeColliders) {
 
+            //if the object is not interactable, skip it
             Interactable colliderInteractable = closeCollider.GetComponent<Interactable>();
-            if(colliderInteractable == null) {
+            if(colliderInteractable == null)
                 continue;
-            }
 
+            //compute angle to object
             Vector3 directionToInteractable = closeCollider.transform.position - transform.position;
 
             float angleToInteractable = Vector3.Angle(character.Behavior.GetDirection(), directionToInteractable);
-            
-            if(angleToInteractable < 50) {
-                if(angleToInteractable < angleToClosestInteractable) {
+
+            //interaction limited to objects with angle < 50°
+            if (angleToInteractable < 50) {
+                //keep the object with the lowest angle to the player
+                if (angleToInteractable < angleToClosestInteractable) {
                     angleToClosestInteractable = angleToInteractable;
                     closestInteractable = colliderInteractable;
                 }
