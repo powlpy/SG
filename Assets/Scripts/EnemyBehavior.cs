@@ -27,7 +27,6 @@ public class EnemyBehavior : MonoBehaviour {
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
-        GetComponentInParent<InteractablePickup>().enabled = false;
     }
 
     void Start() {
@@ -36,6 +35,7 @@ public class EnemyBehavior : MonoBehaviour {
         anim = GetComponentInChildren<Animator>();
         myBody = GetComponent<Rigidbody2D>();
         isAwake = false;
+        GetComponentInParent<InteractablePickup>().SetAuthorizePickup(false);
     }
     
     void Update() {
@@ -83,7 +83,7 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     void StunEnnemy() {
-        GetComponentInParent<InteractablePickup>().enabled = true;
+        GetComponentInParent<InteractablePickup>().SetAuthorizePickup(true);
         myStunTime = stunTime;
         anim.SetBool("IsStunned", true);
         SetFrozen(true);
@@ -93,7 +93,7 @@ public class EnemyBehavior : MonoBehaviour {
         currentHealth = maxHealth;
         anim.SetBool("IsStunned", false);
         SetFrozen(false);
-        GetComponentInParent<InteractablePickup>().enabled = false;
+        GetComponentInParent<InteractablePickup>().SetAuthorizePickup(false);
     }
 
     public bool IsStunned() {
