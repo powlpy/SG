@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PickUp1
+  m_Name: IdlePickupUp
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -18,40 +18,25 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: 0.4, y: 0.522, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-      - time: 1.6666666
-        value: {x: 0.4, y: 0.522, z: 0}
+        value: {x: 0, y: 0.8, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Weapon
+    path: PreviewItem
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - time: 0.33333334
-      value: {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - time: 0.6666667
-      value: {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - time: 1
-      value: {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - time: 1.3333334
-      value: {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - time: 1.6666666
-      value: {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
+      value: {fileID: 21300072, guid: 6e4cba698f8aec04b968ed4505494b6e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 3
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -64,30 +49,25 @@ AnimationClip:
       classID: 212
       customType: 23
       isPPtrCurve: 1
-    - path: 1855955664
+    - path: 247897005
       attribute: 1
       script: {fileID: 0}
       classID: 4
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
-    - {fileID: 21300014, guid: c0bdfb7a4c3b8bc41b37fdffa9e603aa, type: 3}
+    - {fileID: 21300072, guid: 6e4cba698f8aec04b968ed4505494b6e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2
+    m_StopTime: 0.083333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -102,12 +82,7 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0.4
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 1.6666666
-        value: 0.4
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -115,19 +90,14 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Weapon
+    path: PreviewItem
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0.522
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 1.6666666
-        value: 0.522
+        value: 0.8
         inSlope: 0
         outSlope: 0
         tangentMode: 10
@@ -135,18 +105,13 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Weapon
+    path: PreviewItem
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 1.6666666
         value: 0
         inSlope: 0
         outSlope: 0
@@ -155,37 +120,11 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Weapon
+    path: PreviewItem
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events:
-  - time: 0
-    functionName: OnAttackStarted
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-<<<<<<< HEAD:Assets/Sprites/Player/Animations/PickUp1.anim
-  - time: 1.6666666
-    functionName: OnAttackFinished
-=======
-  - time: 2
-    functionName: OnAnimationFinished
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 2
-    functionName: HidePreviewItem
->>>>>>> origin/master:Assets/Sprites/Animations/PickUp1.anim
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
