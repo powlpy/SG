@@ -5,6 +5,8 @@ public class CharacterBehavior : MonoBehaviour {
 
     public float moveSpeed = 6;
     public Transform weaponParent;
+    public Transform shieldParent;
+    public Transform previewItemParent;
     private bool isMoving;
     Animator anim;
     private static float movementX;
@@ -14,22 +16,17 @@ public class CharacterBehavior : MonoBehaviour {
     private CharacterInteractionModel InteractionModel;
     bool isFrozen = false;
     bool isAttacking = false;
-<<<<<<< HEAD
-    ItemType equipedWeapon = ItemType.None;
-    // Use this for initialization
-=======
     public ItemType equipedWeapon = ItemType.None;
     private float pushTime;
     private Vector3 pushDirection;
     private InteractablePickup carriedObject = null;
     private string layerOfCarriedObject;
     
->>>>>>> origin/master
     void Start() {
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody2D>();
         InteractionModel = GetComponent<CharacterInteractionModel>();
-        weaponParent.gameObject.SetActive(false);
+        HideWeapon();
     }
     
     void Update() {
@@ -49,16 +46,8 @@ public class CharacterBehavior : MonoBehaviour {
             OnActionPressed();
     }
 
-<<<<<<< HEAD
-    void UpdateMovement() { 
-        if(isFrozen || isAttacking) {
-            myBody.velocity = new Vector3(0, 0, 0);
-            return;
-        }
-=======
     void UpdateMovement() {
 
->>>>>>> origin/master
         isMoving = false;
         movementX = 0;
         movementY = 0;
@@ -98,10 +87,6 @@ public class CharacterBehavior : MonoBehaviour {
         anim.SetBool("IsMoving", isMoving && !isFrozen);
     }
 
-<<<<<<< HEAD
-    public void setFrozen(bool frozen) {
-        isFrozen = frozen;
-=======
     //freeze/unfreeze the character
     public void setFrozen(bool frozen, bool freezeTime) {
         isFrozen = frozen;
@@ -116,7 +101,6 @@ public class CharacterBehavior : MonoBehaviour {
     IEnumerator FreezeTimeRoutine() {
         yield return new WaitForEndOfFrame();
         Time.timeScale = 0;
->>>>>>> origin/master
     }
 
     public Vector3 GetDirection() {
@@ -135,26 +119,20 @@ public class CharacterBehavior : MonoBehaviour {
 
     //returns true if the character can attack
     bool CanAttack() {
-<<<<<<< HEAD
-        if (isAttacking) {
-            return false;
-        }
-        if(equipedWeapon == ItemType.None) {
-            return false;
-        }
-=======
         if (isAttacking) return false;  //already attacking
         if (equipedWeapon == ItemType.None) return false;   //no weapon equiped
         if (IsBeingPushed()) return false;  //being pushed
         if (IsCarrying()) return false;     //carrying smth
->>>>>>> origin/master
         return true;
     }
     
     public void EquipWeapon(ItemType weapon) {
+        if (weaponParent == null) return;
+        ItemData itemData = Database.Items.FindItem(weapon);
+        if (itemData == null) return;
+        if (itemData.Equip == ItemData.EquipType.NotEquipable) return;
+
         equipedWeapon = weapon;
-<<<<<<< HEAD
-=======
 
         //create the prefab of the weapon in WeaponParent
         GameObject newEquipableObject = (GameObject)Instantiate(itemData.Prefab);
@@ -186,20 +164,10 @@ public class CharacterBehavior : MonoBehaviour {
 
     public void OnAnimationFinished() {
         setFrozen(false, false);
->>>>>>> origin/master
     }
 
     public void OnAttackStarted() {
         isAttacking = true;
-<<<<<<< HEAD
-        weaponParent.gameObject.SetActive(true);
-    }
-
-    public void OnAttackFinished() {
-        Debug.Log("stop attack");
-        weaponParent.gameObject.SetActive(false);
-        isAttacking = false;
-=======
     }
 
     public void OnAttackFinished() {
@@ -231,14 +199,11 @@ public class CharacterBehavior : MonoBehaviour {
     public void SetWeaponAbove() {
         if (weaponParent == null) return;
         weaponParent.GetComponentInChildren<SpriteRenderer>().sortingOrder = 110;
->>>>>>> origin/master
     }
 
     public void StartPickUp1Animation() {
         anim.SetTrigger("DoPickUp1");
     }
-<<<<<<< HEAD
-=======
     
     public void StartPickUp2Animation() {
         anim.SetTrigger("DoPickUp2");
@@ -312,6 +277,5 @@ public class CharacterBehavior : MonoBehaviour {
         if (carriedObject == null) return null;
         return carriedObject.gameObject;
     }
->>>>>>> origin/master
 
 }

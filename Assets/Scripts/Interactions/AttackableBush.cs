@@ -11,17 +11,12 @@ public class AttackableBush : Attackable {
         myRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-<<<<<<< HEAD:Assets/Scripts/Objects/AttackableBush.cs
-    public override void OnHit(ItemType item) {
-        if(GetComponent<Collider2D>() != null) {
-=======
     public override void OnHit(ItemType item, Collider2D weaponCollider) {
         DestroyBush();
     }
 
     void DestroyBush() {
         if (GetComponent<Collider2D>() != null)
->>>>>>> origin/master:Assets/Scripts/Interactions/AttackableBush.cs
             GetComponent<Collider2D>().enabled = false;
         myRenderer.sprite = destroyedSprite;
 

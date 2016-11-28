@@ -53,6 +53,9 @@ TagManager:
   - name: HighObjects
     uniqueID: 552649633
     locked: 0
+  - name: Effects
+    uniqueID: 820434819
+    locked: 0
   - name: UI
     uniqueID: 3579834659
     locked: 0
