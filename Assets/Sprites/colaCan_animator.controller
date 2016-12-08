@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: bat_0
+  m_Name: colaCan_animator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsMoving
@@ -148,7 +148,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 111bbee3e7f4eee4481b5cd69c124c52, type: 2}
+  m_Motion: {fileID: 7400000, guid: 95638a396430fc544a4414715e491cfa, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -172,7 +172,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: aa734b4151012a14e95f46f07c4d97e8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9b49c874f73fd5745a1f424dc6205cf0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -196,7 +196,7 @@ AnimatorState:
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4def57a5d1eed234d9e18d2ba19a2326, type: 2}
+  m_Motion: {fileID: 7400000, guid: 43944c47ce6c3114ea0c914488b149b1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

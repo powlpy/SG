@@ -238,6 +238,9 @@ public class CharacterBehavior : MonoBehaviour {
         layerOfCarriedObject = carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName;
         carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = "HighObjects";    //rendered above the character
         SetColliders(carriedObject.gameObject, false);  //disable all coliders of the carried object
+        EnemyBehavior objectBehavior = carriedObject.GetComponent<EnemyBehavior>();
+        if (objectBehavior != null)
+            objectBehavior.DisableShadow();
     }
 
     public void DropObject() {
@@ -250,7 +253,9 @@ public class CharacterBehavior : MonoBehaviour {
         carriedObject.GetComponentInChildren<SpriteRenderer>().sortingLayerName = layerOfCarriedObject;
         if(carriedObject.GetComponentInChildren<SpriteRenderer>().sortingOrder < 200)
             carriedObject.GetComponentInChildren<SpriteRenderer>().sortingOrder += 100;
-        SetColliders(carriedObject.gameObject, true);
+        SetColliders(carriedObject.gameObject, true); EnemyBehavior objectBehavior = carriedObject.GetComponent<EnemyBehavior>();
+        if (objectBehavior != null)
+            objectBehavior.EnableShadow();
         carriedObject = null;
         anim.SetBool("IsPickingUp", false);     //go back to normal animations
     }

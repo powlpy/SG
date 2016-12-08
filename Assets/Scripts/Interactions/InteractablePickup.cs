@@ -9,7 +9,7 @@ public class InteractablePickup : Interactable {
     public override void OnInteract(Character character) {
         if (!authorizePickup) return;
         character.GetComponent<CharacterBehavior>().CarryObject(this);
-
+        
         BroadcastMessage("OnPickupObject", character, SendMessageOptions.DontRequireReceiver);
 
     }

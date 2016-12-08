@@ -24,6 +24,8 @@ public class EnemyBehavior : MonoBehaviour {
     private Vector3 pushDirection;
     private bool isFrozen = false;
     private bool isImmune = false;
+    public GameObject myShadow;
+    public GameObject stunnedShadow;
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -86,6 +88,10 @@ public class EnemyBehavior : MonoBehaviour {
         myStunTime = stunTime;
         anim.SetBool("IsStunned", true);
         SetFrozen(true);
+        if(stunnedShadow != null) {
+            myShadow.SetActive(false);
+            stunnedShadow.SetActive(true);
+        }
     }
 
     void StopStun() {
@@ -93,6 +99,10 @@ public class EnemyBehavior : MonoBehaviour {
         anim.SetBool("IsStunned", false);
         SetFrozen(false);
         GetComponentInParent<InteractablePickup>().SetAuthorizePickup(false);
+        if (stunnedShadow != null) {
+            myShadow.SetActive(true);
+            stunnedShadow.SetActive(false);
+        }
     }
 
     public bool IsStunned() {
@@ -147,6 +157,25 @@ public class EnemyBehavior : MonoBehaviour {
         moveSpeed *= 1.5f;
         currentHealth = maxHealth * 1.5f;
         StopStun();
+
+    }
+
+    public void EnableShadow() {
+        if (myShadow == null) return;
+        if(stunnedShadow == null)
+            myShadow.SetActive(true);
+        else
+            stunnedShadow.SetActive(true);
+
+    }
+
+    public void DisableShadow() {
+        if (myShadow == null) return;
+        if (stunnedShadow == null)
+            myShadow.SetActive(false);
+        else
+            stunnedShadow.SetActive(false);
+
 
     }
 
