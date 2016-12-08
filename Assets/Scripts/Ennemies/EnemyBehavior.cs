@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum BehaviorType {Follower, Wanders, WandersFollower, Immobile};
+
 public class EnemyBehavior : MonoBehaviour {
 
     public float maxHealth;
     private float currentHealth;
     public float moveSpeed = 2;
+	public bool isAngry = false;
     public float pushStrength;
     public float pushTime;
     public float stunTime;
@@ -22,10 +25,14 @@ public class EnemyBehavior : MonoBehaviour {
     private GameObject player;
     private float myPushTime;
     private Vector3 pushDirection;
+	private Vector3 wandersDirection;
+	private Vector3 precPosition;
     private bool isFrozen = false;
     private bool isImmune = false;
     public GameObject myShadow;
     public GameObject stunnedShadow;
+
+	public BehaviorType behavior;
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -55,8 +62,21 @@ public class EnemyBehavior : MonoBehaviour {
         }
         if (isFrozen) return;
         if (!isAwake) return;
-        FollowPlayer();
 
+		switch (behavior) {
+		case BehaviorType.Follower:
+			FollowPlayer ();
+			break;
+		case BehaviorType.Wanders:
+			RandomMove ();
+			break;
+		case BehaviorType.WandersFollower:
+			FollowPlayer ();
+			RandomMove ();
+			break;
+		default:
+			break;
+		}
     }
 
     public void Awaken() {
@@ -121,6 +141,33 @@ public class EnemyBehavior : MonoBehaviour {
         myBody.velocity = vectMovement * moveSpeed;
     }
 
+	void RandomMove() {
+		if (Random.Range (0, 12) == 1 || transform.position == precPosition) {
+			int rdir = Random.Range (1, 4);
+			switch (rdir) {
+			case 1:
+				wandersDirection.x = 1;
+				wandersDirection.y = 0;
+				break;
+			case 2:
+				wandersDirection.x = 0;
+				wandersDirection.y = 1;
+				break;
+			case 3:
+				wandersDirection.x = -1;
+				wandersDirection.y = 0;
+				break;
+			default:
+				wandersDirection.x = 0;
+				wandersDirection.y = -1;
+				break;
+			}
+		}
+
+		precPosition = transform.position;
+		myBody.velocity = wandersDirection * moveSpeed;
+	}
+
     public void OnHitCharacter() {
         Vector3 pushDirection = player.transform.position - transform.position;
         pushDirection.Normalize();
@@ -153,9 +200,11 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     public void MakeStronger() {
-
-        moveSpeed *= 1.5f;
-        currentHealth = maxHealth * 1.5f;
+		if (!isAngry) {
+			isAngry = true;
+			moveSpeed *= 1.4f;
+			//currentHealth = maxHealth * 1.5f; // trop genant
+		}
         StopStun();
 
     }

@@ -12,7 +12,7 @@ public class CameraBehavior : MonoBehaviour {
     float vertExtent, horzExtent;
 
     void Start() {
-        minX = -11;
+        minX = -200;
         maxX = 200;
         minY = -200;
         maxY = 200;
