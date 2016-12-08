@@ -73,6 +73,7 @@ GameObject:
   - 114: {fileID: 114000012481004320}
   - 114: {fileID: 114000013834287372}
   - 58: {fileID: 58000013001258830}
+  - 58: {fileID: 58000014189469706}
   m_Layer: 0
   m_Name: ColaCan
   m_TagString: Untagged
@@ -242,6 +243,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.61
+--- !u!58 &58000014189469706
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013394723026}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!61 &61000011756623996
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -311,9 +326,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   moveSpeed: 3
+  isAngry: 0
   pushStrength: 25
   pushTime: 0.1
-  stunTime: 6
+  stunTime: 15
   deathAnimationDelay: 0.15
   deathAnimation: {fileID: 1000011606780114, guid: f5e67b67713e31540aed7aa183b15031,
     type: 2}
@@ -321,6 +337,7 @@ MonoBehaviour:
   isAwake: 0
   myShadow: {fileID: 1000010631323620}
   stunnedShadow: {fileID: 0}
+  behavior: 2
 --- !u!114 &114000012722273158
 MonoBehaviour:
   m_ObjectHideFlags: 1
