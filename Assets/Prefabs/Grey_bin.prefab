@@ -55,7 +55,7 @@ GameObject:
   - 4: {fileID: 4000013862756240}
   - 61: {fileID: 61000011227414618}
   m_Layer: 0
-  m_Name: Green_can
+  m_Name: Grey_bin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011768857474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.1, y: 3.11, z: 0}
+  m_LocalPosition: {x: 26, y: 3.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4475607fa7c52b34a98e4f3697de8f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TypeOfTrash: 100
+  TypeOfTrash: 1
   RecyclingEffect: {fileID: 1000011654673000, guid: 4424bb63904c9c14fa3c2e49faa3e461,
     type: 2}
 --- !u!198 &198000010483186000
@@ -2006,7 +2006,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2043200807
   m_SortingOrder: 150
-  m_Sprite: {fileID: 21300000, guid: 8e85732f338eb1045af7793618bb5324, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 552da1198ad1e704080db62f90bd571d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

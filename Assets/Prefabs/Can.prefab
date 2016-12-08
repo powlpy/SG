@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012652909398}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.81, y: -2.03, z: 0}
+  m_LocalPosition: {x: 35.37, y: -4.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -239,9 +239,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.15}
+  m_Offset: {x: 0, y: -0.05}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.74
 --- !u!61 &61000011380477146
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -309,6 +309,7 @@ MonoBehaviour:
   immunityWindow: 0.5
   isAwake: 0
   myShadow: {fileID: 1000010950258950}
+  stunnedShadow: {fileID: 0}
 --- !u!114 &114000010590071280
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b2448e580d3c24cbfbca6ace88854f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TypeOfTrash: 100
+  TypeOfTrash: 2
 --- !u!212 &212000010139080852
 SpriteRenderer:
   m_ObjectHideFlags: 1
