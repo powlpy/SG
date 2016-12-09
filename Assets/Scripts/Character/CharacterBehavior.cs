@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CharacterBehavior : MonoBehaviour {
 
+    public GameObject PlayerHpHandler;
     public float moveSpeed = 6;
     public Transform weaponParent;
     public Transform shieldParent;
@@ -21,8 +22,12 @@ public class CharacterBehavior : MonoBehaviour {
     private Vector3 pushDirection;
     private InteractablePickup carriedObject = null;
     private string layerOfCarriedObject;
+    private float maxHp = 3;
+    private float currentHp;
     
     void Start() {
+        currentHp = maxHp;
+        UpdateDisplayHearts();
         anim = GetComponent<Animator>();
         myBody = GetComponent<Rigidbody2D>();
         InteractionModel = GetComponent<CharacterInteractionModel>();
@@ -220,6 +225,17 @@ public class CharacterBehavior : MonoBehaviour {
         HidePreviewItem();
         HideWeapon();
         anim.SetBool("IsHit", true);
+    }
+
+    public void LoseHp(float i) {
+        currentHp -= i;
+        UpdateDisplayHearts();
+        if (currentHp <= 0)
+            Debug.Log("dead");
+    }
+
+    void UpdateDisplayHearts() {
+        PlayerHpHandler.GetComponent<PlayerHpBehavior>().UpdateDisplay(maxHp, currentHp);
     }
 
     //returns true if player is being pushed right now
