@@ -300,7 +300,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.021751404, y: -0.018327236}
   serializedVersion: 2
-  m_Size: {x: 0.61058414, y: 1.009676}
+  m_Size: {x: 0.73, y: 1.07}
 --- !u!61 &61000013216602206
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -314,7 +314,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.018104553, y: -0.035838127}
   serializedVersion: 2
-  m_Size: {x: 0.7523689, y: 1.0819162}
+  m_Size: {x: 0.59, y: 0.93}
 --- !u!95 &95000012941698856
 Animator:
   serializedVersion: 3
@@ -396,15 +396,13 @@ MonoBehaviour:
   pushTime: 0.1
   stunTime: 15
   deathAnimationDelay: 0.15
-  deathAnimation: {fileID: 1000011606780114, guid: f5e67b67713e31540aed7aa183b15031,
-    type: 2}
+  deathAnimation: {fileID: 49752608, guid: f5e67b67713e31540aed7aa183b15031, type: 2}
   immunityWindow: 0.5
   isAwake: 0
   myShadow: {fileID: 1000013210105506}
   stunnedShadow: {fileID: 1000013000922948}
   behavior: 2
   score: 3
-  healthBar: {fileID: 0}
 --- !u!212 &212000010257338390
 SpriteRenderer:
   m_ObjectHideFlags: 1

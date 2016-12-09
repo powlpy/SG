@@ -123,6 +123,7 @@ GameObject:
   - 114: {fileID: 114000010161545680}
   - 114: {fileID: 114000010855253174}
   - 58: {fileID: 58000014188068484}
+  - 61: {fileID: 61000013750435740}
   m_Layer: 0
   m_Name: GlassBottle
   m_TagString: Untagged
@@ -286,6 +287,20 @@ BoxCollider2D:
   m_Offset: {x: 0.019863129, y: -0.06284952}
   serializedVersion: 2
   m_Size: {x: 0.3588372, y: 1.200948}
+--- !u!61 &61000013750435740
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013704247128}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.02, y: -0.1}
+  serializedVersion: 2
+  m_Size: {x: 0.22, y: 0.97}
 --- !u!61 &61000013926054768
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -299,7 +314,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.02365303, y: -0.09520531}
   serializedVersion: 2
-  m_Size: {x: 0.24715415, y: 1.0265068}
+  m_Size: {x: 0.28, y: 1.09}
 --- !u!95 &95000010602935470
 Animator:
   serializedVersion: 3
@@ -336,15 +351,13 @@ MonoBehaviour:
   pushTime: 0.1
   stunTime: 15
   deathAnimationDelay: 0.15
-  deathAnimation: {fileID: 1000011606780114, guid: f5e67b67713e31540aed7aa183b15031,
-    type: 2}
+  deathAnimation: {fileID: 0, guid: f5e67b67713e31540aed7aa183b15031, type: 2}
   immunityWindow: 0.5
   isAwake: 0
   myShadow: {fileID: 1000011893905538}
   stunnedShadow: {fileID: 1000013438994324}
   behavior: 2
   score: 3
-  healthBar: {fileID: 0}
 --- !u!114 &114000010855253174
 MonoBehaviour:
   m_ObjectHideFlags: 1
