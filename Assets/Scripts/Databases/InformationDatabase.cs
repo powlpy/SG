@@ -15,6 +15,15 @@ public class InformationDatabase : ScriptableObject {
         int i = Random.Range(0, info.Count);
         return info[i].statement;
     }
+    public string[] GetRandomQuestion() {
+        int i = Random.Range(0, info.Count);
+        string[] result = new string[4];
+        result[0] = info[i].question;
+        result[1] = info[i].answer1;
+        result[2] = info[i].answer2;
+        result[3] = info[i].answer3;
+        return result;
+    }
 
 }
 

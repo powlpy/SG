@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class InteractableSign : Interactable {
+public class InteractableRandomSign : Interactable {
 
     public string myText;
 
@@ -10,6 +10,7 @@ public class InteractableSign : Interactable {
             DialogBox.Hide();
             character.Behavior.setFrozen(false, true);
         } else {
+            myText = Database.Information.GetRandomStatement();
             DialogBox.Show(myText);
             character.Behavior.setFrozen(true, true);
         }

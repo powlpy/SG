@@ -51,6 +51,13 @@ public class CharacterBehavior : MonoBehaviour {
     void UpdateAction() {
         if (Input.GetKeyDown(KeyCode.Space))
             OnActionPressed();
+        else if (QuestionBox.IsVisible()) {
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+                QuestionBox.LowerSelection();
+
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+                QuestionBox.GoUpSelection();
+        }
     }
 
     void UpdateMovement() {
@@ -132,7 +139,7 @@ public class CharacterBehavior : MonoBehaviour {
         if (IsCarrying()) return false;     //carrying smth
         return true;
     }
-    
+
     public void EquipWeapon(ItemType weapon) {
         if (weaponParent == null) return;
         ItemData itemData = Database.Items.FindItem(weapon);

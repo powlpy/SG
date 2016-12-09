@@ -22,7 +22,6 @@ public class DialogBox : MonoBehaviour {
         dialogFrame.enabled = true;
         dialogText.text = displayText;
         dialogText.enabled = true;
-
     }
 
     public static void Hide() {
