@@ -10500,6 +10500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ce702a90f9c6844b4d52a66d0b9bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerHpHandler: {fileID: 1429081850}
   moveSpeed: 6
   weaponParent: {fileID: 1996998268}
   shieldParent: {fileID: 1079886414}
@@ -12279,9 +12280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391a00b06912fce438db1f29a47991b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullHeart: {fileID: 355019633}
-  HalfHeart: {fileID: 0}
-  EmptyHeart: {fileID: 0}
+  Heart: {fileID: 1000010220714280, guid: a6922b56f23975142b6e060e219a56d8, type: 2}
   FullHeartSprite: {fileID: 21300000, guid: bc6b62f0409ddbc43a046bac7bbe7a4f, type: 3}
   HalfHeartSprite: {fileID: 21300002, guid: bc6b62f0409ddbc43a046bac7bbe7a4f, type: 3}
   EmptyHeartSprite: {fileID: 21300004, guid: bc6b62f0409ddbc43a046bac7bbe7a4f, type: 3}
