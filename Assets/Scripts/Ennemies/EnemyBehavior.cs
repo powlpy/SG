@@ -173,13 +173,14 @@ public class EnemyBehavior : MonoBehaviour {
 		myBody.velocity = wandersDirection * moveSpeed;
 	}
 
-    public void OnHitCharacter() {                            // ici l Health Bar
+    public void OnHitCharacter() {
         Vector3 pushDirection = player.transform.position - transform.position;
         pushDirection.Normalize();
         player.GetComponent<CharacterBehavior>().PushBack(pushDirection * pushStrength, pushTime);
+        player.GetComponent<CharacterBehavior>().LoseHp(0.5f);
 
 
-		Debug.Log ("Ennemy");
+        Debug.Log ("Ennemy");
 		healthBar.GetComponentInParent<Scrollbar> ().size -= Reduc;
 		Debug.Log("touché par ennemie");
 		if (healthBar.GetComponentInParent<Scrollbar> ().size == 0 ){
