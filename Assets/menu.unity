@@ -653,6 +653,7 @@ GameObject:
   - 222: {fileID: 1561176348}
   - 114: {fileID: 1561176347}
   - 114: {fileID: 1561176346}
+  - 114: {fileID: 1561176349}
   m_Layer: 5
   m_Name: Button_new_game
   m_TagString: Untagged
@@ -753,6 +754,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561176344}
+--- !u!114 &1561176349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1561176344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dffa78ed97c4a4a18947f69bdb3f0be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 1561176346}
 --- !u!1 &1714325711
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +777,7 @@ GameObject:
   - 222: {fileID: 1714325715}
   - 114: {fileID: 1714325714}
   - 114: {fileID: 1714325713}
+  - 114: {fileID: 1714325716}
   m_Layer: 5
   m_Name: Button_quit
   m_TagString: Untagged
@@ -864,6 +878,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1714325711}
+--- !u!114 &1714325716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1714325711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641d5647f124b4e8eba6675f877c4bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Button: {fileID: 1714325713}
 --- !u!1 &1742308092
 GameObject:
   m_ObjectHideFlags: 0

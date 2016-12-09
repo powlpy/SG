@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;    // BArre de vie 
 
 public enum BehaviorType {Follower, Wanders, WandersFollower, Immobile};
 
@@ -33,6 +34,10 @@ public class EnemyBehavior : MonoBehaviour {
     public GameObject stunnedShadow;
 
 	public BehaviorType behavior;
+
+	//    ADD
+	public GameObject healthBar;
+	private float Reduc = 0.005f;
 
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -168,12 +173,21 @@ public class EnemyBehavior : MonoBehaviour {
 		myBody.velocity = wandersDirection * moveSpeed;
 	}
 
-    public void OnHitCharacter() {
+    public void OnHitCharacter() {                            // ici l Health Bar
         Vector3 pushDirection = player.transform.position - transform.position;
         pushDirection.Normalize();
         player.GetComponent<CharacterBehavior>().PushBack(pushDirection * pushStrength, pushTime);
-    }
 
+
+		Debug.Log ("Ennemy");
+		healthBar.GetComponentInParent<Scrollbar> ().size -= Reduc;
+		Debug.Log("touché par ennemie");
+		if (healthBar.GetComponentInParent<Scrollbar> ().size == 0 ){
+
+			Debug.Log("Deceder");
+			Application.LoadLevel("menu");
+   					 }
+	}
     public void PushBack(Collider2D weapon) {
         pushDirection = transform.position - weapon.transform.position;
         pushDirection.Normalize();

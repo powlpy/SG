@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
 public class EnemyPlayerCollision : MonoBehaviour {
+
 
 	// Use this for initialization
 	void OnTriggerEnter2D(Collider2D collider) {
@@ -9,6 +11,10 @@ public class EnemyPlayerCollision : MonoBehaviour {
         if (!GetComponentInParent<EnemyBehavior>().isAwake) return;
         if (collider.tag == "Player") {
             GetComponentInParent<EnemyBehavior>().OnHitCharacter();
-        }
+			Debug.Log ("time");
+
+					
+        			}
     }
 }
+
