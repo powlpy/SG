@@ -24,7 +24,9 @@ public class CharacterBehavior : MonoBehaviour {
     private string layerOfCarriedObject;
     private float maxHp = 3;
     private float currentHp;
-    
+    private bool isImmune = false;
+
+
     void Start() {
         currentHp = maxHp;
         UpdateDisplayHearts();
@@ -216,6 +218,7 @@ public class CharacterBehavior : MonoBehaviour {
 
     //character is pushed back in a direction
     public void PushBack(Vector3 pushVect, float time) {
+        if (isImmune) return;
         pushTime = time;
         pushDirection = pushVect;
         OnAttackFinished();         //end attack
@@ -228,10 +231,30 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     public void LoseHp(float i) {
+        if (isImmune) return;
+        StartCoroutine(ManageImmunity(1.5f));
         currentHp -= i;
         UpdateDisplayHearts();
         if (currentHp <= 0)
             Debug.Log("dead");
+    }
+
+    IEnumerator ManageImmunity(float delay) {
+        StartCoroutine(BlinkRenderer(delay));
+        isImmune = true;
+        yield return new WaitForSeconds(delay);
+        isImmune = false;
+    }
+
+    IEnumerator BlinkRenderer(float duration) {
+        GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.15f);
+        GetComponent<SpriteRenderer>().enabled = true;
+        yield return new WaitForSeconds(0.15f);
+        duration -= 0.3f;
+        if (duration >= 0.15)
+            StartCoroutine(BlinkRenderer(duration));
+
     }
 
     void UpdateDisplayHearts() {
