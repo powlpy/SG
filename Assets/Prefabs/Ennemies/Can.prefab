@@ -265,7 +265,7 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012652909398}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -344,6 +344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
+  currentHealth: 0
   moveSpeed: 3
   isAngry: 0
   pushStrength: 25
@@ -357,6 +358,7 @@ MonoBehaviour:
   myShadow: {fileID: 1000011247059934}
   stunnedShadow: {fileID: 1000010950258950}
   behavior: 0
+  healthBar: {fileID: 0}
 --- !u!114 &114000010590071280
 MonoBehaviour:
   m_ObjectHideFlags: 1

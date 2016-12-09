@@ -7,7 +7,7 @@ public enum BehaviorType {Follower, Wanders, WandersFollower, Immobile};
 public class EnemyBehavior : MonoBehaviour {
 
     public float maxHealth;
-    private float currentHealth;
+	public float currentHealth;
     public float moveSpeed = 2;
 	public bool isAngry = false;
     public float pushStrength;
@@ -34,6 +34,7 @@ public class EnemyBehavior : MonoBehaviour {
     public GameObject stunnedShadow;
 
 	public BehaviorType behavior;
+	public int score = 3;
 
 	//    ADD
 	public GameObject healthBar;
@@ -148,7 +149,7 @@ public class EnemyBehavior : MonoBehaviour {
 
 	void RandomMove() {
 		if (Random.Range (0, 12) == 1 || transform.position == precPosition) {
-			int rdir = Random.Range (1, 4);
+			int rdir = Random.Range (0, 4);
 			switch (rdir) {
 			case 1:
 				wandersDirection.x = 1;
@@ -214,10 +215,12 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     public void MakeStronger() {
+		if(score > 0)
+			score--;
 		if (!isAngry) {
 			isAngry = true;
 			moveSpeed *= 1.4f;
-			//currentHealth = maxHealth * 1.5f; // trop genant
+			currentHealth = maxHealth;
 		}
         StopStun();
 

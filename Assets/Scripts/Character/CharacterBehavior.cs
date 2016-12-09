@@ -283,13 +283,13 @@ public class CharacterBehavior : MonoBehaviour {
         return carriedObject.gameObject;
     }
 
-    public void GainPoints() {
+	public void GainPoints(int nb) {
         CharacterInventoryModel inventory = GetComponent<CharacterInventoryModel>();
         if (inventory == null) return;
-        inventory.AddItem(ItemType.RecyclingPoints, 10);
+        inventory.AddItem(ItemType.RecyclingPoints, nb);
     }
 
-    public void LosePoints() {
+	public void LosePoints(int nb) {
 
     }
 

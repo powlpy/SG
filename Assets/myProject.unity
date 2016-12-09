@@ -8893,6 +8893,11 @@ Prefab:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1429081850}
+    - target: {fileID: 58000013001258830, guid: 002bd75bdfe848c4a86fb052f1be5466,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002bd75bdfe848c4a86fb052f1be5466, type: 2}
   m_IsPrefabParent: 0
@@ -13620,6 +13625,36 @@ Prefab:
     - target: {fileID: 4000010799136060, guid: 002bd75bdfe848c4a86fb052f1be5466, type: 2}
       propertyPath: m_RootOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 61000012670313426, guid: 002bd75bdfe848c4a86fb052f1be5466,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58000013001258830, guid: 002bd75bdfe848c4a86fb052f1be5466,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61000012670313426, guid: 002bd75bdfe848c4a86fb052f1be5466,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 61000012670313426, guid: 002bd75bdfe848c4a86fb052f1be5466,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 58000013001258830, guid: 002bd75bdfe848c4a86fb052f1be5466,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58000013001258830, guid: 002bd75bdfe848c4a86fb052f1be5466,
+        type: 2}
+      propertyPath: m_Radius
+      value: 1.49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 002bd75bdfe848c4a86fb052f1be5466, type: 2}
