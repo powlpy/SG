@@ -165,7 +165,6 @@ public class EnemyBehavior : MonoBehaviour {
 				break;
 			}
 		}
-
 		precPosition = transform.position;
 		myBody.velocity = wandersDirection * moveSpeed;
 	}
