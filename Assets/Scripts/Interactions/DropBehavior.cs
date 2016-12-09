@@ -5,6 +5,7 @@ public class DropBehavior : MonoBehaviour {
 
     public TrashType TypeOfTrash;
     public GameObject RecyclingEffect;
+    public GameObject WrongEffect;
 
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag == "Player") {
@@ -22,6 +23,11 @@ public class DropBehavior : MonoBehaviour {
                     EnemyBehavior behavior = carriedObject.GetComponent<EnemyBehavior>();
                     if (behavior != null) behavior.MakeStronger();
                     //collider.GetComponent<CharacterBehavior>().LosePoints();
+                    if(WrongEffect != null) {
+                        GameObject myEffect = (GameObject)Instantiate(WrongEffect);
+                        myEffect.transform.position = transform.position;
+
+                    }
                 }
             }
         }

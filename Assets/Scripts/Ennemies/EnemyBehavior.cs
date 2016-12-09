@@ -116,6 +116,7 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     void StopStun() {
+        myStunTime = 0f;
         currentHealth = maxHealth;
         anim.SetBool("IsStunned", false);
         SetFrozen(false);

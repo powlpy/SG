@@ -9,12 +9,8 @@ public class EnemyPlayerCollision : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider) {
         if (GetComponentInParent<EnemyBehavior>().IsStunned()) return;
         if (!GetComponentInParent<EnemyBehavior>().isAwake) return;
-        if (collider.tag == "Player") {
+        if (collider.tag == "Player")
             GetComponentInParent<EnemyBehavior>().OnHitCharacter();
-			Debug.Log ("time");
-
-					
-        			}
     }
 }
 
