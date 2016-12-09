@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public enum BehaviorType {Follower, Wanders, WandersFollower, Immobile};
+public enum BehaviorType {Follower, Wanders, WandersFollower, ExitedWanders, ExitedWandersFollower, Immobile};
 
 public class EnemyBehavior : MonoBehaviour {
 
@@ -69,11 +69,18 @@ public class EnemyBehavior : MonoBehaviour {
 			FollowPlayer ();
 			break;
 		case BehaviorType.Wanders:
-			RandomMove ();
+			RandomMove (12);
 			break;
 		case BehaviorType.WandersFollower:
-			FollowPlayer ();
-			RandomMove ();
+			FollowPlayer (); // À modifié, la vélocité est écrasé
+			RandomMove (12); 
+			break;
+		case BehaviorType.ExitedWanders:
+			RandomMove (3);
+			break;
+		case BehaviorType.ExitedWandersFollower:
+			FollowPlayer (); // À modifié, la vélocité est écrasé
+			RandomMove (3); 
 			break;
 		default:
 			break;
@@ -143,8 +150,8 @@ public class EnemyBehavior : MonoBehaviour {
         myBody.velocity = vectMovement * moveSpeed;
     }
 
-	void RandomMove() {
-		if (Random.Range (0, 12) == 1 || transform.position == precPosition) {
+	void RandomMove(int excitation) {
+		if (Random.Range (0, excitation) == 1 || transform.position == precPosition) {
 			int rdir = Random.Range (0, 4);
 			switch (rdir) {
 			case 1:
