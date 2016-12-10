@@ -38,7 +38,7 @@ GameObject:
   - 61: {fileID: 61000013802228464}
   m_Layer: 0
   m_Name: SmallTree
-  m_TagString: Untagged
+  m_TagString: Environement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

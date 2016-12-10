@@ -126,7 +126,7 @@ GameObject:
   - 61: {fileID: 61000013750435740}
   m_Layer: 0
   m_Name: GlassBottle
-  m_TagString: Untagged
+  m_TagString: Ennemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

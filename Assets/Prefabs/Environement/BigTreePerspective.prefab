@@ -54,7 +54,7 @@ GameObject:
   - 60: {fileID: 60000012372567222}
   m_Layer: 0
   m_Name: BigTreePerspective
-  m_TagString: Untagged
+  m_TagString: Environement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -60,7 +60,7 @@ GameObject:
   - 61: {fileID: 61000013216602206}
   m_Layer: 0
   m_Name: Confiture
-  m_TagString: Untagged
+  m_TagString: Ennemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0083e604b2b5848a650632b8da48d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 3
   currentHealth: 0
   moveSpeed: 3
   isAngry: 0
