@@ -26,7 +26,7 @@ public class CharacterInteractionModel : MonoBehaviour {
 
     //return the closest interactable in front of the player in a circle radius
     Interactable FindUsableInteractable() {
-        Collider2D[] closeColliders = Physics2D.OverlapCircleAll(transform.position, 0.8f);
+        Collider2D[] closeColliders = Physics2D.OverlapCircleAll(transform.position, 0.9f);
         Interactable closestInteractable = null;
         float angleToClosestInteractable = Mathf.Infinity;
 

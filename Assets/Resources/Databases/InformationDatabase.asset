@@ -16,173 +16,147 @@ MonoBehaviour:
       \xE0 Montpellier"
     question: "Combien de tonnes d'ordures sont collect\xE9es chaque ann\xE9e \xE0
       Montpellier ?"
-    answer1: 250 000
-    answer2: 150 000
+    answer1: 150 000
+    answer2: 250 000
     answer3: 350 000
+    correctAnswer: 1
     seen: 0
-  - statement: Ou vont les dechets
-    question: "O\xF9 finissent la plupart de nos d\xE9chets ?"
-    answer1: " Dans l'oc\xE9an"
-    answer2: ' Dans l''espace'
-    answer3: Dans les caniveaux
-    seen: 0
-  - statement: "R\xE9duire les d\xE9chets"
-    question: "Pour r\xE9duire les d\xE9chets, il vaut mieux acheter"
-    answer1: Des produits sans emballage
-    answer2: Des lingettes
-    answer3: Des verres en plastiques
-    seen: 0
-  - statement: Dechets  recyclable
+  - statement: "Les sacs plastiques ne sont pas recyclables, mais ils peuvent \xEAtre
+      incin\xE9r\xE9s"
     question: "Parmi ces d\xE9chets, lequel n'est pas recyclable ?"
-    answer1: Sac plastique
-    answer2: Bouteille de shampoing
-    answer3: "Emballage en carton de c\xE9r\xE9ales"
+    answer1: Un pot en verre
+    answer2: Une bouteille de shampoing
+    answer3: Un sac plastique
+    correctAnswer: 2
     seen: 0
-  - statement: "Quantit\xE9 de dechets"
-    question: "Pourquoi y a-t-il plus de d\xE9chets aujourd\u2019hui ?"
-    answer1: "Parce que nous sommes de plus en plus nombreux sur la Terre et que nous
-      achetons plus de produits emball\xE9s"
-    answer2: Parce que nous avons plus de poubelles
-    answer3: Parce que les emballages sont jolis
-    seen: 0
-  - statement: Recyclage
-    question: "Quel mat\xE9riau se recycle \xE0 l\u2019infini ?"
-    answer1: Le verre
-    answer2: Le plastique
-    answer3: Le carton
-    seen: 0
-  - statement: "Utilit\xE9e de le mballage"
-    question: A quoi sert un emballage ?
-    answer1: "Il contient, prot\xE8ge et informe sur les produits"
-    answer2: "Il sert \xE0 cacher le produit"
-    answer3: "A rien, l\u2019emballage est inutile"
-    seen: 0
-  - statement: "R\xE9gles des 3R"
-    question: "Quelle est la r\xE8gle des \xAB 3R \xBB ?"
-    answer1: "R\xE9duire, R\xE9utiliser, Recycler"
-    answer2: Ramasser, Rapporter, Recomposer
-    answer3: "R\xE9tr\xE9cir, R\xE9utiliser, Revendre"
-    seen: 0
-  - statement: "D\xE9chets chez les fran\xE7ais"
-    question: "Combien de d\xE9chets chaque Fran\xE7ais produit-il en moyenne par
-      an ?"
-    answer1: 390 kg
-    answer2: 540 kg
-    answer3: 115 kg
-    seen: 0
-  - statement: Composants des poubelles
-    question: Quels sont les principaux composants de nos poubelles ?
-    answer1: "Les mati\xE8res organiques"
-    answer2: Les papiers et cartons
-    answer3: Les plastiques
-    seen: 0
-  - statement: ' Poubelle de recyclage'
-    question: "Quels d\xE9chets ne peut-on pas jeter dans la poubelle de recyclage
-      ?"
-    answer1: Les pots de yaourt
-    answer2: "Les a\xE9rosols"
-    answer3: "Les bo\xEEtes en aluminium"
-    seen: 0
-  - statement: Recyclage
-    question: Qu\'est-ce que recycler ?
-    answer1: Transformer un plastique en un autre
-    answer2: Faire le tri
-    answer3: Sortir les poubelles
-    seen: 0
-  - statement: "D\xE9composition du plastique"
-    question: "Un sac plastique se d\xE9composera en"
-    answer1: 100 ans
-    answer2: 10 ans
-    answer3: 1000 ans
-    seen: 0
-  - statement: Poubelles jaunes
-    question: A quoi correspond la poubelle de couleur jaune ?
+  - statement: "Le verre peut se recycler \xE0 l'infini"
+    question: "Quel mat\xE9riau peut se recycle \xE0 l\u2019infini ?"
     answer1: Le plastique
-    answer2: Le papier/carton
-    answer3: "Les ordures m\xE9nag\xE9res"
+    answer2: Le verre
+    answer3: Le carton
+    correctAnswer: 1
     seen: 0
-  - statement: Poubelles Bleus
-    question: A quoi correspond la poubelle de couleur bleue ?
-    answer1: Le papier/carton
-    answer2: Le plastique
-    answer3: Le verre
+  - statement: "R\xE9gle des 3R : R\xE9duire, R\xE9utiliser, Recycler"
+    question: "Quelle est la r\xE8gle des \xAB 3R \xBB ?"
+    answer1: "R\xE9tr\xE9cir, R\xE9utiliser, Redonner"
+    answer2: Ramasser, Rapporter, Recomposer
+    answer3: "R\xE9duire, R\xE9utiliser, Recycler"
+    correctAnswer: 2
     seen: 0
-  - statement: Recyclage des bouteilles en verre en France
-    question: Sur 10 bouteilles en verre combien en recycle-t-on en France ?
-    answer1: 5
-    answer2: 7
-    answer3: 10
+  - statement: "Un fran\xE7ais produit en moyenne 400 kg de d\xE9chets par an"
+    question: "Combien de d\xE9chets un fran\xE7ais produit-il en moyenne par an ?"
+    answer1: 200
+    answer2: 300
+    answer3: 400
+    correctAnswer: 2
     seen: 0
-  - statement: Les Gros dechets
-    question: "Comment appelle-t-on des gros d\xE9chets ?"
-    answer1: Les monstres
-    answer2: Les manges tout
-    answer3: Les mutants
+  - statement: "Le recyclage est le fait de transformer les d\xE9chets en nouveaux
+      produits"
+    question: Qu''est-ce que le recyclage ?
+    answer1: "Le fait de trier ses d\xE9chets"
+    answer2: "La transformation des d\xE9chets en nouveaux produits"
+    answer3: "Le fait de bruler les d\xE9chets"
+    correctAnswer: 1
     seen: 0
-  - statement: Transformation des bouteilles en plastiques
-    question: Que deviennent vos bouteilles en plastiques ?
-    answer1: "Des v\xEAtements, des matelas etc."
-    answer2: Des enveloppes krafts
-    answer3: Du papier toilette, papier cadeau etc.
+  - statement: "Un sac plastique met 500 ans \xE0 se d\xE9composer"
+    question: "Combien de temps met un sac plastique pour se d\xE9composer ?"
+    answer1: 50
+    answer2: 500
+    answer3: 5000
+    correctAnswer: 1
     seen: 0
-  - statement: Transformation des boites de conserve
-    question: "Que deviennent vos bo\xEEtes de conserve en acier ?"
-    answer1: "Voiture, \xE9lectro-m\xE9nager, mobilier etc."
-    answer2: Tapis, couette, matelas etc.
-    answer3: Radiateurs, lampadaires etc.
+  - statement: "Le verre met 4 000 ans \xE0 se d\xE9composer"
+    question: "Combien de temps le verre met-il \xE0 se d\xE9composer ?"
+    answer1: 1 000 ans
+    answer2: 2 000 ans
+    answer3: 4 000 ans
+    correctAnswer: 2
     seen: 0
-  - statement: Le verre
-    question: Que devient le verre ?
-    answer1: Du verre
-    answer2: "Des v\xEAtements"
-    answer3: "De l'\xE9lectro-m\xE9nager"
-    seen: 0
-  - statement: "D\xE9composition du verre"
-    question: "Combien de temps met le verre \xE0 se d\xE9composer ?"
-    answer1: 4000 ans
-    answer2: 400
-    answer3: 40
-    seen: 0
-  - statement: "Les canettes m\xE9taliques"
-    question: "O\xF9 faut-il jeter les canettes m\xE9talliques ?"
-    answer1: 4000 ans
-    answer2: 400
-    answer3: 40
-    seen: 0
-  - statement: Avant les poubelles
-    question: "Comment se d\xE9barassait-on des d\xE9chets avant l'invention des poubelles
-      ?"
-    answer1: "Par la fen\xEAtre"
-    answer2: On les enterrait
-    answer3: "Par incin\xE9ration"
-    seen: 0
-  - statement: Origine du nom poubelle
-    question: "( C'est le nom de son cr\xE9ateur! ) "
-    answer1: 4000 ans
-    answer2: 400
-    answer3: 40
-    seen: 0
-  - statement: "Les m\xE9dicaments"
+  - statement: "Les m\xE9dicaments p\xE9rim\xE9s doivent \xEAtre ramen\xE9s dans une
+      pharmacie"
     question: "O\xF9 jeter des m\xE9dicaments p\xE9rim\xE9s ?"
-    answer1: "Les ramener \xE0 la pharmacie"
-    answer2: "Dans une poubelle sp\xE9cialis\xE9e"
-    answer3: Dans la poubelle noire
+    answer1: Il faut les ramener en pharmacie
+    answer2: Avec le compost
+    answer3: Dans la poubelle grise
+    correctAnswer: 0
     seen: 0
-  - statement: Les Stylos
+  - statement: "Les stylos peuvent \xEAtre jet\xE9s dans la poubelle grise"
     question: Dans quelle poubelle se jette un stylo ?
-    answer1: Dans la poubelle traditionnelle
-    answer2: Dans le compost
-    answer3: Dans la poubelle jaune
+    answer1: "Dans une poubelle sp\xE9ciale"
+    answer2: Dans la poubelle jaune
+    answer3: Dans la poubelle grise
+    correctAnswer: 2
     seen: 0
-  - statement: Les piles
-    question: "Pour \xEAtre recycl\xE9es, les piles doivent \xEAtre mises dans.."
-    answer1: "Une poubelle sp\xE9cialis\xE9e"
-    answer2: Une poubelle noire
-    answer3: Une poubelle jaune
+  - statement: "Les piles doivent \xEAtre d\xE9pos\xE9es dans une poubelle sp\xE9cialis\xE9e"
+    question: "Les piles doivent \xEAtre d\xE9pos\xE9es dans ..."
+    answer1: La poubelle jaune
+    answer2: La poubelle grise
+    answer3: "Une poubelle sp\xE9cialis\xE9e"
+    correctAnswer: 2
     seen: 0
-  - statement: "D\xE9chetterie"
+  - statement: "Tout le monde peut d\xE9poser des d\xE9chets \xE0 la d\xE9chetterie"
     question: "Qui peut mettre des objets \xE0 la d\xE9chetterie ?"
     answer1: Tout le monde
     answer2: Uniquement les professionnels
     answer3: Uniquement les particuliers
+    correctAnswer: 0
+    seen: 0
+  - statement: "4 bouteilles d'eau recycl\xE9es peuvent cr\xE9er 3 nouvelles bouteilles"
+    question: "Combien faut-il recycler de bouteilles d'eau pour cr\xE9er 3 nouvelles
+      bouteilles ?"
+    answer1: 2
+    answer2: 3
+    answer3: 4
+    correctAnswer: 2
+    seen: 0
+  - statement: "Un carton peut \xEAtre recycl\xE9 10 fois avant d'\xEAtre incin\xE9r\xE9"
+    question: "Combien de fois un carton peut-il \xEAtre recycl\xE9 ?"
+    answer1: 10 fois
+    answer2: 100 fois
+    answer3: A l'infini
+    correctAnswer: 0
+    seen: 0
+  - statement: "En France, seulement 10% des verres sont recycl\xE9s"
+    question: "En France, la proportion de verres recycl\xE9s est de ..."
+    answer1: 10%
+    answer2: 30%
+    answer3: 50%
+    correctAnswer: 0
+    seen: 0
+  - statement: "En France, seulement 20% des plastiques sont recycl\xE9s"
+    question: "En France, la proportion des plastiques recycl\xE9s est de ..."
+    answer1: 20%
+    answer2: 50%
+    answer3: 80%
+    correctAnswer: 0
+    seen: 0
+  - statement: En France, on recycle le verre depuis 1975
+    question: Depuis quand recycle-t'on le verre en France ?
+    answer1: 1955
+    answer2: 1975
+    answer3: 1995
+    correctAnswer: 1
+    seen: 0
+  - statement: "Le verre collect\xE9 est recycl\xE9 \xE0 100%"
+    question: "Quel proportion du verre collect\xE9 est ensuite recycl\xE9 ?"
+    answer1: 50%
+    answer2: 75%
+    answer3: 100%
+    correctAnswer: 2
+    seen: 0
+  - statement: "Lorsqu'un d\xE9chet finit dans l'oc\xE9an, il coule et ne pourra jamais
+      se d\xE9grader"
+    question: "Qu'arrivent-il aux d\xE9chets jet\xE9s dans l'oc\xE9an ?"
+    answer1: "Ils s'\xE9chouent sur les plages"
+    answer2: "Ils se d\xE9gradent tout seuls"
+    answer3: "Ils coulent et ne se d\xE9graderont jamais"
+    correctAnswer: 2
+    seen: 0
+  - statement: "Lorsqu'un d\xE9chet finit dans l'oc\xE9an, il coule et ne pourra jamais
+      se d\xE9grader"
+    question: "Qu'arrivent-il aux d\xE9chets jet\xE9s dans l'oc\xE9an ?"
+    answer1: "Ils s'\xE9chouent sur les plages"
+    answer2: "Ils se d\xE9gradent tout seuls"
+    answer3: "Ils coulent et ne se d\xE9graderont jamais"
+    correctAnswer: 2
     seen: 0

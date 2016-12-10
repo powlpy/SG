@@ -10,6 +10,7 @@ public class QuestionBox : MonoBehaviour {
     Image answersFrame;
     Text[] answerText = new Text[3];
     int selectedAnswer;
+    int correctAnswer;
     Image selectionRectangle;
     bool isFrozen = false;
 
@@ -65,6 +66,7 @@ public class QuestionBox : MonoBehaviour {
             answerText[i].enabled = true;
             answerText[i].color = Color.white;
         }
+        correctAnswer = int.Parse(displayText[4]);
 
         selectionRectangle.enabled = true;
         DoGoUpSelection();
@@ -77,11 +79,11 @@ public class QuestionBox : MonoBehaviour {
 
     void DoCheckAnswer() {
         isFrozen = true;
-        if(selectedAnswer == 0)
+        if(selectedAnswer == correctAnswer)
             GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().GainPoints(5);
         else
             answerText[selectedAnswer].color = Color.red;
-        answerText[0].color = Color.green;
+        answerText[correctAnswer].color = Color.green;
         StartCoroutine(HideAfterDelay(1.5f));
 
     }

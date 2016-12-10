@@ -8,7 +8,7 @@ public class EnemyBehavior : MonoBehaviour {
     public float maxHealth;
 	public float currentHealth;
     public float moveSpeed = 2;
-	public bool isAngry = false;
+	public bool isAngry;
     public float pushStrength;
     public float pushTime;
     public float stunTime;
@@ -39,6 +39,7 @@ public class EnemyBehavior : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponentInChildren<Animator>();
         myBody = GetComponent<Rigidbody2D>();
+        isAngry = false;
     }
 
     void Start() {
@@ -93,6 +94,7 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     public void Sleep() {
+        if (isAngry) return;
         isAwake = false;
         anim.SetBool("IsMoving", false);
     }
