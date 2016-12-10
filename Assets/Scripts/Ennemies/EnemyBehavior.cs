@@ -172,7 +172,6 @@ public class EnemyBehavior : MonoBehaviour {
 				break;
 			}
 		}
-
 		precPosition = transform.position;
 		myBody.velocity = wandersDirection * moveSpeed;
 	}
@@ -217,8 +216,7 @@ public class EnemyBehavior : MonoBehaviour {
 			moveSpeed *= 1.4f;
 			currentHealth = maxHealth;
 		}
-        StopStun();
-
+        StartCoroutine(WakeUpAfterDelay(1));
     }
 
     public void EnableShadow() {
@@ -238,6 +236,11 @@ public class EnemyBehavior : MonoBehaviour {
             stunnedShadow.SetActive(false);
 
 
+    }
+
+    IEnumerator WakeUpAfterDelay(float delay) {
+        yield return new WaitForSeconds(delay);
+        StopStun();
     }
 
 }

@@ -9,6 +9,8 @@ public class DropBehavior : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag == "Player") {
+            float myAngle = Vector3.Angle(collider.GetComponent<CharacterBehavior>().vectMovement, collider.transform.position - transform.position);
+            if (myAngle < 140) return;
             GameObject carriedObject = collider.GetComponent<CharacterBehavior>().GetCarriedObject();
             if(carriedObject != null) {
                 collider.GetComponent<CharacterBehavior>().DropObject();
