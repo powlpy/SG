@@ -138,7 +138,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013394723026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -27.9, y: -1.3, z: 0}
+  m_LocalPosition: {x: -4.25, y: -1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -367,7 +367,7 @@ MonoBehaviour:
   isAwake: 0
   myShadow: {fileID: 1000013161742818}
   stunnedShadow: {fileID: 1000010631323620}
-  behavior: 2
+  behavior: 0
   score: 3
 --- !u!114 &114000012722273158
 MonoBehaviour:

@@ -44,8 +44,9 @@ public class EnemyBehavior : MonoBehaviour {
 
     void Start() {
         currentHealth = maxHealth;
-        isAwake = false;
+        isAwake = true;
         GetComponentInParent<InteractablePickup>().SetAuthorizePickup(false);
+        Awaken();
     }
     
     void Update() {
