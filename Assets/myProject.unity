@@ -12387,6 +12387,16 @@ Prefab:
       propertyPath: followAxisX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000014054139400, guid: b2560402de9ca91428a346907aec8de1,
+        type: 2}
+      propertyPath: minY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000014054139400, guid: b2560402de9ca91428a346907aec8de1,
+        type: 2}
+      propertyPath: maxY
+      value: 26
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2560402de9ca91428a346907aec8de1, type: 2}
   m_IsPrefabParent: 0
@@ -17704,6 +17714,12 @@ Prefab:
       propertyPath: m_Name
       value: Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 212000012027286836, guid: 8b1a429ca57189b4295cb1fc85d2a407,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: 43656b94dfa87264a97e8982957644e0,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b1a429ca57189b4295cb1fc85d2a407, type: 2}
   m_IsPrefabParent: 0
