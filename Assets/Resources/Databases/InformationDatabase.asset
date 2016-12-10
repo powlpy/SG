@@ -30,7 +30,7 @@ MonoBehaviour:
     correctAnswer: 2
     seen: 0
   - statement: "Le verre peut se recycler \xE0 l'infini"
-    question: "Quel mat\xE9riau peut se recycle \xE0 l\u2019infini ?"
+    question: "Quel mat\xE9riau peut se recycler \xE0 l\u2019infini ?"
     answer1: Le plastique
     answer2: Le verre
     answer3: Le carton
