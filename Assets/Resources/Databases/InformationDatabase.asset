@@ -137,3 +137,52 @@ MonoBehaviour:
     answer2: "Des v\xEAtements"
     answer3: "De l'\xE9lectro-m\xE9nager"
     seen: 0
+  - statement: "D\xE9composition du verre"
+    question: "Combien de temps met le verre \xE0 se d\xE9composer ?"
+    answer1: 4000 ans
+    answer2: 400
+    answer3: 40
+    seen: 0
+  - statement: "Les canettes m\xE9taliques"
+    question: "O\xF9 faut-il jeter les canettes m\xE9talliques ?"
+    answer1: 4000 ans
+    answer2: 400
+    answer3: 40
+    seen: 0
+  - statement: Avant les poubelles
+    question: "Comment se d\xE9barassait-on des d\xE9chets avant l'invention des poubelles
+      ?"
+    answer1: "Par la fen\xEAtre"
+    answer2: On les enterrait
+    answer3: "Par incin\xE9ration"
+    seen: 0
+  - statement: Origine du nom poubelle
+    question: "( C'est le nom de son cr\xE9ateur! ) "
+    answer1: 4000 ans
+    answer2: 400
+    answer3: 40
+    seen: 0
+  - statement: "Les m\xE9dicaments"
+    question: "O\xF9 jeter des m\xE9dicaments p\xE9rim\xE9s ?"
+    answer1: "Les ramener \xE0 la pharmacie"
+    answer2: "Dans une poubelle sp\xE9cialis\xE9e"
+    answer3: Dans la poubelle noire
+    seen: 0
+  - statement: Les Stylos
+    question: Dans quelle poubelle se jette un stylo ?
+    answer1: Dans la poubelle traditionnelle
+    answer2: Dans le compost
+    answer3: Dans la poubelle jaune
+    seen: 0
+  - statement: Les piles
+    question: "Pour \xEAtre recycl\xE9es, les piles doivent \xEAtre mises dans.."
+    answer1: "Une poubelle sp\xE9cialis\xE9e"
+    answer2: Une poubelle noire
+    answer3: Une poubelle jaune
+    seen: 0
+  - statement: "D\xE9chetterie"
+    question: "Qui peut mettre des objets \xE0 la d\xE9chetterie ?"
+    answer1: Tout le monde
+    answer2: Uniquement les professionnels
+    answer3: Uniquement les particuliers
+    seen: 0
