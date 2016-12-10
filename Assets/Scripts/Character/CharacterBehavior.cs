@@ -293,7 +293,7 @@ public class CharacterBehavior : MonoBehaviour {
         if (!IsCarrying()) return;
 
 		// Vérification qu'il n'y a pas d'obstacle devant
-		Collider2D[] closeColliders = Physics2D.OverlapCircleAll(transform.position + (vectMovement * 0.8f), 0.65f);
+		Collider2D[] closeColliders = Physics2D.OverlapCircleAll(transform.position + (vectMovement * 0.7f), 0.55f);
 		foreach (Collider2D closeCollider in closeColliders) {
 			if (closeCollider.CompareTag ("Obstacle")) {
 				// L'objet est déposé derrière

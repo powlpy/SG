@@ -56,7 +56,7 @@ GameObject:
   - 61: {fileID: 61000011227414618}
   m_Layer: 0
   m_Name: Grey_bin
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
