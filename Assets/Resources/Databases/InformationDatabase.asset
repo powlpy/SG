@@ -40,7 +40,6 @@ MonoBehaviour:
     question: "Quelle est la r\xE8gle des \xAB 3R \xBB ?"
     answer1: "R\xE9tr\xE9cir, R\xE9utiliser, Redonner"
     answer2: Ramasser, Rapporter, Recomposer
-<<<<<<< Updated upstream
     answer3: "R\xE9duire, R\xE9utiliser, Recycler"
     correctAnswer: 2
     seen: 0
@@ -179,7 +178,6 @@ MonoBehaviour:
     answer3: 40
     seen: 0
   - statement: "Les m\xE9dicaments"
->>>>>>> Stashed changes
     question: "O\xF9 jeter des m\xE9dicaments p\xE9rim\xE9s ?"
     answer1: Il faut les ramener en pharmacie
     answer2: Avec le compost
