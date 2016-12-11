@@ -3,7 +3,7 @@ using System.Collections;
 
 public class InteractableRandomSign : Interactable {
 
-    public string myText;
+    string myText;
 
     public override void OnInteract(Character character) {
         if (DialogBox.IsVisible()) {

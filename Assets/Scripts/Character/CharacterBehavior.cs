@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 
 public class CharacterBehavior : MonoBehaviour {
 
@@ -243,11 +242,8 @@ public class CharacterBehavior : MonoBehaviour {
         StartCoroutine(ManageImmunity(1.5f));
         currentHp -= i;
         UpdateDisplayHearts();
-		if (currentHp <= 0) {
-			Debug.Log ("dead");
-		
-			//Application.LoadLevel ("menu");
-		}
+        if (currentHp <= 0)
+            Debug.Log("dead");
     }
 
     IEnumerator ManageImmunity(float delay) {
@@ -291,6 +287,7 @@ public class CharacterBehavior : MonoBehaviour {
         EnemyBehavior objectBehavior = carriedObject.GetComponent<EnemyBehavior>();
         if (objectBehavior != null)
             objectBehavior.DisableShadow();
+        TipsHandler.Recycle();
     }
 
     public void DropObject() {
@@ -348,6 +345,7 @@ public class CharacterBehavior : MonoBehaviour {
         CharacterInventoryModel inventory = GetComponent<CharacterInventoryModel>();
         if (inventory == null) return;
         inventory.AddItem(ItemType.RecyclingPoints, nb);
+        TipsHandler.RecyclingPoints();
     }
 
 	public void LosePoints(int nb) {
