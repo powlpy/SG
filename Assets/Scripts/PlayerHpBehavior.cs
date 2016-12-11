@@ -22,7 +22,6 @@ public class PlayerHpBehavior : MonoBehaviour {
         for (int i = 0; i < maxHp - Mathf.Floor(currentHp); i++) {
             myHearts[(int)maxHp - 1 - i].GetComponent<Image>().sprite = EmptyHeartSprite;
         }
-
         if (!Mathf.Approximately(currentHp, Mathf.RoundToInt(currentHp)))
             myHearts[(int)Mathf.Ceil(currentHp)].GetComponent<Image>().sprite = HalfHeartSprite;
     }
@@ -38,10 +37,9 @@ public class PlayerHpBehavior : MonoBehaviour {
             myHearts[i].GetComponent<Image>().sprite = FullHeartSprite;
         }
 
-
         for(int i = 0; i < maxHp - Mathf.Floor(currentHp); i++) {
             myHearts[(int)maxHp -1 - i].GetComponent<Image>().sprite = EmptyHeartSprite;
-		}
+        }
 
         if(!Mathf.Approximately(currentHp, Mathf.RoundToInt(currentHp))) {
             myHearts[(int)Mathf.Ceil(currentHp) - 1].GetComponent<Image>().sprite = HalfHeartSprite;
