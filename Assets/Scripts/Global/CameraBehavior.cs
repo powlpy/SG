@@ -8,16 +8,10 @@ public class CameraBehavior : MonoBehaviour {
     private bool FollowAxisY = false;
     private float minX, maxX, minY, maxY;
     private Vector3 vectMovement;
-    public bool isFrozen = false;
-
-    public GameObject LeftWall;
-    public GameObject RightWall;
-    public GameObject BottomWall;
-    public GameObject UpperWall;
 
     float vertExtent, horzExtent;
 
-    void Awake() {
+    void Start() {
         minX = -200;
         maxX = 200;
         minY = -200;
@@ -25,15 +19,10 @@ public class CameraBehavior : MonoBehaviour {
 
         vertExtent = Camera.main.orthographicSize;
         horzExtent = vertExtent * Screen.width / Screen.height;
-        LeftWall.transform.localPosition = new Vector3(-horzExtent, 0, 0);
-        RightWall.transform.localPosition = new Vector3(horzExtent, 0, 0);
-        BottomWall.transform.localPosition = new Vector3(0, vertExtent, 0);
-        UpperWall.transform.localPosition = new Vector3(0, -vertExtent, 0);
-
     }
 
 	void LateUpdate () {
-        if (isFrozen) return;
+
         vectMovement = transform.position;
         if (FollowAxisX) {
             vectMovement.x = player.transform.position.x;
@@ -58,14 +47,6 @@ public class CameraBehavior : MonoBehaviour {
         FollowAxisY = b;
     }
 
-    public bool GetFollowAxisX() {
-        return FollowAxisX;
-    }
-
-    public bool GetFollowAxisY() {
-        return FollowAxisY;
-    }
-
     public void SetMinX(float x) {
         minX = x;
     }
@@ -80,12 +61,5 @@ public class CameraBehavior : MonoBehaviour {
         maxY = y;
     }
 
-    public float GetWidth() {
-        return horzExtent;
-    }
-
-    public float GetHeight() {
-        return vertExtent;
-    }
 
 }

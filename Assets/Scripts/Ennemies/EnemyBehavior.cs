@@ -32,11 +32,7 @@ public class EnemyBehavior : MonoBehaviour {
     public GameObject myShadow;
     public GameObject stunnedShadow;
 
-    private bool isInArena = false;
-    private bool isLast = false;
-
-
-    public BehaviorType behavior;
+	public BehaviorType behavior;
 	public int score = 3;
 
     void Awake() {
@@ -51,8 +47,6 @@ public class EnemyBehavior : MonoBehaviour {
         isAwake = true;
         GetComponentInParent<InteractablePickup>().SetAuthorizePickup(false);
         Awaken();
-        GetComponent<Rigidbody2D>().isKinematic = true;
-        StartCoroutine(SetInArenaAfterDelay(1));
     }
     
     void Update() {
@@ -71,10 +65,7 @@ public class EnemyBehavior : MonoBehaviour {
         }
         if (isFrozen) return;
         if (!isAwake) return;
-        if (!isInArena) {
-            FollowPlayer();
-            return;
-        }
+
 		switch (behavior) {
 		case BehaviorType.Follower:
 			FollowPlayer ();
@@ -150,9 +141,7 @@ public class EnemyBehavior : MonoBehaviour {
         return (myStunTime > 0f);
     }
 
-    public void OnDeath() {
-        if (isLast)
-            Camera.main.GetComponent<CameraBehavior>().isFrozen = false;
+    void OnDeath() {
         Destroy(gameObject);
     }
 
@@ -255,16 +244,6 @@ public class EnemyBehavior : MonoBehaviour {
     IEnumerator WakeUpAfterDelay(float delay) {
         yield return new WaitForSeconds(delay);
         StopStun();
-    }
-
-    IEnumerator SetInArenaAfterDelay(float delay) {
-        yield return new WaitForSeconds(delay);
-        isInArena = true;
-        GetComponent<Rigidbody2D>().isKinematic = false;
-    }
-
-    public void SetLast(bool b) {
-        isLast = b;
     }
 
 }
