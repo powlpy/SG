@@ -3,14 +3,14 @@ using System.Collections;
 
 public class BinHelp : Interactable {
 
-	string myText;
+	public string myText;
 
 	public override void OnInteract(Character character) {
 		if (BinBox.IsVisible()) {
 			BinBox.Hide();
 			character.Behavior.setFrozen(false, true);
 		} else {
-			myText = ("Poubelle green");
+			//myText = ("Poubelle green");
 			BinBox.Show(myText);
 			character.Behavior.setFrozen(true, true);
 		}
