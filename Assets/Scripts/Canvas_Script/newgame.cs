@@ -16,6 +16,6 @@ public class newgame : MonoBehaviour {
 
 	void TaskOnClick(){
 		Debug.Log ("You have clicked the button!");
-		//Application.LoadLevel("myProject");
+		Application.LoadLevel("myProject");
 	}
 }
