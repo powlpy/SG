@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CharacterBehavior : MonoBehaviour {
 
@@ -242,8 +243,11 @@ public class CharacterBehavior : MonoBehaviour {
         StartCoroutine(ManageImmunity(1.5f));
         currentHp -= i;
         UpdateDisplayHearts();
-        if (currentHp <= 0)
-            Debug.Log("dead");
+		if (currentHp <= 0) {
+			Debug.Log ("dead");
+		
+			//Application.LoadLevel ("menu");
+		}
     }
 
     IEnumerator ManageImmunity(float delay) {
