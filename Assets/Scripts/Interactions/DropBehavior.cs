@@ -15,8 +15,8 @@ public class DropBehavior : MonoBehaviour {
             if(carriedObject != null) {
                 collider.GetComponent<CharacterBehavior>().DropObject();
                 if (carriedObject.GetComponent<InteractablePickup>().TypeOfTrash == TypeOfTrash) {
-                    Destroy(carriedObject);
-					collider.GetComponent<CharacterBehavior>().GainPoints(carriedObject.GetComponent<EnemyBehavior> ().score);
+					collider.GetComponent<CharacterBehavior>().GainPoints(carriedObject.GetComponent<EnemyBehavior>().score);
+                    carriedObject.GetComponent<EnemyBehavior>().OnDeath();
                     if (RecyclingEffect != null) {
                         GameObject myEffect = (GameObject)Instantiate(RecyclingEffect);
                         myEffect.transform.position = transform.position;

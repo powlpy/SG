@@ -17,7 +17,6 @@ public class EnnemiesSpawnBehavior : MonoBehaviour {
     }
 
     void Start () {
-        InvokeRepeating("SummonEnnemy", 1, 6);
 	}
 	
 
