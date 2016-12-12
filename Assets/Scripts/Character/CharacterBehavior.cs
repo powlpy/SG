@@ -247,7 +247,6 @@ public class CharacterBehavior : MonoBehaviour {
 			Debug.Log ("dead");
 
 			EndGame ();
-			Destroy (gameObject);
 		}
 		
     }

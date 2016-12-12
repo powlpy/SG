@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010576647928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.599, y: -0.07731941, z: 0}
+  m_LocalPosition: {x: -40.498722, y: 0.23347165, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -269,9 +269,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.1304152}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.708225, y: 0.92484546}
+  m_Size: {x: 1.7, y: 0.6}
 --- !u!61 &61000012764843176
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -283,9 +283,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -0.1304152}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.83}
+  m_Size: {x: 1.68, y: 0.58}
 --- !u!61 &61000012953394634
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -297,9 +297,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.0000038146973, y: -0.041496634}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.79360735, y: 1.067316}
+  m_Size: {x: 1.9, y: 0.8}
 --- !u!95 &95000012144591100
 Animator:
   serializedVersion: 3

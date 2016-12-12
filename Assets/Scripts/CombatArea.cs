@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CombatArea : MonoBehaviour {
 
     public int nbEnnemies;
+    public float delaiBetweenEnnemies = 5;
 
-    Object[] ennemiesList;
+    public bool greyEnnemies;
+    public bool yellowEnnemies;
+    public bool glassEnnemies;
+    public bool orangeEnnemies;
+
+    List<Object> ennemiesList;
+
     bool saveFollowAxisX;
     bool saveFollowAxisY;
     bool hasTriggered = false;
@@ -13,7 +21,17 @@ public class CombatArea : MonoBehaviour {
     float cameraHeight;
 
     void Awake() {
-        ennemiesList = Resources.LoadAll("Ennemies");
+        ennemiesList = new List<Object>();
+        if(greyEnnemies)
+            ennemiesList.AddRange(Resources.LoadAll("Ennemies/Grey"));
+        if (yellowEnnemies)
+            ennemiesList.AddRange(Resources.LoadAll("Ennemies/Yellow"));
+        if (glassEnnemies)
+            ennemiesList.AddRange(Resources.LoadAll("Ennemies/Glass"));
+        if (orangeEnnemies)
+            ennemiesList.AddRange(Resources.LoadAll("Ennemies/Orange"));
+        if (ennemiesList.Count == 0)
+            Debug.Log("Erreur : aucun type d'ennemis dans la zone " + name);
     }
 
     void Start() {
@@ -28,12 +46,12 @@ public class CombatArea : MonoBehaviour {
         Camera.main.GetComponent<CameraBehavior>().isFrozen = true;
 
         for (int i = 0; i < nbEnnemies-1; i++)
-            StartCoroutine(SummonEnnemyAfterDelay(i * 7));
-        StartCoroutine(SummonLastEnnemyAfterDelay((nbEnnemies - 1) * 7));
+            StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies));
+        StartCoroutine(SummonLastEnnemyAfterDelay((nbEnnemies - 1) * delaiBetweenEnnemies));
     }
 
     void SummonEnnemy() {
-        Object randomEnnemy = ennemiesList[Random.Range(0, ennemiesList.Length)];
+        Object randomEnnemy = ennemiesList[Random.Range(0, ennemiesList.Count)];
         GameObject ennemy = Instantiate(randomEnnemy) as GameObject;
         
         ennemy.transform.position = GetRandomEnnemyPosition();
@@ -45,7 +63,7 @@ public class CombatArea : MonoBehaviour {
     }
 
     void SummonLastEnnemy() {
-        Object randomEnnemy = ennemiesList[Random.Range(0, ennemiesList.Length)];
+        Object randomEnnemy = ennemiesList[Random.Range(0, ennemiesList.Count)];
         GameObject ennemy = Instantiate(randomEnnemy) as GameObject;
 
         ennemy.transform.position = GetRandomEnnemyPosition();
