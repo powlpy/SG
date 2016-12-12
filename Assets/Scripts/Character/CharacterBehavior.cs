@@ -242,9 +242,21 @@ public class CharacterBehavior : MonoBehaviour {
         StartCoroutine(ManageImmunity(1.5f));
         currentHp -= i;
         UpdateDisplayHearts();
-        if (currentHp <= 0)
-            Debug.Log("dead");
+		if (currentHp <= 0) {
+			Debug.Log ("dead");
+			EndGame ();
+		}
+		
     }
+						//  Game Over
+	[SerializeField]
+	private GameObject gameOverUI;
+
+	public void EndGame(){
+		Debug.Log ("GAME OVER");
+		gameOverUI.SetActive (true);
+	}
+		
 
     IEnumerator ManageImmunity(float delay) {
         StartCoroutine(BlinkRenderer(delay));
