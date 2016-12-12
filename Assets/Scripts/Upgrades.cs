@@ -14,6 +14,7 @@ public class Upgrades : MonoBehaviour {
     UpgradeButtonBehavior selectedButton;
     public Sprite[] levelsSprites;
     CharacterBehavior playerBehavior;
+    AudioSource audio;
 
     void Awake() {
         
@@ -23,6 +24,7 @@ public class Upgrades : MonoBehaviour {
         prices = new int[] { 1,1,1};
         levels = new int[] { 0, 0, 0 };
         Instance = this;
+        audio = GetComponent<AudioSource>();
     }
 
     void Start() {
@@ -69,6 +71,8 @@ public class Upgrades : MonoBehaviour {
     public void ButtonPressed(int i) {
         if (levels[i] == 5) return;
         if (inventory.GetItemCount(ItemType.RecyclingPoints) < prices[i]) return;
+        audio.pitch = 1 + (levels[i] * 0.1f);
+        audio.Play();
         inventory.AddItem(ItemType.RecyclingPoints, -prices[i]);
         prices[i] += 2;
         levels[i]++;
