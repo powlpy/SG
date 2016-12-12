@@ -20,6 +20,7 @@ public class CharacterInventoryModel : MonoBehaviour {
         return items[itemType];
     }
 
+
     public void AddItem(ItemType itemType) {
         AddItem(itemType, 1);
 

@@ -29,8 +29,8 @@ public class CharacterBehavior : MonoBehaviour {
 
 
     AudioSource audio;
-    public AudioClip[] attackSounds;
-    public AudioClip[] pointsSound;
+    Object[] attackSounds;
+    Object[] pointsSound;
 
     void Start() {
         currentHp = maxHp;
@@ -39,7 +39,10 @@ public class CharacterBehavior : MonoBehaviour {
         myBody = GetComponent<Rigidbody2D>();
         InteractionModel = GetComponent<CharacterInteractionModel>();
         HideWeapon();
-        audio = GetComponent<AudioSource>();
+        audio = gameObject.AddComponent<AudioSource>();
+        audio.playOnAwake = false;
+        attackSounds = Resources.LoadAll("Sounds/Attacks");
+        pointsSound = Resources.LoadAll("Sounds/Coins");
     }
     
     void Update() {
@@ -52,7 +55,7 @@ public class CharacterBehavior : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C))
             if (CanAttack()) {
                 anim.SetTrigger("DoAttack");
-                audio.clip = attackSounds[Random.Range(0, attackSounds.Length)];
+                audio.clip = (AudioClip) attackSounds[Random.Range(0, attackSounds.Length)];
                 audio.Play();
             }
     }
@@ -368,7 +371,7 @@ public class CharacterBehavior : MonoBehaviour {
         if (inventory == null) return;
         inventory.AddItem(ItemType.RecyclingPoints, nb);
         TipsHandler.RecyclingPoints();
-        audio.clip = pointsSound[Random.Range(0, pointsSound.Length)];
+        audio.clip = (AudioClip) pointsSound[Random.Range(0, pointsSound.Length)];
         audio.Play();
     }
 

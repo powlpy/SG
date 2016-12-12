@@ -26,7 +26,9 @@ public class QuestionBox : MonoBehaviour {
         answerText[2] = transform.Find("AnswerBox").Find("Text3").gameObject.GetComponent<Text>();
         selectionRectangle = transform.Find("AnswerBox").Find("SelectionRectangle").GetComponent<Image>();
         selectedAnswer = 0;
-        audio = GetComponent<AudioSource>();
+        audio = gameObject.AddComponent<AudioSource>();
+        audio.playOnAwake = false;
+        audio.clip = (AudioClip)Resources.Load("Sounds/wrong");
     }
 
     public static void ShowQuestion(string[] displayText) {
