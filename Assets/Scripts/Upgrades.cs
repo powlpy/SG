@@ -24,7 +24,9 @@ public class Upgrades : MonoBehaviour {
         prices = new int[] { 1,1,1};
         levels = new int[] { 0, 0, 0 };
         Instance = this;
-        audio = GetComponent<AudioSource>();
+        audio = gameObject.AddComponent<AudioSource>();
+        audio.playOnAwake = false;
+        audio.clip = (AudioClip)Resources.Load("Sounds/Buttons/woodenButton");
     }
 
     void Start() {

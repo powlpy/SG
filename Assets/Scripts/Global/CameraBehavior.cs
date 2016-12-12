@@ -5,7 +5,7 @@ public class CameraBehavior : MonoBehaviour {
 
     public GameObject player;
     private bool FollowAxisX = true;
-    private bool FollowAxisY = false;
+    private bool FollowAxisY = true;
     private float minX, maxX, minY, maxY;
     private Vector3 vectMovement;
     public bool isFrozen = false;
