@@ -13,6 +13,8 @@ public class QuestionBox : MonoBehaviour {
     int correctAnswer;
     Image selectionRectangle;
     bool isFrozen = false;
+    bool isChecked = false;
+    AudioSource audio;
 
     void Awake() {
         Instance = this;
@@ -24,6 +26,7 @@ public class QuestionBox : MonoBehaviour {
         answerText[2] = transform.Find("AnswerBox").Find("Text3").gameObject.GetComponent<Text>();
         selectionRectangle = transform.Find("AnswerBox").Find("SelectionRectangle").GetComponent<Image>();
         selectedAnswer = 0;
+        audio = GetComponent<AudioSource>();
     }
 
     public static void ShowQuestion(string[] displayText) {
@@ -78,11 +81,15 @@ public class QuestionBox : MonoBehaviour {
     }
 
     void DoCheckAnswer() {
+        if (isChecked) return;
+        isChecked = true;
         isFrozen = true;
         if(selectedAnswer == correctAnswer)
             GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().GainPoints(5);
-        else
+        else {
             answerText[selectedAnswer].color = Color.red;
+            audio.Play();
+        }
         answerText[correctAnswer].color = Color.green;
         StartCoroutine(HideAfterDelay(1.5f));
 
@@ -112,6 +119,7 @@ public class QuestionBox : MonoBehaviour {
         for (int i = 0; i < 3; i++)
             answerText[i].enabled = false;
         selectionRectangle.enabled = false;
+        isChecked = false;
     }
 
     public static bool IsVisible() {

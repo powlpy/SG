@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterBehavior : MonoBehaviour {
 
     public GameObject PlayerHpHandler;
-    public float moveSpeed = 6;
+    public float moveSpeed = 4;
     public Transform weaponParent;
     public Transform shieldParent;
     public Transform previewItemParent;
@@ -28,6 +28,10 @@ public class CharacterBehavior : MonoBehaviour {
     public float damage = 3;
 
 
+    AudioSource audio;
+    public AudioClip[] attackSounds;
+    public AudioClip[] pointsSound;
+
     void Start() {
         currentHp = maxHp;
         UpdateDisplayHearts();
@@ -35,6 +39,7 @@ public class CharacterBehavior : MonoBehaviour {
         myBody = GetComponent<Rigidbody2D>();
         InteractionModel = GetComponent<CharacterInteractionModel>();
         HideWeapon();
+        audio = GetComponent<AudioSource>();
     }
     
     void Update() {
@@ -45,8 +50,11 @@ public class CharacterBehavior : MonoBehaviour {
 
     void UpdateAttack() {
         if (Input.GetKeyDown(KeyCode.C))
-            if (CanAttack())
+            if (CanAttack()) {
                 anim.SetTrigger("DoAttack");
+                audio.clip = attackSounds[Random.Range(0, attackSounds.Length)];
+                audio.Play();
+            }
     }
 
     void UpdateAction() {
@@ -360,6 +368,8 @@ public class CharacterBehavior : MonoBehaviour {
         if (inventory == null) return;
         inventory.AddItem(ItemType.RecyclingPoints, nb);
         TipsHandler.RecyclingPoints();
+        audio.clip = pointsSound[Random.Range(0, pointsSound.Length)];
+        audio.Play();
     }
 
 	public void LosePoints(int nb) {
