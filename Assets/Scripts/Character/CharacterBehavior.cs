@@ -244,7 +244,9 @@ public class CharacterBehavior : MonoBehaviour {
         UpdateDisplayHearts();
 		if (currentHp <= 0) {
 			Debug.Log ("dead");
+
 			EndGame ();
+			Destroy (gameObject);
 		}
 		
     }

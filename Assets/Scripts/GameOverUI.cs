@@ -9,14 +9,15 @@ public class GameOverUI : MonoBehaviour {
 	public void Quit()
 	{
 		Debug.Log ("Application Quit !");
-		Application.Quit ();
+		//Application.Quit ();
+		SceneManager.LoadScene("menu");
+
 	}
 
 	public void Retry ()
 	{
-		//Application.LoadLevel (Application.loadedLevel);
+		
 		Debug.Log ("Application Retry !");
-		//SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 		Application.LoadLevel("myProject");
 	}
 
