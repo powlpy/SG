@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterBehavior : MonoBehaviour {
 
     public GameObject PlayerHpHandler;
-    public float moveSpeed = 6;
+    public float moveSpeed = 4;
     public Transform weaponParent;
     public Transform shieldParent;
     public Transform previewItemParent;
@@ -28,6 +28,9 @@ public class CharacterBehavior : MonoBehaviour {
     public float damage = 3;
 
 
+    AudioSource audio;
+    public AudioClip[] attackSounds;
+
     void Start() {
         currentHp = maxHp;
         UpdateDisplayHearts();
@@ -35,6 +38,7 @@ public class CharacterBehavior : MonoBehaviour {
         myBody = GetComponent<Rigidbody2D>();
         InteractionModel = GetComponent<CharacterInteractionModel>();
         HideWeapon();
+        audio = GetComponent<AudioSource>();
     }
     
     void Update() {
@@ -45,8 +49,11 @@ public class CharacterBehavior : MonoBehaviour {
 
     void UpdateAttack() {
         if (Input.GetKeyDown(KeyCode.C))
-            if (CanAttack())
+            if (CanAttack()) {
                 anim.SetTrigger("DoAttack");
+                audio.clip = attackSounds[Random.Range(0, attackSounds.Length)];
+                audio.Play();
+            }
     }
 
     void UpdateAction() {
