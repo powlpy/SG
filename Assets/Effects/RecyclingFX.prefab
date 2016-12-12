@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011654673000}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 26.170734, y: 7.43, z: 0}
+  m_LocalPosition: {x: -36.535652, y: 1.7524797, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -48,7 +48,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011654673000}
   serializedVersion: 4
-  lengthInSec: 0.15
+  lengthInSec: 0.2
   startDelay:
     scalar: 0
     maxCurve:
@@ -91,7 +91,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 1
-  randomSeed: 1535303583
+  randomSeed: -859755282
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -254,7 +254,7 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.27450982, g: 0.83137256, b: 0.36862746, a: 1}
+      maxColor: {r: 0.4117647, g: 1, b: 0.50980395, a: 1}
       minMaxState: 0
     startSize:
       scalar: 1
@@ -474,9 +474,9 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 2
     enabled: 1
-    type: 7
+    type: 4
     radius: 1
-    angle: 25
+    angle: 45
     length: 5
     boxX: 1
     boxY: 1
@@ -496,7 +496,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 70
+      scalar: 100
       maxCurve:
         serializedVersion: 2
         m_Curve:
