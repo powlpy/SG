@@ -76,7 +76,7 @@ public class CombatArea : MonoBehaviour {
     }
 
     Vector3 GetRandomEnnemyPosition() {
-
+        /*
         Vector3 result = Camera.main.transform.position;
 
         Vector3 variation = new Vector3(1.1f * cameraWidth, Random.Range(-cameraHeight, cameraHeight), 0);
@@ -85,7 +85,13 @@ public class CombatArea : MonoBehaviour {
         else
             result += variation;
 
-        result.z = 0;
+        result.z = 0;*/
+
+
+        bool isValid = false;
+        while (!isValid) {
+
+        }
 
         return result;
     }
