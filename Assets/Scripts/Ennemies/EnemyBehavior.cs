@@ -35,6 +35,8 @@ public class EnemyBehavior : MonoBehaviour {
     private bool isInArena = false;
     private bool isLast = false;
 
+    private bool lookingLeft = true;
+
 
     public BehaviorType behavior;
 	public int score = 3;
@@ -71,7 +73,16 @@ public class EnemyBehavior : MonoBehaviour {
         }
         if (isFrozen) return;
         if (!isAwake) return;
-        if (!isInArena) {
+
+        if (player.transform.position.x > transform.position.x && lookingLeft) {
+            transform.Rotate(new Vector3(0, 180, 0));
+            lookingLeft = false;
+        } else if (player.transform.position.x < transform.position.x && !lookingLeft) {
+            transform.Rotate(new Vector3(0, -180, 0));
+            lookingLeft = true;
+        }
+
+            if (!isInArena) {
             FollowPlayer();
             return;
         }
