@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class newgame : MonoBehaviour {
 	public Button Button;
@@ -15,7 +16,7 @@ public class newgame : MonoBehaviour {
 	}
 
 	void TaskOnClick(){
-		Debug.Log ("You have clicked the button!");
-		Application.LoadLevel("myProject");
+	//	Debug.Log ("You have clicked the button!");
+		SceneManager.LoadScene("myProject");
 	}
 }
