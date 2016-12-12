@@ -25,6 +25,7 @@ public class CharacterBehavior : MonoBehaviour {
     private float maxHp = 3;
     private float currentHp;
     private bool isImmune = false;
+    public float damage = 3;
 
 
     void Start() {
@@ -242,9 +243,23 @@ public class CharacterBehavior : MonoBehaviour {
         StartCoroutine(ManageImmunity(1.5f));
         currentHp -= i;
         UpdateDisplayHearts();
-        if (currentHp <= 0)
-            Debug.Log("dead");
+		if (currentHp <= 0) {
+			Debug.Log ("dead");
+
+			EndGame ();
+			Destroy (gameObject);
+		}
+		
     }
+						//  Game Over
+	[SerializeField]
+	private GameObject gameOverUI;
+
+	public void EndGame(){
+		Debug.Log ("GAME OVER");
+		gameOverUI.SetActive (true);
+	}
+		
 
     IEnumerator ManageImmunity(float delay) {
         StartCoroutine(BlinkRenderer(delay));
@@ -350,6 +365,20 @@ public class CharacterBehavior : MonoBehaviour {
 
 	public void LosePoints(int nb) {
 
+    }
+
+    public void UpgradeSpeed() {
+        moveSpeed ++;
+    }
+
+    public void UpgradeHealth() {
+        maxHp++;
+        currentHp++;
+        UpdateDisplayHearts();
+    }
+
+    public void UpgradeDamage() {
+        damage++;
     }
 
 }

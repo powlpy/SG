@@ -10,8 +10,10 @@ public class PlayerHpBehavior : MonoBehaviour {
     public Sprite HalfHeartSprite;
     public Sprite EmptyHeartSprite;
     private List<GameObject> myHearts = new List<GameObject>();
+    private float myMaxHp;
 
     public void FirstDisplay(float maxHp, float currentHp) {
+        myMaxHp = maxHp;
         for (int i = 0; i < maxHp; i++) {
             GameObject Heart1 = Instantiate(Heart);
             myHearts.Add(Heart1);
@@ -28,7 +30,17 @@ public class PlayerHpBehavior : MonoBehaviour {
 
     public void UpdateDisplay(float maxHp, float currentHp) {
         if (currentHp < 0) return;
-        if(myHearts.Count == 0) {
+        if (maxHp > myMaxHp) {
+            for (int i = (int)myMaxHp; i < maxHp; i++) {
+                GameObject Heart1 = Instantiate(Heart);
+                myHearts.Add(Heart1);
+                Heart1.transform.SetParent(this.transform, false);
+                Heart1.GetComponent<RectTransform>().anchoredPosition += new Vector2(i * 45, 0);
+                Heart1.GetComponent<Image>().sprite = EmptyHeartSprite;
+            }
+            myMaxHp = maxHp;
+        }
+        if (myHearts.Count == 0) {
             FirstDisplay(maxHp, currentHp);
             return;
         }

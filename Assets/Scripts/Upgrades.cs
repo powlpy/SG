@@ -10,18 +10,24 @@ public class Upgrades : MonoBehaviour {
     Image myImage;
     CharacterInventoryModel inventory;
     int[] prices;
+    int[] levels;
     UpgradeButtonBehavior selectedButton;
+    public Sprite[] levelsSprites;
+    CharacterBehavior playerBehavior;
 
     void Awake() {
         
         myImage = GetComponent<Image>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterInventoryModel>();
-        prices = new int[] { 10, 20, 30};
+        playerBehavior = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>();
+        prices = new int[] { 1,1,1};
+        levels = new int[] { 0, 0, 0 };
         Instance = this;
     }
 
     void Start() {
         UpdatePrices();
+        UpdateLevels();
     }
 
     public static void Show() {
@@ -41,7 +47,7 @@ public class Upgrades : MonoBehaviour {
     }
 
     public void InstanceHide() {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().setFrozen(false, true);
+        playerBehavior.setFrozen(false, true);
         StartCoroutine(HideElements());
 
     }
@@ -61,27 +67,29 @@ public class Upgrades : MonoBehaviour {
     }
 
     public void ButtonPressed(int i) {
+        if (levels[i] == 5) return;
         if (inventory.GetItemCount(ItemType.RecyclingPoints) < prices[i]) return;
         inventory.AddItem(ItemType.RecyclingPoints, -prices[i]);
         prices[i] += 2;
+        levels[i]++;
         UpdatePrices();
+        UpdateLevels();
         InstanceButtonSelected(selectedButton);
 
         switch (selectedButton.index) {
             case 0:
-                Debug.Log("Augmenter les pv");
+                playerBehavior.UpgradeHealth();
                 break;
             case 1:
-                Debug.Log("Augmenter la vitesse");
+                playerBehavior.UpgradeSpeed();
                 break;
             case 2:
-                Debug.Log("Augmenter les dégats");
+                playerBehavior.UpgradeDamage();
                 break;
             default:
                 Debug.Log("Not implemented");
                 break;
         }
-
     }
 
     public static void ButtonSelected(UpgradeButtonBehavior behavior) {
@@ -103,4 +111,11 @@ public class Upgrades : MonoBehaviour {
         }
     }
 
+    void UpdateLevels() {
+        int nbUpgrades = transform.GetChild(0).childCount - 1;
+        for (int i = 0; i < nbUpgrades; i++) {
+            transform.GetChild(0).GetChild(i).Find("Level").GetComponent<Image>().sprite = levelsSprites[levels[i]];
+
+        }
+    }
 }

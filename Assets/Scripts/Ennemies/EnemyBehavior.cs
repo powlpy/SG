@@ -113,7 +113,7 @@ public class EnemyBehavior : MonoBehaviour {
     public void OnHit(Collider2D weaponCollider) {
         if (isImmune) return;
         StartCoroutine(ManageImmunity(immunityWindow));
-        currentHealth--;
+        currentHealth -= player.GetComponent<CharacterBehavior>().damage;
         CheckHealth();
         PushBack(weaponCollider);
     }
