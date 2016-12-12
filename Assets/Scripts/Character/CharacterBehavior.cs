@@ -30,6 +30,7 @@ public class CharacterBehavior : MonoBehaviour {
 
     AudioSource audio;
     public AudioClip[] attackSounds;
+    public AudioClip[] pointsSound;
 
     void Start() {
         currentHp = maxHp;
@@ -367,6 +368,8 @@ public class CharacterBehavior : MonoBehaviour {
         if (inventory == null) return;
         inventory.AddItem(ItemType.RecyclingPoints, nb);
         TipsHandler.RecyclingPoints();
+        audio.clip = pointsSound[Random.Range(0, pointsSound.Length)];
+        audio.Play();
     }
 
 	public void LosePoints(int nb) {
