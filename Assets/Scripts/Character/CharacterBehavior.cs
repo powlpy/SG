@@ -25,6 +25,7 @@ public class CharacterBehavior : MonoBehaviour {
     private float maxHp = 3;
     private float currentHp;
     private bool isImmune = false;
+    public float damage = 3;
 
 
     void Start() {
@@ -364,6 +365,20 @@ public class CharacterBehavior : MonoBehaviour {
 
 	public void LosePoints(int nb) {
 
+    }
+
+    public void UpgradeSpeed() {
+        moveSpeed ++;
+    }
+
+    public void UpgradeHealth() {
+        maxHp++;
+        currentHp++;
+        UpdateDisplayHearts();
+    }
+
+    public void UpgradeDamage() {
+        damage++;
     }
 
 }

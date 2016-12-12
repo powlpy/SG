@@ -13,12 +13,14 @@ public class Upgrades : MonoBehaviour {
     int[] levels;
     UpgradeButtonBehavior selectedButton;
     public Sprite[] levelsSprites;
+    CharacterBehavior playerBehavior;
 
     void Awake() {
         
         myImage = GetComponent<Image>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterInventoryModel>();
-        prices = new int[] { 10, 20, 30};
+        playerBehavior = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>();
+        prices = new int[] { 1,1,1};
         levels = new int[] { 0, 0, 0 };
         Instance = this;
     }
@@ -45,7 +47,7 @@ public class Upgrades : MonoBehaviour {
     }
 
     public void InstanceHide() {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().setFrozen(false, true);
+        playerBehavior.setFrozen(false, true);
         StartCoroutine(HideElements());
 
     }
@@ -76,13 +78,13 @@ public class Upgrades : MonoBehaviour {
 
         switch (selectedButton.index) {
             case 0:
-                Debug.Log("Augmenter les pv");
+                playerBehavior.UpgradeHealth();
                 break;
             case 1:
-                Debug.Log("Augmenter la vitesse");
+                playerBehavior.UpgradeSpeed();
                 break;
             case 2:
-                Debug.Log("Augmenter les dégats");
+                playerBehavior.UpgradeDamage();
                 break;
             default:
                 Debug.Log("Not implemented");
