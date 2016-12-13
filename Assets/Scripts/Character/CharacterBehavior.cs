@@ -22,7 +22,7 @@ public class CharacterBehavior : MonoBehaviour {
     private Vector3 pushDirection;
     private InteractablePickup carriedObject = null;
     private string layerOfCarriedObject;
-    private float maxHp = 1;
+    private float maxHp = 3;
     private float currentHp;
     private bool isImmune = false;
     public float damage = 3;
@@ -391,7 +391,7 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     public void UpgradeSpeed() {
-        moveSpeed ++;
+        moveSpeed += 0.75f;
     }
 
     public void UpgradeHealth() {

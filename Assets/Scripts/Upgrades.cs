@@ -78,6 +78,9 @@ public class Upgrades : MonoBehaviour {
         inventory.AddItem(ItemType.RecyclingPoints, -prices[i]);
 		prices[i] += (2 + (levels[i] * levels[i]));
         levels[i]++;
+        if(levels[i] == 5) {
+
+        }
         UpdatePrices();
         UpdateLevels();
         InstanceButtonSelected(selectedButton);
@@ -113,7 +116,13 @@ public class Upgrades : MonoBehaviour {
     void UpdatePrices() {
         int nbUpgrades = transform.GetChild(0).childCount - 1;
         for (int i = 0; i < nbUpgrades; i++) {
-            transform.GetChild(0).GetChild(i).Find("Cost").GetComponentInChildren<Text>().text = prices[i].ToString("000");
+            if(levels[i] < 5)
+                transform.GetChild(0).GetChild(i).Find("Cost").GetComponentInChildren<Text>().text = prices[i].ToString("000");
+            else {
+                transform.GetChild(0).GetChild(i).Find("Cost").GetComponentInChildren<Text>().text = "";
+                transform.GetChild(0).GetChild(i).Find("Cost").GetComponentInChildren<Image>().enabled = false;
+            }
+
         }
     }
 

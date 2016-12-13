@@ -13,7 +13,17 @@ public class GameOverUI : MonoBehaviour {
         firstButton = GetComponentInChildren<Button>();
         firstButton.Select();
         if(GameObject.FindGameObjectWithTag("Player") != null) {
-            score = (GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().GetScore() * 100).ToString() + " %";
+            float temp = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().GetScore() * 100;
+            if (temp > 95)
+                score = "S";
+            else if (temp > 85)
+                score = "A";
+            else if (temp > 75)
+                score = "B";
+            else if (temp > 65)
+                score = "C";
+            else
+                score = "D";
             transform.Find("scoreText").GetComponent<Text>().text = "Score : " + score;
         } else {
             transform.Find("scoreText").GetComponent<Text>().text = "Les déchets ont gagné";
