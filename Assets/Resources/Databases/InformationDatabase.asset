@@ -37,16 +37,16 @@ MonoBehaviour:
     answer2: Le verre
     answer3: Le carton
     correctAnswer: 1
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "R\xE9gle des 3R : R\xE9duire, R\xE9utiliser, Recycler"
     question: "Quelle est la r\xE8gle des \xAB 3R \xBB ?"
     answer1: "R\xE9tr\xE9cir, R\xE9utiliser, Redonner"
     answer2: Ramasser, Rapporter, Recomposer
     answer3: "R\xE9duire, R\xE9utiliser, Recycler"
     correctAnswer: 2
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "Un fran\xE7ais produit en moyenne 400 kg de d\xE9chets par an"
     question: "Combien de kilos de d\xE9chets un fran\xE7ais produit-il en moyenne
       par an ?"
@@ -63,8 +63,8 @@ MonoBehaviour:
     answer2: "La transformation des d\xE9chets en nouveaux produits"
     answer3: "Le fait de bruler les d\xE9chets"
     correctAnswer: 1
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "Un sac plastique met environ 500 ans \xE0 se d\xE9composer"
     question: "Combien de temps met un sac plastique pour se d\xE9composer ?"
     answer1: 50 ans
@@ -79,8 +79,8 @@ MonoBehaviour:
     answer2: 2 000 ans
     answer3: 4 000 ans
     correctAnswer: 2
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "Les m\xE9dicaments p\xE9rim\xE9s doivent \xEAtre ramen\xE9s dans une
       pharmacie"
     question: "O\xF9 jeter des m\xE9dicaments p\xE9rim\xE9s ?"
@@ -88,7 +88,7 @@ MonoBehaviour:
     answer2: Avec le compost
     answer3: Dans la poubelle grise
     correctAnswer: 0
-    seen: 0
+    seen: 1
     asked: 0
   - statement: "Les stylos peuvent \xEAtre jet\xE9s dans la poubelle grise"
     question: Dans quelle poubelle se jette un stylo ?
@@ -97,7 +97,7 @@ MonoBehaviour:
     answer3: Dans la poubelle grise
     correctAnswer: 2
     seen: 1
-    asked: 0
+    asked: 1
   - statement: "Les piles doivent \xEAtre d\xE9pos\xE9es dans une poubelle sp\xE9cialis\xE9e"
     question: "Les piles doivent \xEAtre d\xE9pos\xE9es dans ..."
     answer1: La poubelle jaune
@@ -119,33 +119,33 @@ MonoBehaviour:
       bouteilles ?"
     answer1: 3
     answer2: 4
-    answer3: 4
+    answer3: 10
     correctAnswer: 2
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "Un carton peut \xEAtre recycl\xE9 10 fois avant d'\xEAtre incin\xE9r\xE9"
     question: "Combien de fois un carton peut-il \xEAtre recycl\xE9 ?"
     answer1: 5 fois
     answer2: 10 fois
     answer3: 100 fois
     correctAnswer: 1
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "En France, seulement 10% des verres sont recycl\xE9s"
     question: "En France, la proportion de verres recycl\xE9s est de ..."
     answer1: 10%
     answer2: 30%
     answer3: 50%
     correctAnswer: 0
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "En France, seulement 20% des plastiques sont recycl\xE9s"
     question: "En France, la proportion des plastiques recycl\xE9s est de ..."
     answer1: 20%
     answer2: 50%
     answer3: 80%
     correctAnswer: 0
-    seen: 0
+    seen: 1
     asked: 0
   - statement: En France, on recycle le verre depuis 1975
     question: Depuis quand recycle-t'on le verre en France ?
@@ -161,7 +161,7 @@ MonoBehaviour:
     answer2: 75%
     answer3: 100%
     correctAnswer: 2
-    seen: 0
+    seen: 1
     asked: 0
   - statement: "Lorsqu'un d\xE9chet finit dans l'oc\xE9an, il coule et ne pourra jamais
       se d\xE9grader"
