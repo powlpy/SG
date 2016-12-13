@@ -31,7 +31,7 @@ public class UI_Manager : MonoBehaviour {
 
    public void StartNewGame()
     {
-        SceneManager.LoadScene("myProject");
+        SceneManager.LoadScene("Level1");
     }
 
     public void ShowOptions()
