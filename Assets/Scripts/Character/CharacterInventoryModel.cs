@@ -12,7 +12,7 @@ public class CharacterInventoryModel : MonoBehaviour {
     }
     
     void Start() {
-        AddItem(ItemType.RecyclingPoints, 100);
+        AddItem(ItemType.RecyclingPoints, 0);
     }
 
     public int GetItemCount(ItemType itemType) {

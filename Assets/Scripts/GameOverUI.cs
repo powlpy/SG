@@ -18,7 +18,7 @@ public class GameOverUI : MonoBehaviour {
 	{
 		
 		Debug.Log ("Application Retry !");
-		SceneManager.LoadScene("myProject");
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
 }
