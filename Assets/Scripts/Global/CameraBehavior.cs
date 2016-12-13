@@ -10,6 +10,8 @@ public class CameraBehavior : MonoBehaviour {
     private Vector3 vectMovement;
     public bool isFrozen = false;
 
+    Vector3 arenaPoint;
+
     public GameObject LeftWall;
     public GameObject RightWall;
     public GameObject BottomWall;
@@ -31,8 +33,18 @@ public class CameraBehavior : MonoBehaviour {
         UpperWall.transform.localPosition = new Vector3(0, -vertExtent, 0);
     }
 
+    void Start() {
+        transform.position = (new Vector3(player.transform.position.x, player.transform.position.y, -50));
+    }
+
 	void LateUpdate () {
-        if (isFrozen) return;
+        Vector3 temp = transform.position;
+        if (isFrozen) {
+            temp.x = Mathf.MoveTowards(temp.x, arenaPoint.x, 0.15f);
+            temp.y = Mathf.MoveTowards(temp.y, arenaPoint.y, 0.15f);
+            transform.position = temp;
+            return;
+        }
         vectMovement = transform.position;
         if (FollowAxisX) {
             vectMovement.x = player.transform.position.x;
@@ -46,7 +58,9 @@ public class CameraBehavior : MonoBehaviour {
         } else {
             vectMovement.y = 0f;
         }
-        transform.position = vectMovement;
+        temp.x = Mathf.MoveTowards(temp.x, vectMovement.x, 0.15f);
+        temp.y = Mathf.MoveTowards(temp.y, vectMovement.y, 0.15f);
+        transform.position = temp;
 	}
     
     public void SetFollowAxisX(bool b) {
@@ -88,10 +102,7 @@ public class CameraBehavior : MonoBehaviour {
     }
 
 	public void Frozen(float x, float y){
-		vectMovement = transform.position;
-		vectMovement.x = x;
-		vectMovement.y = y;
-		transform.position = vectMovement;
+        arenaPoint = new Vector3(x, y, 0);
 		isFrozen = true;
 	}
 
