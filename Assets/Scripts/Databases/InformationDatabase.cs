@@ -26,8 +26,8 @@ public class InformationDatabase : ScriptableObject {
                 i++;
         }
         if (!found) {
-            Debug.Log("ERROR : NOT ENOUGH SIGNS FOR QUESTION");
-            return null;
+            Debug.Log("NOT ENOUGH SIGNS FOR QUESTION");
+            i = 0;
         }
         info[i].asked = true;
         string[] result = new string[5];
