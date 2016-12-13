@@ -59,14 +59,14 @@ MonoBehaviour:
     answer3: "Le fait de bruler les d\xE9chets"
     correctAnswer: 1
     seen: 0
-  - statement: "Un sac plastique met 500 ans \xE0 se d\xE9composer"
+  - statement: "Un sac plastique met environ 500 ans \xE0 se d\xE9composer"
     question: "Combien de temps met un sac plastique pour se d\xE9composer ?"
     answer1: 50
     answer2: 500
     answer3: 5000
     correctAnswer: 1
     seen: 0
-  - statement: "Le verre met 4 000 ans \xE0 se d\xE9composer"
+  - statement: "Le verre met plus de 4 000 ans \xE0 se d\xE9composer"
     question: "Combien de temps le verre met-il \xE0 se d\xE9composer ?"
     answer1: 1 000 ans
     answer2: 2 000 ans
@@ -150,14 +150,6 @@ MonoBehaviour:
     question: "Qu'arrivent-il aux d\xE9chets jet\xE9s dans l'oc\xE9an ?"
     answer1: "Ils s'\xE9chouent sur les plages"
     answer2: "Ils se d\xE9gradent tout seuls"
-    answer3: "Ils coulent et ne se d\xE9graderont jamais"
-    correctAnswer: 2
-    seen: 0
-  - statement: "Lorsqu'un d\xE9chet finit dans l'oc\xE9an, il coule et ne pourra jamais
-      se d\xE9grader"
-    question: "Qu'arrivent-il aux d\xE9chets jet\xE9s dans l'oc\xE9an ?"
-    answer1: "Ils s'\xE9chouent sur les plages"
-    answer2: "Ils se d\xE9gradent tout seuls"
-    answer3: "Ils coulent et ne se d\xE9graderont jamais"
+    answer3: Ils coulent
     correctAnswer: 2
     seen: 0

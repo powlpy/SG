@@ -31,6 +31,7 @@ public class CharacterBehavior : MonoBehaviour {
     AudioSource audio;
     Object[] attackSounds;
     Object[] pointsSound;
+    Object hurtSound;
 
     void Start() {
         currentHp = maxHp;
@@ -41,9 +42,10 @@ public class CharacterBehavior : MonoBehaviour {
         HideWeapon();
         audio = gameObject.AddComponent<AudioSource>();
         audio.playOnAwake = false;
-        audio.volume = 0.3f;
+        audio.volume = 0.8f;
         attackSounds = Resources.LoadAll("Sounds/Attacks");
         pointsSound = Resources.LoadAll("Sounds/Coins");
+        hurtSound = Resources.Load("Sounds/Hurt");
     }
     
     void Update() {
@@ -56,8 +58,6 @@ public class CharacterBehavior : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C))
             if (CanAttack()) {
                 anim.SetTrigger("DoAttack");
-                audio.clip = (AudioClip) attackSounds[Random.Range(0, attackSounds.Length)];
-                audio.Play();
             }
     }
 
@@ -258,6 +258,8 @@ public class CharacterBehavior : MonoBehaviour {
 
     public void LoseHp(float i) {
         if (isImmune) return;
+        audio.clip = (AudioClip) hurtSound;
+        audio.Play();
         StartCoroutine(ManageImmunity(1.5f));
         currentHp -= i;
         UpdateDisplayHearts();

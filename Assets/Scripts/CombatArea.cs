@@ -20,6 +20,8 @@ public class CombatArea : MonoBehaviour {
     float cameraWidth;
     float cameraHeight;
 
+    AudioSource audio;
+
     void Awake() {
         ennemiesList = new List<Object>();
         if(greyEnnemies)
@@ -32,6 +34,10 @@ public class CombatArea : MonoBehaviour {
             ennemiesList.AddRange(Resources.LoadAll("Ennemies/Orange"));
         if (ennemiesList.Count == 0)
             Debug.Log("Erreur : aucun type d'ennemis dans la zone " + name);
+        
+        audio = gameObject.AddComponent<AudioSource>();
+        audio.playOnAwake = false;
+        audio.clip = (AudioClip)Resources.Load("Sounds/exclamation");
     }
 
     void Start() {
@@ -43,11 +49,21 @@ public class CombatArea : MonoBehaviour {
         if (collider.tag != "Player") return;
         if (hasTriggered) return;
         hasTriggered = true;
+
+        collider.transform.Find("exclamation").GetComponent<SpriteRenderer>().enabled = true;
+        StartCoroutine(DisableExclamation());
+        audio.Play();
 		Camera.main.GetComponent<CameraBehavior> ().Frozen(transform.position.x, transform.position.y);
 
         for (int i = 0; i < nbEnnemies-1; i++)
             StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies));
         StartCoroutine(SummonLastEnnemyAfterDelay((nbEnnemies - 1) * delaiBetweenEnnemies));
+    }
+
+    IEnumerator DisableExclamation() {
+        yield return new WaitForSeconds(1.5f);
+        GameObject.FindGameObjectWithTag("Player").transform.Find("exclamation").GetComponent<SpriteRenderer>().enabled = false;
+
     }
 
     void SummonEnnemy() {
