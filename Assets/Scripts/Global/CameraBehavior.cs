@@ -29,7 +29,6 @@ public class CameraBehavior : MonoBehaviour {
         RightWall.transform.localPosition = new Vector3(horzExtent, 0, 0);
         BottomWall.transform.localPosition = new Vector3(0, vertExtent, 0);
         UpperWall.transform.localPosition = new Vector3(0, -vertExtent, 0);
-
     }
 
 	void LateUpdate () {
@@ -87,5 +86,13 @@ public class CameraBehavior : MonoBehaviour {
     public float GetHeight() {
         return vertExtent;
     }
+
+	public void Frozen(float x, float y){
+		vectMovement = transform.position;
+		vectMovement.x = x;
+		vectMovement.y = y;
+		transform.position = vectMovement;
+		isFrozen = true;
+	}
 
 }

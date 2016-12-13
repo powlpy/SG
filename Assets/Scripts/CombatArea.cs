@@ -43,7 +43,7 @@ public class CombatArea : MonoBehaviour {
         if (collider.tag != "Player") return;
         if (hasTriggered) return;
         hasTriggered = true;
-        Camera.main.GetComponent<CameraBehavior>().isFrozen = true;
+		Camera.main.GetComponent<CameraBehavior> ().Frozen(transform.position.x, transform.position.y);
 
         for (int i = 0; i < nbEnnemies-1; i++)
             StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies));
