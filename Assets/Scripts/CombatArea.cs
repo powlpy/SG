@@ -87,12 +87,19 @@ public class CombatArea : MonoBehaviour {
 
         result.z = 0;*/
 
-
         bool isValid = false;
+        Vector3 result = Vector3.zero;
+        int ii = 0;
         while (!isValid) {
-
+            ii++;
+            isValid = true;
+            result = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), Camera.main.farClipPlane / 2));
+            result.z = 0;
+            if (Physics2D.OverlapCircleAll(result, 0.8f).Length > 0)
+                isValid = false;
+            //if(Vector3.Distance())
         }
-
+        Debug.Log(ii);
         return result;
     }
 
