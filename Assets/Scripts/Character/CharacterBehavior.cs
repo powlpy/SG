@@ -46,6 +46,7 @@ public class CharacterBehavior : MonoBehaviour {
         attackSounds = Resources.LoadAll("Sounds/Attacks");
         pointsSound = Resources.LoadAll("Sounds/Coins");
         hurtSound = Resources.Load("Sounds/Hurt");
+		gameObject.active = true;
     }
     
     void Update() {
@@ -265,7 +266,8 @@ public class CharacterBehavior : MonoBehaviour {
         UpdateDisplayHearts();
 		if (currentHp <= 0) {
 			Debug.Log ("dead");
-
+			//setFrozen (true, false);
+			gameObject.active = false;
 			EndGame ();
 		}
 		
