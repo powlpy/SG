@@ -57,6 +57,7 @@ public class EnemyBehavior : MonoBehaviour {
         StartCoroutine(SetInArenaAfterDelay(1));
         GameObject animation = (GameObject)Instantiate(spawnAnimation);
         animation.transform.position = transform.position;
+        player.GetComponent<CharacterBehavior>().AddEnemy();
     }
     
     void Update() {
@@ -238,13 +239,14 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     public void MakeStronger() {
-		if(score > 0)
+        player.GetComponent<CharacterBehavior>().AddError();
+        if (score > 0)
 			score--;
 		if (!isAngry) {
 			isAngry = true;
 			moveSpeed *= 1.4f;
-			currentHealth = maxHealth;
-		}
+        }
+        currentHealth = maxHealth;
         StartCoroutine(WakeUpAfterDelay(1));
     }
 

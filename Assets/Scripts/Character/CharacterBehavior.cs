@@ -26,6 +26,8 @@ public class CharacterBehavior : MonoBehaviour {
     private float currentHp;
     private bool isImmune = false;
     public float damage = 3;
+    float nbErrors = 0;
+    float nbEnemies = 0;
 
 
     AudioSource audio;
@@ -400,6 +402,20 @@ public class CharacterBehavior : MonoBehaviour {
 
     public void UpgradeDamage() {
         damage++;
+    }
+
+    public void AddError() {
+        nbErrors++;
+    }
+
+    public void AddEnemy() {
+        nbEnemies++;
+    }
+
+    public float GetScore() {
+
+
+        return (1f - (nbErrors/nbEnemies));
     }
 
 }
