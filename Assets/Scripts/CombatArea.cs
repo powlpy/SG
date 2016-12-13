@@ -76,7 +76,7 @@ public class CombatArea : MonoBehaviour {
     }
 
     Vector3 GetRandomEnnemyPosition() {
-
+        /*
         Vector3 result = Camera.main.transform.position;
 
         Vector3 variation = new Vector3(1.1f * cameraWidth, Random.Range(-cameraHeight, cameraHeight), 0);
@@ -85,8 +85,21 @@ public class CombatArea : MonoBehaviour {
         else
             result += variation;
 
-        result.z = 0;
+        result.z = 0;*/
 
+        bool isValid = false;
+        Vector3 result = Vector3.zero;
+        int ii = 0;
+        while (!isValid) {
+            ii++;
+            isValid = true;
+            result = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0.1f * Screen.width, 0.9f * Screen.width), Random.Range(0.1f * Screen.height, 0.9f * Screen.height), Camera.main.farClipPlane / 2));
+            result.z = 0;
+            if (Physics2D.OverlapCircleAll(result, 0.8f).Length > 0)
+                isValid = false;
+            if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, result) < 3)
+                isValid = false;
+        }
         return result;
     }
 
