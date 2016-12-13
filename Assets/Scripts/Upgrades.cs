@@ -21,7 +21,7 @@ public class Upgrades : MonoBehaviour {
         myImage = GetComponent<Image>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterInventoryModel>();
         playerBehavior = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>();
-        prices = new int[] { 1,1,1};
+        prices = new int[] { 5, 5, 5};
         levels = new int[] { 0, 0, 0 };
         Instance = this;
         audio = gameObject.AddComponent<AudioSource>();
@@ -76,7 +76,7 @@ public class Upgrades : MonoBehaviour {
         audio.pitch = 1 + (levels[i] * 0.1f);
         audio.Play();
         inventory.AddItem(ItemType.RecyclingPoints, -prices[i]);
-        prices[i] += 2;
+		prices[i] += (2 + (levels[i] * levels[i]));
         levels[i]++;
         UpdatePrices();
         UpdateLevels();
