@@ -418,4 +418,13 @@ public class CharacterBehavior : MonoBehaviour {
         return (1f - (nbErrors/nbEnemies));
     }
 
+	public void gainHp(){
+		currentHp += 1f;
+		if (currentHp > maxHp)
+			currentHp = maxHp;
+		UpdateDisplayHearts();
+		audio.clip = (AudioClip) pointsSound[Random.Range(0, pointsSound.Length)];
+		audio.Play();
+	}
+
 }
