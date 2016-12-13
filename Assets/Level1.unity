@@ -7987,6 +7987,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012253438426, guid: e9f039666a183314f811b70a032b78d0,
+        type: 2}
+      propertyPath: myText
+      value: "Dans la Poubelle jauneNEWLINEBoites m\xE9talliques, cartons, journeaux,
+        bouteilles en plastique"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9f039666a183314f811b70a032b78d0, type: 2}
   m_IsPrefabParent: 0
@@ -33617,6 +33623,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012784209196, guid: 9065aa5d697f96843af82e0c1f261a78,
+        type: 2}
+      propertyPath: myText
+      value: "D\xE9chers m\xE9nagersNEWLINEBarquettes, emballages et sacs plastiques"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9065aa5d697f96843af82e0c1f261a78, type: 2}
