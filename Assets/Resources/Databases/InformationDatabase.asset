@@ -37,8 +37,13 @@ MonoBehaviour:
     answer2: Le verre
     answer3: Le carton
     correctAnswer: 1
+<<<<<<< HEAD
     seen: 1
     asked: 1
+=======
+    seen: 0
+    asked: 0
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
   - statement: "R\xE9gle des 3R : R\xE9duire, R\xE9utiliser, Recycler"
     question: "Quelle est la r\xE8gle des \xAB 3R \xBB ?"
     answer1: "R\xE9tr\xE9cir, R\xE9utiliser, Redonner"
@@ -54,7 +59,11 @@ MonoBehaviour:
     answer2: 300 kg
     answer3: 400 kg
     correctAnswer: 2
+<<<<<<< HEAD
     seen: 0
+=======
+    seen: 1
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
     asked: 0
   - statement: "Le recyclage est le fait de transformer les d\xE9chets en nouveaux
       produits"
@@ -63,16 +72,26 @@ MonoBehaviour:
     answer2: "La transformation des d\xE9chets en nouveaux produits"
     answer3: "Le fait de bruler les d\xE9chets"
     correctAnswer: 1
+<<<<<<< HEAD
     seen: 1
     asked: 1
+=======
+    seen: 0
+    asked: 0
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
   - statement: "Un sac plastique met environ 500 ans \xE0 se d\xE9composer"
     question: "Combien de temps met un sac plastique pour se d\xE9composer ?"
-    answer1: 50
-    answer2: 500
-    answer3: 5000
+    answer1: 50 ans
+    answer2: 500 ans
+    answer3: 5000 ans
     correctAnswer: 1
+<<<<<<< HEAD
     seen: 1
     asked: 1
+=======
+    seen: 0
+    asked: 0
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
   - statement: "Le verre met plus de 4 000 ans \xE0 se d\xE9composer"
     question: "Combien de temps le verre met-il \xE0 se d\xE9composer ?"
     answer1: 1 000 ans
@@ -104,7 +123,11 @@ MonoBehaviour:
     answer2: La poubelle grise
     answer3: "Une poubelle sp\xE9cialis\xE9e"
     correctAnswer: 2
+<<<<<<< HEAD
     seen: 1
+=======
+    seen: 0
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
     asked: 0
   - statement: "Tout le monde peut d\xE9poser des d\xE9chets \xE0 la d\xE9chetterie"
     question: "Qui peut mettre des objets \xE0 la d\xE9chetterie ?"
@@ -112,8 +135,13 @@ MonoBehaviour:
     answer2: Uniquement les professionnels
     answer3: Uniquement les particuliers
     correctAnswer: 0
+<<<<<<< HEAD
     seen: 0
     asked: 0
+=======
+    seen: 1
+    asked: 1
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
   - statement: "4 bouteilles d'eau recycl\xE9es peuvent cr\xE9er 3 nouvelles bouteilles"
     question: "Combien faut-il recycler de bouteilles d'eau pour cr\xE9er 3 nouvelles
       bouteilles ?"
@@ -145,8 +173,13 @@ MonoBehaviour:
     answer2: 50%
     answer3: 80%
     correctAnswer: 0
+<<<<<<< HEAD
     seen: 1
     asked: 1
+=======
+    seen: 0
+    asked: 0
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
   - statement: En France, on recycle le verre depuis 1975
     question: Depuis quand recycle-t'on le verre en France ?
     answer1: 1955
@@ -161,8 +194,13 @@ MonoBehaviour:
     answer2: 75%
     answer3: 100%
     correctAnswer: 2
+<<<<<<< HEAD
     seen: 1
     asked: 1
+=======
+    seen: 0
+    asked: 0
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
   - statement: "Lorsqu'un d\xE9chet finit dans l'oc\xE9an, il coule et ne pourra jamais
       se d\xE9grader"
     question: "Qu'arrivent-il aux d\xE9chets jet\xE9s dans l'oc\xE9an ?"
@@ -171,4 +209,8 @@ MonoBehaviour:
     answer3: Ils coulent
     correctAnswer: 2
     seen: 1
+<<<<<<< HEAD
     asked: 1
+=======
+    asked: 0
+>>>>>>> dc8faf6a6a0ffd19a0bb6449525239dc0730f2c4
