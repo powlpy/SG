@@ -22,6 +22,8 @@ public class CombatArea : MonoBehaviour {
 
     AudioSource audio;
 
+    GameObject player;
+
     void Awake() {
         ennemiesList = new List<Object>();
         if(greyEnnemies)
@@ -38,6 +40,7 @@ public class CombatArea : MonoBehaviour {
         audio = gameObject.AddComponent<AudioSource>();
         audio.playOnAwake = false;
         audio.clip = (AudioClip)Resources.Load("Sounds/exclamation");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start() {
@@ -116,7 +119,7 @@ public class CombatArea : MonoBehaviour {
             result.z = 0;
             if (Physics2D.OverlapCircleAll(result, 0.8f).Length > 0)
                 isValid = false;
-            if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, result) < 3)
+            if (Vector3.Distance(player.transform.position, result) < 3)
                 isValid = false;
         }
         return result;

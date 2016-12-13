@@ -57,7 +57,8 @@ public class EnemyBehavior : MonoBehaviour {
         StartCoroutine(SetInArenaAfterDelay(1));
         GameObject animation = (GameObject)Instantiate(spawnAnimation);
         animation.transform.position = transform.position;
-        player.GetComponent<CharacterBehavior>().AddEnemy();
+        if(player != null)
+            player.GetComponent<CharacterBehavior>().AddEnemy();
 		Camera.main.GetComponent<CameraBehavior> ().nbEnnemies++;
     }
     
@@ -77,19 +78,20 @@ public class EnemyBehavior : MonoBehaviour {
         }
         if (isFrozen) return;
         if (!isAwake) return;
-
-        if (player.transform.position.x > transform.position.x && lookingLeft) {
-            transform.Rotate(new Vector3(0, 180, 0));
-            lookingLeft = false;
-        } else if (player.transform.position.x < transform.position.x && !lookingLeft) {
-            transform.Rotate(new Vector3(0, -180, 0));
-            lookingLeft = true;
-        }
-
+        if (player != null) {
+            if (player.transform.position.x > transform.position.x && lookingLeft) {
+                transform.Rotate(new Vector3(0, 180, 0));
+                lookingLeft = false;
+            } else if (player.transform.position.x < transform.position.x && !lookingLeft) {
+                transform.Rotate(new Vector3(0, -180, 0));
+                lookingLeft = true;
+            }
             if (!isInArena) {
-            FollowPlayer();
-            return;
-        }
+                FollowPlayer();
+                return;
+            }
+        } else
+            behavior = BehaviorType.Wanders;
 		switch (behavior) {
 		case BehaviorType.Follower:
 			FollowPlayer ();

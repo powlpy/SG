@@ -5,6 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour {
 
+    Button firstButton;
+    string score;
+    Text scoreText;
+
+    void Start() {
+        firstButton = GetComponentInChildren<Button>();
+        firstButton.Select();
+        if(GameObject.FindGameObjectWithTag("Player") != null) {
+            score = (GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().GetScore() * 100).ToString() + " %";
+            transform.Find("scoreText").GetComponent<Text>().text = "Score : " + score;
+        } else {
+            transform.Find("scoreText").GetComponent<Text>().text = "Les déchets ont gagné";
+        }
+    }
+
+    public void SetTitle(string t) {
+        transform.Find("Title").GetComponent<Text>().text = t;
+    }
+
 	// Use this for initialization
 	public void Quit()
 	{

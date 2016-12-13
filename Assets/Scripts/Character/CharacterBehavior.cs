@@ -22,7 +22,7 @@ public class CharacterBehavior : MonoBehaviour {
     private Vector3 pushDirection;
     private InteractablePickup carriedObject = null;
     private string layerOfCarriedObject;
-    private float maxHp = 3;
+    private float maxHp = 1;
     private float currentHp;
     private bool isImmune = false;
     public float damage = 3;
@@ -48,7 +48,6 @@ public class CharacterBehavior : MonoBehaviour {
         attackSounds = Resources.LoadAll("Sounds/Attacks");
         pointsSound = Resources.LoadAll("Sounds/Coins");
         hurtSound = Resources.Load("Sounds/Hurt");
-		gameObject.active = true;
     }
     
     void Update() {
@@ -268,8 +267,7 @@ public class CharacterBehavior : MonoBehaviour {
         UpdateDisplayHearts();
 		if (currentHp <= 0) {
 			Debug.Log ("dead");
-			//setFrozen (true, false);
-			gameObject.active = false;
+			gameObject.SetActive(false);
 			EndGame ();
 		}
 		
@@ -279,9 +277,9 @@ public class CharacterBehavior : MonoBehaviour {
 	private GameObject gameOverUI;
 
 	public void EndGame(){
-		Debug.Log ("GAME OVER");
-		gameOverUI.SetActive (true);
-	}
+		gameOverUI.SetActive(true);
+        gameOverUI.GetComponent<GameOverUI>().SetTitle("Game Over !");
+    }
 		
 
     IEnumerator ManageImmunity(float delay) {
@@ -415,8 +413,8 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     public float GetScore() {
-
-
+        if (nbEnemies == 0)
+            return 0;
         return (1f - (nbErrors/nbEnemies));
     }
 

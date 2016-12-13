@@ -3,9 +3,13 @@ using System.Collections;
 
 public class ExitBehavior : MonoBehaviour {
 
+    public GameObject ScoreMenu;
+
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.tag != "Player") return;
-        Debug.Log((collider.GetComponent<CharacterBehavior>().GetScore() * 100).ToString() + " %");
+        collider.GetComponent<CharacterBehavior>().setFrozen(true, false);
+        ScoreMenu.SetActive(true);
+        ScoreMenu.GetComponent<GameOverUI>().SetTitle("Niveau terminé !");
 
     }
 
