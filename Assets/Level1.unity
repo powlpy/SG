@@ -34398,7 +34398,8 @@ Prefab:
     - target: {fileID: 114000012784209196, guid: 9065aa5d697f96843af82e0c1f261a78,
         type: 2}
       propertyPath: myText
-      value: "D\xE9chers m\xE9nagersNEWLINEBarquettes, emballages et sacs plastiques"
+      value: "Dans la Poubelle grise :NEWLINED\xE9chers m\xE9nagers,NEWLINEBarquettes,
+        emballages et sacs plastiques"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9065aa5d697f96843af82e0c1f261a78, type: 2}
@@ -59715,7 +59716,7 @@ Prefab:
     - target: {fileID: 114000012784209196, guid: 9065aa5d697f96843af82e0c1f261a78,
         type: 2}
       propertyPath: myText
-      value: "Dans la Poubelle jauneNEWLINEBoites m\xE9talliques, cartons, journeaux,
+      value: "Dans la Poubelle jaune :NEWLINEBoites m\xE9talliques, cartons, journeaux,
         bouteilles en plastique"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
