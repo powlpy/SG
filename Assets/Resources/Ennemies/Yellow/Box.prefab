@@ -298,15 +298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0083e604b2b5848a650632b8da48d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 3
   currentHealth: 0
   moveSpeed: 3
   isAngry: 0
   pushStrength: 25
   pushTime: 0.1
   stunTime: 15
-  deathAnimationDelay: 0.15
-  deathAnimation: {fileID: 0, guid: f5e67b67713e31540aed7aa183b15031, type: 2}
   immunityWindow: 0.5
   isAwake: 0
   myShadow: {fileID: 1000011347043168}
