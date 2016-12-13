@@ -41,6 +41,7 @@ public class CharacterBehavior : MonoBehaviour {
         HideWeapon();
         audio = gameObject.AddComponent<AudioSource>();
         audio.playOnAwake = false;
+        audio.volume = 0.3f;
         attackSounds = Resources.LoadAll("Sounds/Attacks");
         pointsSound = Resources.LoadAll("Sounds/Coins");
     }
@@ -202,7 +203,13 @@ public class CharacterBehavior : MonoBehaviour {
 
     public void ShowWeapon() {
         if (weaponParent != null)
+            StartCoroutine(ShowWeaponAfterDelay());
+    }
+
+    IEnumerator ShowWeaponAfterDelay() {
+        yield return new WaitForSeconds(0.01f);
             weaponParent.gameObject.SetActive(true);
+
     }
 
     public void HideWeapon() {
@@ -256,7 +263,7 @@ public class CharacterBehavior : MonoBehaviour {
         UpdateDisplayHearts();
 		if (currentHp <= 0) {
 			Debug.Log ("dead");
-			Destroy (gameObject);
+
 			EndGame ();
 		}
 		

@@ -13,8 +13,7 @@ public class EnemyBehavior : MonoBehaviour {
     public float pushTime;
     public float stunTime;
     private float myStunTime;
-    public float deathAnimationDelay;
-    public GameObject deathAnimation;
+    Object spawnAnimation;
     public float immunityWindow;
     private bool isMoving;
     Animator anim;
@@ -46,6 +45,7 @@ public class EnemyBehavior : MonoBehaviour {
         anim = GetComponentInChildren<Animator>();
         myBody = GetComponent<Rigidbody2D>();
         isAngry = false;
+        spawnAnimation = Resources.Load("EnnemySpawn");
     }
 
     void Start() {
@@ -55,6 +55,8 @@ public class EnemyBehavior : MonoBehaviour {
         Awaken();
         GetComponent<Rigidbody2D>().isKinematic = true;
         StartCoroutine(SetInArenaAfterDelay(1));
+        GameObject animation = (GameObject)Instantiate(spawnAnimation);
+        animation.transform.position = transform.position;
     }
     
     void Update() {
