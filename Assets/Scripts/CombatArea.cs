@@ -53,7 +53,10 @@ public class CombatArea : MonoBehaviour {
         collider.transform.Find("exclamation").GetComponent<SpriteRenderer>().enabled = true;
         StartCoroutine(DisableExclamation());
         audio.Play();
-		Camera.main.GetComponent<CameraBehavior> ().Frozen(transform.position.x, transform.position.y);
+		CameraBehavior cam = Camera.main.GetComponent<CameraBehavior> ();
+		cam.Frozen(transform.position.x, transform.position.y);
+		cam.lastEnnemieIsDestroy = false;
+
 
         for (int i = 0; i < nbEnnemies-1; i++)
             StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies));

@@ -32,10 +32,10 @@ public class EnemyBehavior : MonoBehaviour {
     public GameObject stunnedShadow;
 
     private bool isInArena = false;
-    private bool isLast = false;
 
     private bool lookingLeft = true;
 
+	public bool isLast = false;
 
     public BehaviorType behavior;
 	public int score = 3;
@@ -58,6 +58,7 @@ public class EnemyBehavior : MonoBehaviour {
         GameObject animation = (GameObject)Instantiate(spawnAnimation);
         animation.transform.position = transform.position;
         player.GetComponent<CharacterBehavior>().AddEnemy();
+		Camera.main.GetComponent<CameraBehavior> ().nbEnnemies++;
     }
     
     void Update() {
@@ -167,8 +168,12 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     public void OnDeath() {
-        if (isLast)
-            Camera.main.GetComponent<CameraBehavior>().isFrozen = false;
+		CameraBehavior cam = Camera.main.GetComponent<CameraBehavior> ();
+		cam.nbEnnemies--;
+		if (isLast)
+			cam.lastEnnemieIsDestroy = true;
+		if(cam.nbEnnemies <= 0 && cam.lastEnnemieIsDestroy)
+           cam.isFrozen = false;
         Destroy(gameObject);
     }
 
@@ -280,8 +285,7 @@ public class EnemyBehavior : MonoBehaviour {
         GetComponent<Rigidbody2D>().isKinematic = false;
     }
 
-    public void SetLast(bool b) {
-        isLast = b;
-    }
-
+	public void SetLast(bool b){
+		isLast = b;
+	}
 }

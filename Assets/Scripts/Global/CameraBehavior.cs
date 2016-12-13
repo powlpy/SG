@@ -9,6 +9,8 @@ public class CameraBehavior : MonoBehaviour {
     private float minX, maxX, minY, maxY;
     private Vector3 vectMovement;
     public bool isFrozen = false;
+	public int nbEnnemies = 0;
+	public bool lastEnnemieIsDestroy = true;
 
     Vector3 arenaPoint;
 
