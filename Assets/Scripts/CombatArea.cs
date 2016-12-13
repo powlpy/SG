@@ -93,13 +93,13 @@ public class CombatArea : MonoBehaviour {
         while (!isValid) {
             ii++;
             isValid = true;
-            result = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0, Screen.width), Random.Range(0, Screen.height), Camera.main.farClipPlane / 2));
+            result = Camera.main.ScreenToWorldPoint(new Vector3(Random.Range(0.1f * Screen.width, 0.9f * Screen.width), Random.Range(0.1f * Screen.height, 0.9f * Screen.height), Camera.main.farClipPlane / 2));
             result.z = 0;
             if (Physics2D.OverlapCircleAll(result, 0.8f).Length > 0)
                 isValid = false;
-            //if(Vector3.Distance())
+            if (Vector3.Distance(GameObject.FindGameObjectWithTag("Player").transform.position, result) < 3)
+                isValid = false;
         }
-        Debug.Log(ii);
         return result;
     }
 
