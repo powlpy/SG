@@ -13,10 +13,23 @@ public class InformationDatabase : ScriptableObject {
     }
     public string GetRandomStatement() {
         int i = Random.Range(0, info.Count);
+        info[i].seen = true;
         return info[i].statement;
     }
     public string[] GetRandomQuestion() {
-        int i = Random.Range(0, info.Count);
+        int i = 0;
+        bool found = false;
+        while (i < info.Count && !found) {
+            if (info[i].seen && !info[i].asked)
+                found = true;
+            else
+                i++;
+        }
+        if (!found) {
+            Debug.Log("ERROR : NOT ENOUGH SIGNS FOR QUESTION");
+            return null;
+        }
+        info[i].asked = true;
         string[] result = new string[5];
         result[0] = info[i].question;
         result[1] = info[i].answer1;
@@ -38,4 +51,5 @@ public class Information {
     [Range(0, 2)]
     public int correctAnswer;
     public bool seen = false;
+    public bool asked = false;
 }

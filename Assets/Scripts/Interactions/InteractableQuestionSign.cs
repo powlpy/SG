@@ -3,11 +3,20 @@ using System.Collections;
 
 public class InteractableQuestionSign : Interactable {
 
+    string[] myText;
+
+    void Start() {
+        myText = Database.Information.GetRandomQuestion();
+    }
+
     public override void OnInteract(Character character) {
         if (QuestionBox.IsVisible()) {
-            QuestionBox.CheckAnswer();
+            if (QuestionBox.IsChecked())
+                QuestionBox.Hide();
+            else
+                QuestionBox.CheckAnswer();
         } else {
-            QuestionBox.ShowQuestion(Database.Information.GetRandomQuestion());
+            QuestionBox.ShowQuestion(myText);
             character.Behavior.setFrozen(true, true);
         }
     }

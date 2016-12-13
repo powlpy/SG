@@ -73,9 +73,14 @@ public class QuestionBox : MonoBehaviour {
         }
         correctAnswer = int.Parse(displayText[4]);
 
-        selectionRectangle.enabled = true;
-        DoGoUpSelection();
-        DoGoUpSelection();
+        if (!isChecked) {
+            selectionRectangle.enabled = true;
+            DoGoUpSelection();
+            DoGoUpSelection();
+        } else {
+            answerText[selectedAnswer].color = Color.red;
+            answerText[correctAnswer].color = Color.green;
+        }
     }
 
     public static void CheckAnswer() {
@@ -104,7 +109,6 @@ public class QuestionBox : MonoBehaviour {
             yield return null;
         }
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().setFrozen(false, true);
         DoHide();
         isFrozen = false;
 
@@ -121,11 +125,19 @@ public class QuestionBox : MonoBehaviour {
         for (int i = 0; i < 3; i++)
             answerText[i].enabled = false;
         selectionRectangle.enabled = false;
-        isChecked = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().setFrozen(false, true);
     }
 
     public static bool IsVisible() {
         return Instance.dialogFrame.enabled;
+    }
+
+    public static bool IsChecked() {
+        return Instance.InstanceIsChecked();
+    }
+
+    bool InstanceIsChecked() {
+        return isChecked;
     }
 
 }
