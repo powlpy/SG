@@ -365,6 +365,7 @@ MonoBehaviour:
   isAwake: 0
   myShadow: {fileID: 1000013161742818}
   stunnedShadow: {fileID: 1000010631323620}
+  isLast: 0
   behavior: 0
   score: 3
 --- !u!114 &114000012722273158

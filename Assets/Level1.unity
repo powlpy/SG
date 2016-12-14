@@ -29115,6 +29115,11 @@ Prefab:
       propertyPath: m_Name
       value: BigTreeBlock (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 212000011356220236, guid: 9a3e129df238bd44094f91045ba06807,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a3e129df238bd44094f91045ba06807, type: 2}
   m_IsPrefabParent: 0
@@ -37222,6 +37227,16 @@ Prefab:
       propertyPath: m_Name
       value: BigTreePerspective (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 212000012103728792, guid: dc90e0fd432b67743b75f3e37d4d683f,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000013849475802, guid: dc90e0fd432b67743b75f3e37d4d683f,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc90e0fd432b67743b75f3e37d4d683f, type: 2}
   m_IsPrefabParent: 0
@@ -38178,6 +38193,11 @@ Prefab:
     - target: {fileID: 1000010018157728, guid: 9a3e129df238bd44094f91045ba06807, type: 2}
       propertyPath: m_Name
       value: BigTreeBlock (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000011356220236, guid: 9a3e129df238bd44094f91045ba06807,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a3e129df238bd44094f91045ba06807, type: 2}
@@ -51030,6 +51050,11 @@ Prefab:
       propertyPath: m_Name
       value: SmallTree (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 212000011999048798, guid: e77dbc15720c82c42a44441a3c9adb1f,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e77dbc15720c82c42a44441a3c9adb1f, type: 2}
   m_IsPrefabParent: 0
@@ -59690,6 +59715,11 @@ Prefab:
       propertyPath: m_Name
       value: BigTreeBlock (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 212000011356220236, guid: 9a3e129df238bd44094f91045ba06807,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a3e129df238bd44094f91045ba06807, type: 2}
   m_IsPrefabParent: 0
@@ -60910,6 +60940,11 @@ Prefab:
     - target: {fileID: 4000013021125820, guid: 9a3e129df238bd44094f91045ba06807, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000011356220236, guid: 9a3e129df238bd44094f91045ba06807,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a3e129df238bd44094f91045ba06807, type: 2}
@@ -64931,6 +64966,11 @@ Prefab:
     - target: {fileID: 1000010018157728, guid: 9a3e129df238bd44094f91045ba06807, type: 2}
       propertyPath: m_Name
       value: BigTreeBlock (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000011356220236, guid: 9a3e129df238bd44094f91045ba06807,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a3e129df238bd44094f91045ba06807, type: 2}

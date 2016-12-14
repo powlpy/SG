@@ -20,8 +20,8 @@ MonoBehaviour:
     answer2: 250 000
     answer3: 350 000
     correctAnswer: 1
-    seen: 1
-    asked: 1
+    seen: 0
+    asked: 0
   - statement: "Les sacs plastiques ne sont pas recyclables, mais ils peuvent \xEAtre
       incin\xE9r\xE9s"
     question: "Parmi ces d\xE9chets, lequel n'est pas recyclable ?"
@@ -38,7 +38,7 @@ MonoBehaviour:
     answer3: Le carton
     correctAnswer: 1
     seen: 1
-    asked: 0
+    asked: 1
   - statement: "R\xE9gle des 3R : R\xE9duire, R\xE9utiliser, Recycler"
     question: "Quelle est la r\xE8gle des \xAB 3R \xBB ?"
     answer1: "R\xE9tr\xE9cir, R\xE9utiliser, Redonner"
@@ -46,7 +46,7 @@ MonoBehaviour:
     answer3: "R\xE9duire, R\xE9utiliser, Recycler"
     correctAnswer: 2
     seen: 1
-    asked: 0
+    asked: 1
   - statement: "Un fran\xE7ais produit en moyenne 400 kg de d\xE9chets par an"
     question: "Combien de kilos de d\xE9chets un fran\xE7ais produit-il en moyenne
       par an ?"
@@ -54,8 +54,8 @@ MonoBehaviour:
     answer2: 300 kg
     answer3: 400 kg
     correctAnswer: 2
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "Le recyclage est le fait de transformer les d\xE9chets en nouveaux
       produits"
     question: Qu''est-ce que le recyclage ?
@@ -64,14 +64,14 @@ MonoBehaviour:
     answer3: "Le fait de bruler les d\xE9chets"
     correctAnswer: 1
     seen: 1
-    asked: 0
+    asked: 1
   - statement: "Un sac plastique met environ 500 ans \xE0 se d\xE9composer"
     question: "Combien de temps met un sac plastique pour se d\xE9composer ?"
     answer1: 50 ans
     answer2: 500 ans
     answer3: 5000 ans
     correctAnswer: 1
-    seen: 1
+    seen: 0
     asked: 0
   - statement: "Le verre met plus de 4 000 ans \xE0 se d\xE9composer"
     question: "Combien de temps le verre met-il \xE0 se d\xE9composer ?"
@@ -79,8 +79,8 @@ MonoBehaviour:
     answer2: 2 000 ans
     answer3: 4 000 ans
     correctAnswer: 2
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "Les m\xE9dicaments p\xE9rim\xE9s doivent \xEAtre ramen\xE9s dans une
       pharmacie"
     question: "O\xF9 jeter des m\xE9dicaments p\xE9rim\xE9s ?"
@@ -88,7 +88,7 @@ MonoBehaviour:
     answer2: Avec le compost
     answer3: Dans la poubelle grise
     correctAnswer: 0
-    seen: 0
+    seen: 1
     asked: 0
   - statement: "Les stylos peuvent \xEAtre jet\xE9s dans la poubelle grise"
     question: Dans quelle poubelle se jette un stylo ?
@@ -96,15 +96,15 @@ MonoBehaviour:
     answer2: Dans la poubelle jaune
     answer3: Dans la poubelle grise
     correctAnswer: 2
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "Les piles doivent \xEAtre d\xE9pos\xE9es dans une poubelle sp\xE9cialis\xE9e"
     question: "Les piles doivent \xEAtre d\xE9pos\xE9es dans ..."
     answer1: La poubelle jaune
     answer2: La poubelle grise
     answer3: "Une poubelle sp\xE9cialis\xE9e"
     correctAnswer: 2
-    seen: 1
+    seen: 0
     asked: 0
   - statement: "Tout le monde peut d\xE9poser des d\xE9chets \xE0 la d\xE9chetterie"
     question: "Qui peut mettre des objets \xE0 la d\xE9chetterie ?"
@@ -112,33 +112,33 @@ MonoBehaviour:
     answer2: Uniquement les professionnels
     answer3: Uniquement les particuliers
     correctAnswer: 0
-    seen: 1
+    seen: 0
     asked: 0
   - statement: "4 bouteilles d'eau recycl\xE9es peuvent cr\xE9er 3 nouvelles bouteilles"
     question: "Combien faut-il recycler de bouteilles d'eau pour cr\xE9er 3 nouvelles
       bouteilles ?"
     answer1: 3
     answer2: 4
-    answer3: 4
+    answer3: 10
     correctAnswer: 2
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "Un carton peut \xEAtre recycl\xE9 10 fois avant d'\xEAtre incin\xE9r\xE9"
     question: "Combien de fois un carton peut-il \xEAtre recycl\xE9 ?"
     answer1: 5 fois
     answer2: 10 fois
     answer3: 100 fois
     correctAnswer: 1
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "En France, seulement 10% des verres sont recycl\xE9s"
     question: "En France, la proportion de verres recycl\xE9s est de ..."
     answer1: 10%
     answer2: 30%
     answer3: 50%
     correctAnswer: 0
-    seen: 0
-    asked: 0
+    seen: 1
+    asked: 1
   - statement: "En France, seulement 20% des plastiques sont recycl\xE9s"
     question: "En France, la proportion des plastiques recycl\xE9s est de ..."
     answer1: 20%
@@ -153,7 +153,7 @@ MonoBehaviour:
     answer2: 1975
     answer3: 1995
     correctAnswer: 1
-    seen: 1
+    seen: 0
     asked: 0
   - statement: "Le verre collect\xE9 est recycl\xE9 \xE0 100%"
     question: "Quel proportion du verre collect\xE9 est ensuite recycl\xE9 ?"
@@ -170,5 +170,5 @@ MonoBehaviour:
     answer2: "Ils se d\xE9gradent tout seuls"
     answer3: Ils coulent
     correctAnswer: 2
-    seen: 1
+    seen: 0
     asked: 0
