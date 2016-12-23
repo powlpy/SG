@@ -28,6 +28,9 @@ public class CharacterBehavior : MonoBehaviour {
     public float damage = 3;
     float nbErrors = 0;
     float nbEnemies = 0;
+    bool isPaused = false;
+    bool pauseFrozen;
+    public GameObject pausePannel;
 
 
     AudioSource audio;
@@ -48,6 +51,7 @@ public class CharacterBehavior : MonoBehaviour {
         attackSounds = Resources.LoadAll("Sounds/Attacks");
         pointsSound = Resources.LoadAll("Sounds/Coins");
         hurtSound = Resources.Load("Sounds/Hurt");
+        setFrozen(false, true);
     }
     
     void Update() {
@@ -73,6 +77,22 @@ public class CharacterBehavior : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.UpArrow))
                 QuestionBox.GoUpSelection();
         }
+        else if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (isPaused) {
+                ResumeGame();
+            } else {
+                isPaused = true;
+                pausePannel.SetActive(true);
+                pauseFrozen = isFrozen;
+                setFrozen(true, false);
+            }
+        }
+    }
+
+    public void ResumeGame() {
+        isPaused = false;
+        pausePannel.SetActive(false);
+        setFrozen(pauseFrozen, true);
     }
 
     void UpdateMovement() {

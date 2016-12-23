@@ -5,6 +5,14 @@ using System.Collections.Generic;
 public class InformationDatabase : ScriptableObject {
 
     public List<Information> info = new List<Information>();
+
+    public void Initialize() {
+        foreach(Information myInfo in info){
+            myInfo.seen = false;
+            myInfo.asked = false;
+        }
+    }
+
     public int GetNbStatements() {
         return info.Count;
     }

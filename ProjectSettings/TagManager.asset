@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Ennemie
+  - Global
   layers:
   - Default
   - TransparentFX
