@@ -446,5 +446,14 @@ public class CharacterBehavior : MonoBehaviour {
 		audio.clip = (AudioClip) pointsSound[Random.Range(0, pointsSound.Length)];
 		audio.Play();
 	}
+    
+    public void SetVolume(float vol) {
+        audio.volume = 0.8f * vol;
+    }
+
+    public void PlaySound(AudioClip clip) {
+        audio.clip = clip;
+        audio.Play();
+    }
 
 }

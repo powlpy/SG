@@ -20,7 +20,7 @@ public class CombatArea : MonoBehaviour {
     float cameraWidth;
     float cameraHeight;
 
-    AudioSource audio;
+    AudioClip exclamationSound;
 
     GameObject player;
 
@@ -36,10 +36,8 @@ public class CombatArea : MonoBehaviour {
             ennemiesList.AddRange(Resources.LoadAll("Ennemies/Orange"));
         if (ennemiesList.Count == 0)
             Debug.Log("Erreur : aucun type d'ennemis dans la zone " + name);
-        
-        audio = gameObject.AddComponent<AudioSource>();
-        audio.playOnAwake = false;
-        audio.clip = (AudioClip)Resources.Load("Sounds/exclamation");
+
+        exclamationSound = (AudioClip)Resources.Load("Sounds/exclamation");
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -55,7 +53,7 @@ public class CombatArea : MonoBehaviour {
 
         collider.transform.Find("exclamation").GetComponent<SpriteRenderer>().enabled = true;
         StartCoroutine(DisableExclamation());
-        audio.Play();
+        collider.GetComponent<CharacterBehavior>().PlaySound(exclamationSound);
 		CameraBehavior cam = Camera.main.GetComponent<CameraBehavior> ();
 		cam.Frozen(transform.position.x, transform.position.y);
 		cam.lastEnnemieIsDestroy = false;

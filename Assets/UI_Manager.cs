@@ -2,19 +2,31 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class UI_Manager : MonoBehaviour {
 
     public GameObject panelOptions;
     public GameObject cloud1,cloud2;
+    public GameObject Canvas;
+    Button firstButton;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
+        firstButton = Canvas.GetComponentInChildren<Button>();
+        StartCoroutine(SelectFirstButton());
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    IEnumerator SelectFirstButton() {
+        EventSystem.current.SetSelectedGameObject(null, new BaseEventData(EventSystem.current));
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(firstButton.gameObject, new BaseEventData(EventSystem.current));
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         //--- Animation nuages---
         cloud1.transform.Translate(Vector3.left * 0.008f);
