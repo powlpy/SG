@@ -60,7 +60,7 @@ public class CombatArea : MonoBehaviour {
 
 
         for (int i = 0; i < nbEnnemies-1; i++)
-            StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies));
+            StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies + 0.8f));
         StartCoroutine(SummonLastEnnemyAfterDelay((nbEnnemies - 1) * delaiBetweenEnnemies));
     }
 
