@@ -31,11 +31,11 @@ public class EnemyBehavior : MonoBehaviour {
     public GameObject myShadow;
     public GameObject stunnedShadow;
 
+    CombatArea myArea;
+
     private bool isInArena = false;
 
     private bool lookingLeft = true;
-
-	public bool isLast = false;
 
     public BehaviorType behavior;
 	public int score = 3;
@@ -170,12 +170,7 @@ public class EnemyBehavior : MonoBehaviour {
     }
 
     public void OnDeath() {
-		CameraBehavior cam = Camera.main.GetComponent<CameraBehavior> ();
-		cam.nbEnnemies--;
-		if (isLast)
-			cam.lastEnnemieIsDestroy = true;
-        if (cam.nbEnnemies <= 0 && cam.lastEnnemieIsDestroy)
-            cam.unFreeze();
+        myArea.EnnemyKilled();
         Destroy(gameObject);
     }
 
@@ -287,7 +282,8 @@ public class EnemyBehavior : MonoBehaviour {
         GetComponent<Rigidbody2D>().isKinematic = false;
     }
 
-	public void SetLast(bool b){
-		isLast = b;
-	}
+    public void SetCombatArea(CombatArea ca) {
+        myArea = ca;
+    }
+
 }

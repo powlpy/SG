@@ -6,8 +6,9 @@ public class CombatArea : MonoBehaviour {
 
     public int nbEnnemies;
 	public float delaiBetweenEnnemies = 5;
-	public int nbEnnemiesMax = 4;
-	float addDelay;
+	public int nbEnnemiesMax = 2;
+    int nbCurrentEnnemies;
+    int nbEnnemiesLeft;
 
     public bool greyEnnemies;
     public bool yellowEnnemies;
@@ -19,8 +20,6 @@ public class CombatArea : MonoBehaviour {
     bool saveFollowAxisX;
     bool saveFollowAxisY;
     bool hasTriggered = false;
-    float cameraWidth;
-    float cameraHeight;
 
     AudioClip exclamationSound;
 
@@ -41,12 +40,6 @@ public class CombatArea : MonoBehaviour {
 
         exclamationSound = (AudioClip)Resources.Load("Sounds/exclamation");
         player = GameObject.FindGameObjectWithTag("Player");
-		addDelay = 0;
-    }
-
-    void Start() {
-        cameraWidth = Camera.main.GetComponent<CameraBehavior>().GetWidth();
-        cameraHeight = Camera.main.GetComponent<CameraBehavior>().GetHeight();
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
@@ -61,10 +54,10 @@ public class CombatArea : MonoBehaviour {
 		cam.Frozen(transform.position.x, transform.position.y);
 		cam.lastEnnemieIsDestroy = false;
 
+        nbEnnemiesLeft = nbEnnemies;
 
-        for (int i = 0; i < nbEnnemies-1; i++)
+        for (int i = 0; i < nbEnnemies; i++)
 			StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies + 0.8f));
-        StartCoroutine(SummonLastEnnemyAfterDelay((nbEnnemies - 1) * delaiBetweenEnnemies));
     }
 
     IEnumerator DisableExclamation() {
@@ -78,42 +71,26 @@ public class CombatArea : MonoBehaviour {
         GameObject ennemy = Instantiate(randomEnnemy) as GameObject;
         
         ennemy.transform.position = GetRandomEnnemyPosition();
+        ennemy.GetComponent<EnemyBehavior>().SetCombatArea(this);
+        nbCurrentEnnemies++;
+        nbEnnemiesLeft--;
     }
 
     IEnumerator SummonEnnemyAfterDelay(float delay) {
-		yield return new WaitForSeconds(delay + addDelay);
-		while (Camera.main.GetComponent<CameraBehavior> ().nbEnnemies >= nbEnnemiesMax) {
-			addDelay += 2f;
-			yield return new WaitForSeconds (delay + addDelay);
-		}
-        SummonEnnemy();
+		yield return new WaitForSeconds(delay);
+        if (nbCurrentEnnemies < nbEnnemiesMax)
+            SummonEnnemy();
+        else
+            StartCoroutine(SummonEnnemyAfterDelay(delaiBetweenEnnemies));
     }
 
-    void SummonLastEnnemy() {
-        Object randomEnnemy = ennemiesList[Random.Range(0, ennemiesList.Count)];
-        GameObject ennemy = Instantiate(randomEnnemy) as GameObject;
-
-        ennemy.transform.position = GetRandomEnnemyPosition();
-        ennemy.GetComponent<EnemyBehavior>().SetLast(true);
-    }
-
-    IEnumerator SummonLastEnnemyAfterDelay(float delay) {
-        yield return new WaitForSeconds(delay);
-        SummonLastEnnemy();
+    public void EnnemyKilled() {
+        nbCurrentEnnemies--;
+        if (nbCurrentEnnemies == 0 && nbEnnemiesLeft == 0)
+            Camera.main.GetComponent<CameraBehavior>().unFreeze();
     }
 
     Vector3 GetRandomEnnemyPosition() {
-        /*
-        Vector3 result = Camera.main.transform.position;
-
-        Vector3 variation = new Vector3(1.1f * cameraWidth, Random.Range(-cameraHeight, cameraHeight), 0);
-        if (Random.value < 0.5)
-            result -= variation;
-        else
-            result += variation;
-
-        result.z = 0;*/
-
         bool isValid = false;
         Vector3 result = Vector3.zero;
         int ii = 0;

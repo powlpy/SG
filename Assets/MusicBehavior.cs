@@ -18,21 +18,17 @@ public class MusicBehavior : MonoBehaviour {
     public void goFast() {
         float temp;
         myParameter.getValue(out temp);
-        Debug.Log(temp);
         Debug.Log("G2G FAST!");
         myParameter.setValue(0.8f);
         myParameter.getValue(out temp);
-        Debug.Log(temp);
     }
 
     public void goSlow() {
         float temp;
         myParameter.getValue(out temp);
-        Debug.Log(temp);
         Debug.Log("G2G SLOW!");
         myParameter.setValue(0.2f);
         myParameter.getValue(out temp);
-        Debug.Log(temp);
     }
 
 }
