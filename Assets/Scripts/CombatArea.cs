@@ -81,7 +81,7 @@ public class CombatArea : MonoBehaviour {
         if (nbCurrentEnnemies < nbEnnemiesMax)
             SummonEnnemy();
         else
-            StartCoroutine(SummonEnnemyAfterDelay(delaiBetweenEnnemies));
+            StartCoroutine(SummonEnnemyAfterDelay(1));
     }
 
     public void EnnemyKilled() {
