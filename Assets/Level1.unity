@@ -31482,12 +31482,17 @@ Prefab:
     - target: {fileID: 114000010122291572, guid: b71008f38f50cb140bc4215caabbaffe,
         type: 2}
       propertyPath: delaiBetweenEnnemies
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114000010122291572, guid: b71008f38f50cb140bc4215caabbaffe,
         type: 2}
       propertyPath: glassEnnemies
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010122291572, guid: b71008f38f50cb140bc4215caabbaffe,
+        type: 2}
+      propertyPath: nbEnnemiesMax
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
@@ -33522,6 +33527,11 @@ Prefab:
         type: 2}
       propertyPath: orangeEnnemies
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010122291572, guid: b71008f38f50cb140bc4215caabbaffe,
+        type: 2}
+      propertyPath: nbEnnemiesMax
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
@@ -44553,6 +44563,11 @@ Prefab:
       propertyPath: delaiBetweenEnnemies
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114000010122291572, guid: b71008f38f50cb140bc4215caabbaffe,
+        type: 2}
+      propertyPath: nbEnnemiesMax
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
   m_IsPrefabParent: 0
@@ -55512,7 +55527,7 @@ Prefab:
     - target: {fileID: 114000010122291572, guid: b71008f38f50cb140bc4215caabbaffe,
         type: 2}
       propertyPath: delaiBetweenEnnemies
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 61000012859158550, guid: b71008f38f50cb140bc4215caabbaffe,
         type: 2}
@@ -55528,6 +55543,11 @@ Prefab:
         type: 2}
       propertyPath: glassEnnemies
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010122291572, guid: b71008f38f50cb140bc4215caabbaffe,
+        type: 2}
+      propertyPath: nbEnnemiesMax
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b71008f38f50cb140bc4215caabbaffe, type: 2}
@@ -65463,7 +65483,7 @@ Prefab:
     - target: {fileID: 114000012784209196, guid: 9065aa5d697f96843af82e0c1f261a78,
         type: 2}
       propertyPath: myText
-      value: "Poubelle jauneNEWLINEBoites m\xE9talliques, cartons, journeaux, bouteilles
+      value: "Poubelle jauneNEWLINEBoites m\xE9talliques, cartons, journaux, bouteilles
         en plastique"
       objectReference: {fileID: 0}
     m_RemovedComponents: []

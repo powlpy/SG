@@ -5,7 +5,9 @@ using System.Collections.Generic;
 public class CombatArea : MonoBehaviour {
 
     public int nbEnnemies;
-    public float delaiBetweenEnnemies = 5;
+	public float delaiBetweenEnnemies = 5;
+	public int nbEnnemiesMax = 4;
+	float addDelay;
 
     public bool greyEnnemies;
     public bool yellowEnnemies;
@@ -39,6 +41,7 @@ public class CombatArea : MonoBehaviour {
 
         exclamationSound = (AudioClip)Resources.Load("Sounds/exclamation");
         player = GameObject.FindGameObjectWithTag("Player");
+		addDelay = 0;
     }
 
     void Start() {
@@ -60,7 +63,7 @@ public class CombatArea : MonoBehaviour {
 
 
         for (int i = 0; i < nbEnnemies-1; i++)
-            StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies));
+			StartCoroutine(SummonEnnemyAfterDelay(i * delaiBetweenEnnemies + 0.8f));
         StartCoroutine(SummonLastEnnemyAfterDelay((nbEnnemies - 1) * delaiBetweenEnnemies));
     }
 
@@ -78,7 +81,11 @@ public class CombatArea : MonoBehaviour {
     }
 
     IEnumerator SummonEnnemyAfterDelay(float delay) {
-        yield return new WaitForSeconds(delay);
+		yield return new WaitForSeconds(delay + addDelay);
+		while (Camera.main.GetComponent<CameraBehavior> ().nbEnnemies >= nbEnnemiesMax) {
+			addDelay += 2f;
+			yield return new WaitForSeconds (delay + addDelay);
+		}
         SummonEnnemy();
     }
 
