@@ -53,7 +53,7 @@ public class CombatArea : MonoBehaviour {
 
         collider.transform.Find("exclamation").GetComponent<SpriteRenderer>().enabled = true;
         StartCoroutine(DisableExclamation());
-        collider.GetComponent<CharacterBehavior>().PlaySound(exclamationSound);
+        //collider.GetComponent<CharacterBehavior>().PlaySound(exclamationSound);
 		CameraBehavior cam = Camera.main.GetComponent<CameraBehavior> ();
 		cam.Frozen(transform.position.x, transform.position.y);
 		cam.lastEnnemieIsDestroy = false;

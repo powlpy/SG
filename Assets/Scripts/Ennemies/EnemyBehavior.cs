@@ -174,8 +174,8 @@ public class EnemyBehavior : MonoBehaviour {
 		cam.nbEnnemies--;
 		if (isLast)
 			cam.lastEnnemieIsDestroy = true;
-		if(cam.nbEnnemies <= 0 && cam.lastEnnemieIsDestroy)
-           cam.isFrozen = false;
+        if (cam.nbEnnemies <= 0 && cam.lastEnnemieIsDestroy)
+            cam.unFreeze();
         Destroy(gameObject);
     }
 

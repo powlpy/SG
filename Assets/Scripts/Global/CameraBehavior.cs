@@ -106,6 +106,15 @@ public class CameraBehavior : MonoBehaviour {
 	public void Frozen(float x, float y){
         arenaPoint = new Vector3(x, y, 0);
 		isFrozen = true;
+
+        GetComponent<MusicBehavior>().goFast();
+
 	}
+
+    public void unFreeze() {
+        isFrozen = false;
+        GetComponent<MusicBehavior>().goSlow();
+
+    }
 
 }
