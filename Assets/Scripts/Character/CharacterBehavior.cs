@@ -80,10 +80,9 @@ public class CharacterBehavior : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.Escape)) {
             if (isPaused) {
                 ResumeGame();
-				GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("paused", 0f);
             } else {
-                isPaused = true;
 				GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("paused", 1f);
+                isPaused = true;
                 pausePannel.SetActive(true);
                 pauseFrozen = isFrozen;
                 setFrozen(true, false);
@@ -92,6 +91,7 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     public void ResumeGame() {
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("paused", 0f);
         isPaused = false;
         pausePannel.SetActive(false);
         setFrozen(pauseFrozen, true);
