@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  SourceProjectPath: "C:\\Users\\Cl\xE9ment\\Documents\\FMOD Studio\\seriousGame\\seriousGame.fspro"
-  SourceBankPath: "C:\\Users\\Cl\xE9ment\\Documents\\FMOD Studio\\seriousGame\\Build"
+  SourceProjectPath: Assets\FMOD\FMODseriousGame\FMODseriousGame.fspro
+  SourceBankPath: Assets\FMOD\FMODseriousGame\Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
