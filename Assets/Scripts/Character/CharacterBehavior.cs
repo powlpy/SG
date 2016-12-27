@@ -290,6 +290,7 @@ public class CharacterBehavior : MonoBehaviour {
         UpdateDisplayHearts();
 		if (currentHp <= 0) {
 			Debug.Log ("dead");
+			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
 			gameObject.SetActive(false);
 			EndGame ();
 		}

@@ -31,6 +31,7 @@ public class PauseUI : MonoBehaviour {
     // Use this for initialization
     public void Quit(){
 		Debug.Log ("Application Quit !");
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
 		//Application.Quit ();
 		SceneManager.LoadScene("menu");
 
@@ -39,6 +40,7 @@ public class PauseUI : MonoBehaviour {
 	public void Retry (){
 		
 		Debug.Log ("Application Retry !");
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
