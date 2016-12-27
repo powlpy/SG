@@ -81,8 +81,10 @@ public class CharacterBehavior : MonoBehaviour {
             if (isPaused) {
                 ResumeGame();
             } else {
+				GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("paused", 1f);
                 isPaused = true;
                 pausePannel.SetActive(true);
+                pausePannel.GetComponent<PauseUI>().Select();
                 pauseFrozen = isFrozen;
                 setFrozen(true, true);
             }
@@ -90,8 +92,9 @@ public class CharacterBehavior : MonoBehaviour {
     }
 
     public void ResumeGame() {
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("paused", 0f);
         isPaused = false;
-        pausePannel.SetActive(false);
+        pausePannel.GetComponent<PauseUI>().Deselect();
         setFrozen(pauseFrozen, true);
     }
 
@@ -148,8 +151,7 @@ public class CharacterBehavior : MonoBehaviour {
     }
     //wait end of frame before freezing the time for the animation
     IEnumerator FreezeTimeRoutine() {
-        //yield return new WaitForEndOfFrame();
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForEndOfFrame();
         Time.timeScale = 0;
     }
 

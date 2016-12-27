@@ -12,15 +12,30 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114003749316382664}
-  - {fileID: 114457302309346198}
+  - {fileID: 114371804122493170}
+  - {fileID: 114426757630832414}
   EditorEvents:
-  - {fileID: 114542621107158326}
-  MasterBankRef: {fileID: 114457302309346198}
-  StringsBankRef: {fileID: 114003749316382664}
+  - {fileID: 114870370098921024}
+  MasterBankRef: {fileID: 114426757630832414}
+  StringsBankRef: {fileID: 114371804122493170}
   stringsBankWriteTime: 636181967519697809
   cacheVersion: 2
---- !u!114 &114003749316382664
+--- !u!114 &114154372208595542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114371804122493170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -38,93 +53,7 @@ MonoBehaviour:
   - Name: Desktop
     Value: 674
   Exists: 1
---- !u!114 &114067049666089600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114149863697020340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: "C:\\Users\\Cl\xE9ment\\Documents\\FMOD Studio\\seriousGame\\Build\\Desktop\\Master
-    Bank.bank"
-  lastModified: 636181967519667773
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 59296
-  Exists: 1
---- !u!114 &114203515493224244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114252869784602654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114409250854184062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: event:/mainMusic
-  guid: 3002609a82318e478e27271c5f9a4a92
-  Banks:
-  - {fileID: 114149863697020340}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 114957072445077206}
-  MinDistance: 1
-  MaxDistance: 20
---- !u!114 &114457302309346198
+--- !u!114 &114426757630832414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -137,13 +66,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: "C:\\Users\\Cl\xE9ment\\Documents\\seriousGame\\Assets\\FMOD\\FMODseriousGame\\Build\\Desktop\\Master
     Bank.bank"
-  lastModified: 636184553614021212
+  lastModified: 636184766288116725
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 59296
+    Value: 60224
   Exists: 1
---- !u!114 &114542621107158326
+--- !u!114 &114848482934003902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: paused
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114870370098921024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -157,169 +101,12 @@ MonoBehaviour:
   Path: event:/mainMusic
   guid: 3002609a82318e478e27271c5f9a4a92
   Banks:
-  - {fileID: 114457302309346198}
+  - {fileID: 114426757630832414}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114252869784602654}
+  - {fileID: 114848482934003902}
+  - {fileID: 114154372208595542}
   MinDistance: 1
   MaxDistance: 9.2
---- !u!114 &114556630789472038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114575481669593888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: "C:\\Users\\Cl\xE9ment\\Documents\\FMOD Studio\\seriousGame\\Build\\Desktop\\Master
-    Bank.strings.bank"
-  lastModified: 636181967519697809
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 674
-  Exists: 1
---- !u!114 &114580427694374778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114627699910756548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114769558180410244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114781179768223208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114788651603056750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114871746196017556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114957072445077206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: intensity
-  Min: 0
-  Max: 1
-  Default: 0
---- !u!114 &114968785782747246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Path: C:\Users\Nicolas\Documents\Unity\seriousGame\Assets\FMOD\FMODseriousGame\Build\Desktop\Master
-    Bank.bank
-  lastModified: 636183985311327924
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 59296
-  Exists: 1

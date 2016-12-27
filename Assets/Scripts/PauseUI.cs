@@ -13,17 +13,19 @@ public class PauseUI : MonoBehaviour {
     public GameObject volumeHandle;
     Image volumeHandleImage;
 
-    void Start() {
+    void Awake() {
         firstButton = GetComponentInChildren<Button>();
-        StartCoroutine(SelectFirstButton());
         volumeHandleImage = volumeHandle.GetComponent<Image>();
     }
 
-    IEnumerator SelectFirstButton() {
-        EventSystem.current.SetSelectedGameObject(null, new BaseEventData(EventSystem.current));
-        yield return new WaitForSeconds(0.1f);
-        EventSystem.current.SetSelectedGameObject(firstButton.gameObject, new BaseEventData(EventSystem.current));
+    public void Select() {
+        //EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButton.gameObject);
+    }
 
+    public void Deselect() {
+        EventSystem.current.SetSelectedGameObject(null);
+        gameObject.SetActive(false);
     }
 
     // Use this for initialization
