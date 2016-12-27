@@ -84,7 +84,7 @@ public class CharacterBehavior : MonoBehaviour {
                 isPaused = true;
                 pausePannel.SetActive(true);
                 pauseFrozen = isFrozen;
-                setFrozen(true, false);
+                setFrozen(true, true);
             }
         }
     }
@@ -148,7 +148,8 @@ public class CharacterBehavior : MonoBehaviour {
     }
     //wait end of frame before freezing the time for the animation
     IEnumerator FreezeTimeRoutine() {
-        yield return new WaitForEndOfFrame();
+        //yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.25f);
         Time.timeScale = 0;
     }
 

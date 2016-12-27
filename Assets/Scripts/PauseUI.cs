@@ -21,7 +21,7 @@ public class PauseUI : MonoBehaviour {
 
     IEnumerator SelectFirstButton() {
         EventSystem.current.SetSelectedGameObject(null, new BaseEventData(EventSystem.current));
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.1f);
         EventSystem.current.SetSelectedGameObject(firstButton.gameObject, new BaseEventData(EventSystem.current));
 
     }
