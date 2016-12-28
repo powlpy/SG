@@ -290,12 +290,17 @@ public class CharacterBehavior : MonoBehaviour {
         StartCoroutine(ManageImmunity(1.5f));
         currentHp -= i;
         UpdateDisplayHearts();
+	
 		if (currentHp <= 0) {
 			Debug.Log ("dead");
 			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
 			gameObject.SetActive(false);
 			EndGame ();
 		}
+
+		if(currentHp <= 1)
+			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("warning", 1);
+		
 		
     }
 						//  Game Over
@@ -446,6 +451,8 @@ public class CharacterBehavior : MonoBehaviour {
 
 	public void gainHp(){
 		currentHp += 1f;
+		if(currentHp > 1f)
+			GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("warning", 0);
 		if (currentHp > maxHp)
 			currentHp = maxHp;
 		UpdateDisplayHearts();
