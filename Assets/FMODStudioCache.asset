@@ -13,12 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114371804122493170}
-  - {fileID: 114426757630832414}
+  - {fileID: 114852845510871754}
   EditorEvents:
   - {fileID: 114870370098921024}
-  MasterBankRef: {fileID: 114426757630832414}
+  MasterBankRef: {fileID: 114852845510871754}
   StringsBankRef: {fileID: 114371804122493170}
-  stringsBankWriteTime: 636181967519697809
+  stringsBankWriteTime: 636184851451352022
   cacheVersion: 2
 --- !u!114 &114154372208595542
 MonoBehaviour:
@@ -35,6 +35,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114365160463660818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: volumeMusique
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114371804122493170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD\FMODseriousGame\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636181967519697809
+  lastModified: 636184851451352022
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -72,6 +87,96 @@ MonoBehaviour:
   - Name: Desktop
     Value: 60224
   Exists: 1
+--- !u!114 &114455485844220958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114497148390450078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: volumeMusique
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114567534064467140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: paused
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114635948988716830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: paused
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114703042937497482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114745457920633788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: paused
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114848482934003902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +192,40 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114852254110665046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: paused
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114852845510871754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\Nicolas\Documents\Unity\seriousGame\Assets\FMOD\FMODseriousGame\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636184851451122009
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 60640
+  Exists: 1
 --- !u!114 &114870370098921024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,12 +240,43 @@ MonoBehaviour:
   Path: event:/mainMusic
   guid: 3002609a82318e478e27271c5f9a4a92
   Banks:
-  - {fileID: 114426757630832414}
+  - {fileID: 114852845510871754}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114848482934003902}
-  - {fileID: 114154372208595542}
+  - {fileID: 114365160463660818}
+  - {fileID: 114852254110665046}
+  - {fileID: 114703042937497482}
   MinDistance: 1
   MaxDistance: 9.2
+--- !u!114 &114918662161725700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114993989124181278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: intensity
+  Min: 0
+  Max: 1
+  Default: 0

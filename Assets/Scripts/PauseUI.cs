@@ -51,6 +51,7 @@ public class PauseUI : MonoBehaviour {
     public void ChangeVolume(GameObject myObject) {
         Slider mySlider = myObject.GetComponent<Slider>();
         GameObject.FindGameObjectWithTag("Global").GetComponent<AudioSource>().volume = 0.1f * mySlider.value / 3.0f;
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().SetParameter ("volumeMusique", mySlider.value / 6f);
         GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterBehavior>().SetVolume(mySlider.value / 3.0f);
         UpdateVolumeSprite(mySlider);
     }
@@ -63,5 +64,4 @@ public class PauseUI : MonoBehaviour {
         else
             volumeHandleImage.sprite = fullVolume;
     }
-
 }

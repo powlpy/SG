@@ -1153,6 +1153,10 @@ MonoBehaviour:
   Params:
   - Name: intensity
     Value: 0
+  - Name: paused
+    Value: 0
+  - Name: volumeMusique
+    Value: 0.5
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 9.2
