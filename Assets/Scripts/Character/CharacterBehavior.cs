@@ -48,7 +48,7 @@ public class CharacterBehavior : MonoBehaviour {
         audio = gameObject.AddComponent<AudioSource>();
         audio.playOnAwake = false;
         audio.volume = 0.8f;
-        attackSounds = Resources.LoadAll("Sounds/Attacks");
+        attackSounds = Resources.LoadAll("Sounds/AttacksBis");
         pointsSound = Resources.LoadAll("Sounds/Coins");
         hurtSound = Resources.Load("Sounds/Hurt");
         setFrozen(false, true);
@@ -64,6 +64,8 @@ public class CharacterBehavior : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C))
             if (CanAttack()) {
                 anim.SetTrigger("DoAttack");
+				audio.clip = (AudioClip) attackSounds[Random.Range(0, attackSounds.Length)];
+				audio.Play();
             }
     }
 
