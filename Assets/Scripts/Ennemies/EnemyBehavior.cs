@@ -40,6 +40,8 @@ public class EnemyBehavior : MonoBehaviour {
     public BehaviorType behavior;
 	public int score = 3;
 
+	float destunMove;
+
 	AudioSource audio;
 
     void Awake() {
@@ -65,14 +67,30 @@ public class EnemyBehavior : MonoBehaviour {
 
 		audio = gameObject.AddComponent<AudioSource>();
 		audio.playOnAwake = false;
+		destunMove = 0.1f;
     }
     
     void Update() {
-        if (IsBeingCarried()) return;
+		if (IsBeingCarried ()) {
+			Vector3 zero = new Vector3(0f, 0f, 0f);
+			myBody.velocity = zero;
+			return;
+		}
         if(IsStunned()) {
+			if (myStunTime < 2f) { // anmation «se réveille bientot»
+				Vector3 p = GetComponentInChildren<SpriteRenderer>().transform.position;
+				p.x += destunMove;
+				GetComponentInChildren<SpriteRenderer> ().transform.position = p;
+				if (p.x > 0.4f || p.x < -0.4f)
+					destunMove = -destunMove;
+			}
+
             myStunTime = Mathf.MoveTowards(myStunTime, 0f, Time.deltaTime);
             if (!IsStunned()) {
                 StopStun();
+				/*Vector3 p = GetComponentInChildren<SpriteRenderer> ().transform.position;
+				p.x = 0f;
+				GetComponentInChildren<SpriteRenderer>().transform.position = p;*/
             }
         }
         if (IsBeingPushed()) {
