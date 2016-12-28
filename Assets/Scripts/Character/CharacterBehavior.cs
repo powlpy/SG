@@ -38,6 +38,7 @@ public class CharacterBehavior : MonoBehaviour {
     Object[] pointsSound;
 	Object[] shootSounds;
     Object hurtSound;
+	Object heartSound;
 
     void Start() {
         currentHp = maxHp;
@@ -53,6 +54,7 @@ public class CharacterBehavior : MonoBehaviour {
         pointsSound = Resources.LoadAll("Sounds/Coins");
         hurtSound = Resources.Load("Sounds/Hurt");
 		shootSounds = Resources.LoadAll ("Sounds/Shoot");
+		heartSound = Resources.Load ("Sounds/heart");
         setFrozen(false, true);
     }
     
@@ -458,7 +460,7 @@ public class CharacterBehavior : MonoBehaviour {
 		if (currentHp > maxHp)
 			currentHp = maxHp;
 		UpdateDisplayHearts();
-		audio.clip = (AudioClip) pointsSound[Random.Range(0, pointsSound.Length)];
+		audio.clip = (AudioClip) heartSound;
 		audio.Play();
 	}
     
