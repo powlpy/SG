@@ -40,6 +40,8 @@ public class EnemyBehavior : MonoBehaviour {
     public BehaviorType behavior;
 	public int score = 3;
 
+	AudioSource audio;
+
     void Awake() {
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponentInChildren<Animator>();
@@ -60,6 +62,9 @@ public class EnemyBehavior : MonoBehaviour {
         if(player != null)
             player.GetComponent<CharacterBehavior>().AddEnemy();
 		Camera.main.GetComponent<CameraBehavior> ().nbEnnemies++;
+
+		audio = gameObject.AddComponent<AudioSource>();
+		audio.playOnAwake = false;
     }
     
     void Update() {
@@ -133,6 +138,10 @@ public class EnemyBehavior : MonoBehaviour {
         currentHealth -= player.GetComponent<CharacterBehavior>().damage;
         CheckHealth();
         PushBack(weaponCollider);
+
+		audio.volume = player.GetComponent<AudioSource> ().volume;
+		audio.clip = player.GetComponent<CharacterBehavior> ().soundShoot ();
+		audio.Play();
     }
 
     void CheckHealth() {
