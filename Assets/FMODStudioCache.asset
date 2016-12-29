@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114371804122493170}
-  - {fileID: 114852845510871754}
+  - {fileID: 114662772187758640}
   EditorEvents:
   - {fileID: 114870370098921024}
-  MasterBankRef: {fileID: 114852845510871754}
+  MasterBankRef: {fileID: 114662772187758640}
   StringsBankRef: {fileID: 114371804122493170}
   stringsBankWriteTime: 636185735410001059
   cacheVersion: 2
@@ -267,6 +267,39 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114653256450903706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: paused
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114662772187758640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\seriousGame\Assets\FMOD\FMODseriousGame\Build\Desktop\Master Bank.bank
+  lastModified: 636185866511866617
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 987744
+  Exists: 1
 --- !u!114 &114677181025088430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +360,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114742157547896486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: warning
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114745457920633788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,6 +387,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: paused
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114755808174102426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: intensity
   Min: 0
   Max: 1
   Default: 0
@@ -435,7 +498,7 @@ MonoBehaviour:
   Path: event:/mainMusic
   guid: 3002609a82318e478e27271c5f9a4a92
   Banks:
-  - {fileID: 114852845510871754}
+  - {fileID: 114662772187758640}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0

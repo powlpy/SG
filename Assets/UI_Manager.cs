@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class UI_Manager : MonoBehaviour {
 
+
     public GameObject panelOptions;
     public GameObject cloud1,cloud2;
     public GameObject Canvas;
@@ -56,4 +57,8 @@ public class UI_Manager : MonoBehaviour {
         Application.Quit();
         Debug.Log("Game exited ! Bye bye !");
     }
+
+    //---Options---
+
+ 
 }
