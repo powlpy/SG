@@ -57,8 +57,8 @@ public class EnemyBehavior : MonoBehaviour {
         isAwake = true;
         GetComponentInParent<InteractablePickup>().SetAuthorizePickup(false);
         Awaken();
-        GetComponent<Rigidbody2D>().isKinematic = true;
-        StartCoroutine(SetInArenaAfterDelay(1));
+        //GetComponent<Rigidbody2D>().isKinematic = true;
+        //StartCoroutine(SetInArenaAfterDelay(1));
         GameObject animation = (GameObject)Instantiate(spawnAnimation);
         animation.transform.position = transform.position;
         if(player != null)
