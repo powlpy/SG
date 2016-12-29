@@ -338,7 +338,7 @@
             <value>2.9039072374814587</value>
         </property>
         <property name="volume">
-            <value>3.5</value>
+            <value>5</value>
         </property>
         <property name="pitch">
             <value>2</value>
@@ -358,7 +358,7 @@
             <value>5.0526303854875287</value>
         </property>
         <property name="volume">
-            <value>3.5</value>
+            <value>5</value>
         </property>
         <property name="pitch">
             <value>2</value>
@@ -676,7 +676,7 @@
             <value>0.10676691729323309</value>
         </property>
         <property name="value">
-            <value>-60.0289917</value>
+            <value>-37.2330437</value>
         </property>
         <property name="curveShape">
             <value>0.0147360656</value>
@@ -687,7 +687,7 @@
             <value>0.50225562836887028</value>
         </property>
         <property name="value">
-            <value>-3.65565109</value>
+            <value>-7.25043488</value>
         </property>
     </object>
     <object class="AutomationPoint" id="{d3bd35ae-b7b8-4f86-b87e-f99e4c2119da}">

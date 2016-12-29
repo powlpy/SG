@@ -26,7 +26,7 @@ public class GameOverUI : MonoBehaviour {
                 score = "D";
             transform.Find("scoreText").GetComponent<Text>().text = "Score : " + score;
         } else {
-            transform.Find("scoreText").GetComponent<Text>().text = "Les déchets ont gagnés";
+            transform.Find("scoreText").GetComponent<Text>().text = "Les déchets ont gagné";
         }
     }
 
