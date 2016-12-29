@@ -37,6 +37,7 @@ public class GameOverUI : MonoBehaviour {
 	// Use this for initialization
 	public void Quit()
 	{
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
 		Debug.Log ("Application Quit !");
 		//Application.Quit ();
 		SceneManager.LoadScene("menu");
@@ -45,7 +46,7 @@ public class GameOverUI : MonoBehaviour {
 
 	public void Retry ()
 	{
-		
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<FMODUnity.StudioEventEmitter> ().Stop ();
 		Debug.Log ("Application Retry !");
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
